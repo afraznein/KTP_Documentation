@@ -1,270 +1,478 @@
-1	-General Rules, Games, and Servers-
+# KTP League Official Rules
 
-&nbsp;	
+**Day of Defeat 1.3 Competitive Ruleset**
 
-1.1	• KTP reserves the right to modify any rules as needed at any time. This includes changes due to software updates/releases and all other changes deemed necessary to the league. Changes to the rules will be posted here AND announced somewhere publicly. Best faith efforts will be made to ensure no-one misses a rule change, but teams should check the rules on a regular basis and prior to every match to ensure they are in complete compliance.
+[![Version](https://img.shields.io/badge/Version-Season%9-2026-blue)](#)
+[![Game](https://img.shields.io/badge/Game-Day%20of%20Defeat%201.3-green)](#)
 
-&nbsp;	
+> **Note:** These rules govern the KTP competitive league for the Half-Life: Day of Defeat mod. They may be updated as needed (see Rule 1.1). All teams and players are expected to know and abide by these rules. Failure to do so can result in penalties, including suspensions and forfeits.
 
-1.2	• Upon an infraction of the rules listed here or the rules listed in the KTP Community Rules any combination of: a player or multiple players may be suspended, a game may be forfeited, or a match may be forfeited.
+---
 
-&nbsp;	
+## Table of Contents
 
-1.3	• A 'game' consists of a single contest between two opponents on a single map. A 'match' consists of one or more 'games' between the same two teams. A 'BO3 match' would consist of up to three 'games'. Suspensions will always be detailed in an amount of time or number of 'games' instead of 'matches'.
+- [1. General Rules, Games, and Servers](#1-general-rules-games-and-servers)
+- [2. Teams, Regions, Home/Away, and Ringer Rules](#2-teams-regions-homeaway-and-ringer-rules)
+- [3. Cheating, Penalties, and Disputes](#3-cheating-penalties-and-disputes)
+- [4. Player Rules](#4-player-rules)
+- [5. Captain Rules](#5-captain-rules)
 
-&nbsp;	
+---
 
-1.4	• For any given 'game': The correct map must be played, the correct KTP config must be used, and the match must be played on a KTP approved server.
+## 1. General Rules, Games, and Servers
 
-&nbsp;	
+> **Section Summary:** This section covers league administration, definitions of terms, server requirements, and general match procedures.
 
-1.5	• The server must qualify as a KTP approved server which entails: a dedicated non-listening server, server logs set to record, HLTV must be present and with a minimum of a 120 seconds delay, server and hltv must have gone through configuration process (by Jrod/Nein). Final admin approval must be given before any server may be used for any KTP 'games' or 'matches'.
+### 1.1 Rule Modifications
 
-&nbsp;	
+KTP reserves the right to modify or update any league rules at any time as needed. This includes changes necessitated by game updates, new releases, or other factors deemed necessary to the league. Any rule changes will be posted here AND announced publicly (via Discord, website, etc.). Teams are responsible for checking the rules regularly (especially before matches) to ensure they remain in compliance. Best faith efforts will be made to ensure no one misses a rule change.
 
-1.6	• In addition, servers owners must provide any HLTV passwords to KTP admins, give KTP admins server rcon, server dashboard access, and FTP access.
+### 1.2 Penalties for Rule Violations
 
-&nbsp;	
+Upon an infraction of the rules listed here or the rules listed in the KTP Community Rules, the league may apply penalties. Depending on severity, any combination of the following may occur:
 
-1.7	• In the event the server crashes in the first five minutes of a half, the half will be restarted. In the event the server crashes after the first five minutes of a half, half must be restarted and played with the same score and same amount of time remaining, rounded up to the nearest minute. Score will need to be handled manually, time remaining can be adjusted via server command. No player substitutions may be made at this time.
+- A player (or multiple players) can be suspended
+- A single game can be forfeited
+- An entire match can be declared a forfeit loss for the offending team
 
-&nbsp;	
+### 1.3 Definitions: Games vs Matches
 
-1.8	• The use of restricted areas on a map may result in player suspension and/or game/match forfeiture. Accessing an area via pixel walking, pixel walking and hanging in an area (such as harrington ladder), or an area that is only accessible via pixel walking is generally illegal. Please see Illegal Spots for examples of map areas that are considered illegal as well as a short video demonstrating illegal pixel walking.
+| Term | Definition |
+|------|------------|
+| **Game** | A single contest between two teams on one map (i.e., one full round on the chosen map) |
+| **Match** | May consist of multiple games between the same teams (e.g., a best-of-three can include up to three separate games on possibly different maps) |
 
-&nbsp;	
+> **Important:** Suspensions are typically given in terms of a number of **games** (or a length of time), rather than entire matches. This distinction is critical for understanding penalty durations.
 
-1.9	• In the event of a tie, two five-minute halves of overtime should be played. These overtime rounds are to be played immediately after the match. Overtime rounds should continue until a winner can be established.The overtime configs have the normal config name with \_ot added to the end. For example: ktp\_harrington\_ot.cfg.Failure to complete overtime rounds will result in a loss for both teams.
+### 1.4 Valid Game Requirements
 
-&nbsp;	
+For any official game to be valid, the following conditions must be met:
 
-1.10	• Spectators: No unauthorized spectators are allowed in the game server during official matches. The only spectators permitted are KTP admins or official broadcasters (e.g. the HLTV proxy with the required delay, or other league-sanctioned casters). This rule is in place to prevent any form of real-time “ghosting” or outside assistance. Unauthorized individuals joining the server to spectate may cause the game to be paused or forfeited at the admins’ discretion.
+- [ ] The correct map must be played (as scheduled)
+- [ ] The correct KTP league config for that map must be used
+- [ ] The game must take place on a KTP-approved server
 
-&nbsp;	
+### 1.5 KTP-Approved Servers
 
-1.11	"• Team Admission and Participation Eligibility: KTP reserves the sole and absolute discretion to approve or deny entry to any team seeking to participate in the league. This authority is exercised to preserve the fairness, safety, and overall enjoyment of the competition for all participants.
+All matches must be played on a server that has been approved by KTP admins. To qualify as approved, a server must meet the following requirements:
 
+| Requirement | Description |
+|-------------|-------------|
+| **Dedicated server** | Must be a dedicated (non-listen) server |
+| **Logging enabled** | Server logging must be set to record |
+| **HLTV requirement** | An HLTV spectator proxy must be running with a minimum 120-second delay to prevent ghosting |
+| **Configuration** | Server and HLTV must be configured with official KTP settings |
+| **Final approval** | Admin approval required before server can be used for KTP matches |
 
+### 1.6 Admin Access to Servers
 
-• Disruptive Conduct: Behavior intended to provoke conflict, interfere with gameplay, or violate league policies such as the KTP Community Rules.
+Server owners who wish to host league matches must provide KTP admins with full access to the server:
 
+- Any HLTV passwords
+- Server rcon (remote console) password
+- Access to the server's control dashboard
+- FTP access to server files/logs
 
+### 1.7 Server Crash Procedure
 
-• Operational Unreliability: Patterns of forfeits, missed matches, excessive roster turnover, or any other behavior that may disrupt league scheduling or competitive consistency."
+#### Crash within first 5 minutes of a half:
+The half must be fully restarted from the beginning (score 0-0)
 
-&nbsp;	
+#### Crash after first 5 minutes of a half:
+- The half will be restarted with the score and time remaining set to what they were at the moment of the crash
+- Round the time up to the nearest full minute
+- The score will need to be manually restored via server commands
+- **No player substitutions are allowed** during this mid-game restart
 
-1.12	• BYEs and Forfeit Scoring: BYEs will be awarded the average point value of all teams in the same division, calculated after the completion of all matches in that division on that map. Forfeits will only be scored after the end of regulation. If a BYE is awaiting a potential forfeit and that forfeit is confirmed at the end of regulation, it will instead be treated as a BYE and scored using the average point value method described above—as if neither match had occurred for scoring purposes.
+> **Mandatory notification:** Teams must inform a league admin immediately when a crash/restart occurs.
 
-&nbsp;	
+### 1.8 Map Exploits and Illegal Spots
 
-2	-Teams, Regions, Home/Away, and Ringer Rules-
+Using restricted or unintended areas of a map is strictly prohibited:
 
-&nbsp;	
+- Standing on tiny invisible ledges or edges not meant to support players
+- "Pixel-walking and hanging" (e.g., perching on the ladder in dod_harrington via an exploit)
+- Entering any area that is only reachable by using a pixel walk
 
-2.1	• An INTERNATIONAL team is any team that has a participating majority (4 EU/SA) players in the game.
+Violations may result in player suspension and/or forfeiture of the game or match.
 
-&nbsp;	
+### 1.9 Tie Games and Overtime
 
-2.2.a	• If teams cannot agree upon a date \& time the match will default to Sundays 9:00PM EST. Times may adjust for daylight savings time.
+In the event of a tie game, overtime must be played immediately to determine a winner.
 
-&nbsp;	
+**Overtime format:**
+- Two additional halves of **5 minutes each** (teams switch sides for the second OT half)
+- If still tied, continue playing additional 5-minute overtime halves until a winner is decided
+- Use the overtime config files: normal config name with `_ot` appended (e.g., `ktp_harrington_ot.cfg`)
 
-2.2.b	• INTERNATIONAL teams that live east of UTC -2 may use the alternate default match time of Sundays 3:00PM EST. Please see Time Zones. Times may adjust for daylight savings time.
+> **Penalty:** Failure to complete required overtime rounds will result in a loss being recorded for **both teams**.
 
-&nbsp;	
+### 1.10 Spectators
 
-2.3.a	• The team listed on the schedule as the HOME team has the choice of server usage for both halves as well as the choice of which side to join first.
+No unauthorized spectators are allowed in the game server during official matches. The only spectators permitted are:
 
-&nbsp;	
+- KTP admins
+- Official broadcasters (e.g., HLTV proxy with required delay, or league-sanctioned casters)
 
-2.3.b	• In the event of a BO3 contest the HOME team in each ‘round’ is the team that has selected the map.
+### 1.11 Team Admission and Participation Eligibility
 
-&nbsp;	
+KTP reserves the sole and absolute discretion to approve or deny entry to any team. Teams may be denied entry or removed for:
 
-2.4.a	• For matches that do not feature an INTERNATIONAL team games default to CENTRAL servers. Both captains may agree to play on a different KTP approved server. Games may never be played on non KTP approved servers.
+| Reason | Description |
+|--------|-------------|
+| **Disruptive Conduct** | Behavior intended to provoke conflict, interfere with gameplay, or violate league policies |
+| **Operational Unreliability** | Patterns of forfeits, missed matches, excessive roster turnover, or behavior disrupting league scheduling |
 
-&nbsp;	
+### 1.12 BYEs and Forfeit Scoring
 
-2.4.b	• If both teams are INTERNATIONAL teams games should occur on NEW YORK servers.
+- **BYEs:** Awarded the average point value of all teams in the same division, calculated after all matches complete
+- **Forfeits:** Only scored after the end of regulation
+- **Special case:** If a BYE is awaiting a potential forfeit that is confirmed at regulation end, it will be treated as a BYE and scored using the average point value method
 
-&nbsp;	
+---
 
-2.4.c	• if a majority INTERNATIONAL team is playing against an NA majority team the NA team would always select the starting side. If the INTERNATIONAL team is HOME they will select an NY server for play. If the NA team is HOME they will select an NY server for play.
+## 2. Teams, Regions, Home/Away, and Ringer Rules
 
-&nbsp;	
+> **Section Summary:** This section covers team composition, scheduling, server selection by region, roster management, and rules for using substitute players (ringers).
 
-2.5	• Teams that knowingly allow suspended players to join their roster will be removed from the league and all players on that team may be suspended. This same punishment also applies if a team lets a suspended player use one of their member's steam accounts.
+### 2.1 Team Composition (International vs NA)
 
-&nbsp;	
+| Team Type | Definition |
+|-----------|------------|
+| **International** | Majority of players (4+) based outside North America (EU, SA, etc.) |
+| **North American** | Majority of North American players |
 
-2.6	• Team names may be changed from the registered name a single time during the course of a season.
+### 2.2 Scheduling Default Match Times
 
-&nbsp;	
+| Scenario | Default Time |
+|----------|--------------|
+| **Standard** | Sunday at 9:00 PM Eastern Time (EST) |
+| **International (east of UTC -2)** | Sunday at 3:00 PM EST |
 
-2.7	• Rosters are capped at 10 players per team. Rosters will lock once team registration ends. Once this lock occurs, no modifications whatsoever will be made to team names, player handles, STEAMIDs or rosters. Players may be still be removed from rosters upon captain ticket request.
+> Times may adjust for daylight savings time.
 
-&nbsp;	
+### 2.3 Home Team Advantage
 
-2.7.1	• A single roster window will open during the season (around the half-way mark) and will be announced at least one week prior. Modifications to rosters may be ticket requested at this time. Additions to rosters for teams in the highest division will be approved pending roster space. Additions to rosters for teams not in the higest division require admin approval to preserve the league competitive integrity.
+#### 2.3.a Standard Matches
+The **HOME** team chooses:
+- Which KTP-approved server the match will be played on
+- Which side (Allies or Axis) their team will start on
 
-&nbsp;	
+#### 2.3.b Best-of-Three (BO3) Matches
+Each map is treated independently. The team that picked a map is considered the "home" team for that map.
 
-2.8	• No agreements between teams or captains will allow anyone to bypass any rules or suspensions of any kind. Ignoring rules or suspensions may result in captain suspension, player suspension, and/or team forfeiture of games/matches.
+### 2.4 Server Selection by Region
 
-&nbsp;	
+| Matchup | Server Location | Side Selection |
+|---------|-----------------|----------------|
+| **NA vs NA** | Central US (default) | Home team chooses |
+| **International vs International** | New York | Home team chooses |
+| **NA vs International** | New York (mandatory) | **NA team always chooses side** |
 
-2.9	• A 'ringer' is a player not on your roster used in a match. Ringers are subject to the opposing team's approval.
+### 2.5 Use of Suspended Players
 
-&nbsp;	
+Teams may not roster or play any individuals who are suspended by KTP. Violations result in:
+- Team removal from the league
+- Possible suspension of all team members
+- Suspension of anyone lending accounts to evade bans
 
-2.10	• In a 'game' a team must use a majority (four) of rostered players and may use no more than two ringers.
+### 2.6 Team Name Changes
 
-&nbsp;	
+A team is allowed to change its name **once** during the course of a season. After using this single name change, the team's name is locked for the rest of the season.
 
-2.11	• Team Forfeits and Removal: Teams that repeatedly forfeit their matches may be subject to removal from the league. If a team fails to show up or forfeits more than once in a season, the admins have discretion to remove that team from the schedule to maintain competitive integrity and scheduling fairness. All participants are expected to make a good-faith effort to play their matches as scheduled.
+### 2.7 Rosters and Roster Locks
 
-&nbsp;	
+| Rule | Details |
+|------|---------|
+| **Maximum roster size** | 10 players |
+| **Lock timing** | End of team registration period |
+| **After lock** | No changes to roster, team name, player handles, or SteamIDs |
+| **Exception** | Captain may request to remove a player via support ticket |
 
-3	-Cheating, Penalties, and Disputes-
+### 2.7.1 Mid-Season Roster Window
 
-&nbsp;	
+One roster addition window will occur mid-season, announced at least one week in advance.
 
-3.1	• Admins reserve the right to assign suspensions and forfeits, as well as set suspension lengths as deemed necessary.
+| Division | Requirements |
+|----------|--------------|
+| **Highest division** | Additions approved if roster slot available (up to 10) |
+| **Other divisions** | Admin approval required (preserves competitive integrity) |
 
-&nbsp;	
+### 2.8 No Bypassing Rules by Agreement
 
-3.2	• KTP Admins reserve the right to investigate suspicious players in order to maintain competitive integrity. Demos and Moss files can be pulled at random. Failure to provide requested evidence may result in a team forfeit loss or player suspension. Admins reserve the right to warn or suspend players for failure to abide by any of the rules.
+No agreement between team captains can override official rules or active suspensions. Such agreements are invalid and constitute a rule violation.
 
-&nbsp;	
+### 2.9 Ringers
 
-3.3	• Cheating is not allowed in any form. Players found to be cheating can be suspended from KTP and match results that featured the cheating player may be subject to forfeit.
+A **ringer** is a player not on your official roster, temporarily used to fill in. Using ringers requires:
+- Approval from the opposing team before the match
+- Captain's consent
 
-&nbsp;	
+### 2.10 Roster Minimums in Matches
 
-3.4	• Cheating includes but is not limited to: the use of any program that aids in the visual location of players on a map, recoil control, target acquisition, or illegally modifying game files.
+| Requirement | Details |
+|-------------|---------|
+| **Rostered players** | At least 4 of 6 players must be from official roster |
+| **Maximum ringers** | Up to 2 approved ringers allowed |
 
-&nbsp;	
+### 2.11 Team Forfeits and Removal
 
-3.5	• Only default game files may be used unless explicitly approved or provided by the league. The use of approved scoreboard modifiers, HLTV models and modifications to ClientScheme.res and TrackerScheme.res is allowed. The use of a custom crosshair is allowed for all weapons except the sniper rifle.
+Teams that repeatedly forfeit may be removed from the league. More than one forfeit in a season may result in removal at admin discretion.
 
-&nbsp;	
+---
 
-3.6	• Once a game has gone live the use of spectator is cheating. Spec hopping is cheating with a caveat. The sole exception to the spec hop rule is if a player has been killed at the moment of a full map capture or a player is stuck in terrain then Spec hopping IS allowed to join your team during the spawn wave.
+## 3. Cheating, Penalties, and Disputes
 
-&nbsp;	
+> **Section Summary:** This section outlines what constitutes cheating, the dispute process, evidence requirements, and penalties for violations.
 
-3.7	• All disputes must be filed within 24 hours of match completion by a team captain. Teams may file two cheating disputes in the regular season and one cheating dispute in the post-season. If a disputed player is guilty of cheating, the disputing team will not be charged with a dispute.
+### 3.1 Admin Authority
 
-&nbsp;	
+League administrators reserve the right to issue suspensions, forfeits, or other penalties as needed. All decisions are aimed at preserving fair play and competitive integrity.
 
-3.8.a	• Disputed players have 24 hours to submit requested match information to our KTP evidence form. The 24 hours shall begin when a message has been sent to the player requesting match information.
+### 3.2 Investigations and Evidence
 
-&nbsp;	
+KTP admins may investigate any player or team for suspicious behavior, including:
+- Requesting player POV demos or MOSS anti-cheat files at random
+- Conducting spot-checks at any time
 
-3.8.b	• The disputed player may be subject to demo and moss review for prior and future matches as well as match suspension. The player's team may be subject to match forfeiture.
+**Failure to provide requested materials can result in:**
+- Forfeit of the game/match in question
+- Suspension of the player
 
-&nbsp;	
+### 3.3 Zero Tolerance for Cheating
 
-3.9	• Moss will no longer be collected weekly from teams. In the event of a dispute players must submit their demos and Moss from the match in question. Admins reserve the right to request all previous Moss and demos from the current season.
+Any player found cheating will be suspended (or banned) from KTP, and any influenced match results are subject to being overturned or forfeited.
 
-&nbsp;	
+### 3.4 Definition of Cheating
 
-4	-Player Rules-
+Cheating includes (but is not limited to):
+- Wallhacks (seeing enemies through walls)
+- Aimbots (automatic target acquisition)
+- Illegally modifying game files
+- Any external program giving unfair advantage
+- Snap tap, rapid trigger, or any mechanical or software-based input enhancements that allow firing beyond intended game limits
 
-&nbsp;	
+### 3.5 Allowed & Prohibited Game Files
 
-4.1.a	• All players agree to abide by the KTP Community Rules. All players will treat each other with integrity.
+Only default game files may be used, with these exceptions:
 
-&nbsp;	
+#### Permitted Modifications:
+| Modification | Status |
+|--------------|--------|
+| Approved custom scoreboard HUD/UI | Allowed |
+| Custom HLTV models | Allowed |
+| ClientScheme.res modifications | Allowed |
+| TrackerScheme.res modifications | Allowed |
+| Custom crosshair (non-sniper weapons) | Allowed |
+| Custom crosshair for sniper rifle | **NOT Allowed** |
 
-4.1.b	• Players may only register a single alias/handle. Once a player is registered that player has a limit of one change to their alias and STEAMID for the length of the season.
+### 3.6 In-Game Spectator Rule (No Spectating Once Live)
 
-&nbsp;	
+Once a match has gone "live", no player is allowed to use spectator mode. **Spec hopping** is considered cheating.
 
-4.1.c	• All players must play from the same STEAMID they registered with on the roster and use their team tag and player handle as listed on the roster during games/matches (minor modifications are allowed).
+**Exceptions:**
+- Player killed at exact moment of full map capture
+- Player becomes stuck in map geometry
 
-&nbsp;	
+### 3.7 Filing Disputes
 
-4.1.d	• All players must abide by the file integrity checker and cvar checker.
+Disputes must be filed by the team captain **within 24 hours** of match completion.
 
-&nbsp;	
+| Season Phase | Dispute Limit |
+|--------------|---------------|
+| Regular season | 2 cheating disputes |
+| Post-season (playoffs) | 1 cheating dispute |
 
-4.1.e	• All players must create one MOSS ZIP for each match. Rename this ZIP after the match to something relevant: Player handle, teams in match, date, etc. Do not under any circumstances alter the contents of the ZIP at all.
+> **Note:** Valid disputes (where accused is found guilty) do not count against your limit.
 
-&nbsp;	
+### 3.8 Dispute Process for Accused Players
 
-4.1.f	• All players must record one in-game POV demo for each half of every game, take an in-game screenshot pre-game that has at least one of each faction player model visible, take an in-game screenshot of the scoreboard at the end of each half, and not leave games early.
+#### 3.8.a Evidence Submission Deadline
+Players have **24 hours from notification** to submit:
+- POV demos
+- MOSS files
+- Any other requested materials
 
-&nbsp;	
+#### 3.8.b Consequences and Investigation
+- Failure to provide files may result in suspension and/or forfeit
+- Admins may review demos and MOSS files from prior/subsequent matches
+- Player may be subject to additional scrutiny in future games
 
-4.2	• We are not counting a VOD as an acceptable replacement for a demo or Moss. You must record in-game POV demos and Moss as required. If you are having an issue with Moss contact a KTP Admin.
+### 3.9 MOSS Anti-Cheat Submissions
 
-&nbsp;	
+MOSS files are **not collected weekly** on a routine basis. However, in the event of a dispute or random check, players must provide their MOSS file and demos from the match in question.
 
-4.3	• All players must retain all demos, screenshots and MOSS files for the length of the season.
+---
 
-&nbsp;	
+## 4. Player Rules
 
-4.4	• Player boosting IS ALLOWED so as long as the area being boosted into is an area that is accessible by a single player without boosting. 
+> **Section Summary:** This section outlines player registration, identity requirements, recording obligations, file retention, and prohibited behaviors.
 
-&nbsp;	
+### 4.1 Player Registration and Identity
 
-4.5	• The use of voice commands or hand signals in game for anything other than communication between team mates is not allowed. Excessive voice negging opponents or abusing voice commands is not allowed. Violation of this rule must be submitted to KTP Admins in the same manner as a dispute with a POV demo and timestamps.
+#### 4.1.a Community Rules and Conduct
+All players agree to abide by the **KTP Community Rules** at all times.
 
-&nbsp;	
+#### 4.1.b Alias and SteamID Registration
+- One in-game alias and one Steam account per player
+- Allowed to change alias and/or SteamID **once** per season
+- Changes must be reported to league admins
 
-4.6	• Players are prohibited from binding any action in conjunction with +attack. Players may not bind +attack or +duck to mwheelup or mwheeldown (or any other macroed key) to accelerate shooting weapons faster than they are intended to be or to bypass stamina restrictions. 
+#### 4.1.c In-Game Identity Requirements
+- Must use exact registered SteamID
+- Must use team tag and registered player handle
+- Minor formatting variations allowed (color codes, abbreviations)
 
-&nbsp;	
+#### 4.1.d File Integrity and CVAR Checks
+All players must comply with file-integrity and CVAR checks. Players must not interfere with or bypass these systems.
 
-4.7	• Players may not script to automate player attacking, player movement, or to gain an unfair advantage. 
+#### 4.1.e MOSS Anti-Cheat and Recording
 
-&nbsp;	
+Every player must use **MOSS (Mission Officer Security Software)** during each match.
 
-4.8	• Players may not use hand signals, voice commands, or bind any cvar toggles in conjunction with +sprint, +crouch, +move, +fire, +jump or any other key or command in an attempt to make their player model harder to hit.
+**Requirements:**
+- [ ] Do not alter or tamper with the MOSS ZIP file
+- [ ] Rename the file after match (e.g., `PlayerName_vs_TeamX_Week3.zip`)
+- [ ] Be prepared to provide it to admins if requested
+- [ ] Never modify the contents of the MOSS zip
 
-&nbsp;	
+#### 4.1.f POV Demos and Screenshots
 
-4.9	• Players may not spawn weapons to bypass class limitation, grenade glitch, map exploit, pixel walk, or wall glitch. All of the above are considered cheating.
+**POV Demos:**
+- Record one POV demo for each half (two demos per full game)
+- Start recording before first round, stop when half ends
 
-&nbsp;	
+**Pre-Game Screenshot:**
+- Take screenshot showing at least one player model from each team
+- Verifies player models/skins are correct
 
-5	-Captain Rules-
+**End-of-Half Scoreboard Screenshots:**
+- Screenshot the scoreboard at the end of each half
+- Used to verify score and player participation
 
-&nbsp;	
+**Stay Until Game End:**
+- Do not disconnect until match is completely over
+- If you crash, rejoin immediately
 
-5.1.a	• All captains must modify their in-game client scheme to produce more legible screenshots for end match score submission.
+### 4.2 VODs Are Not Acceptable Replacements
 
-&nbsp;	
+Video recordings or Twitch VODs are **NOT** substitutes for demos or MOSS. You must still record in-game demos and run MOSS even if streaming.
 
-5.1.b	• All captains must take one in-game rcon status screenshot per game.
+### 4.3 File Retention
 
-&nbsp;	
+Retain all match files **for the duration of the season**:
+- POV demos for each half
+- All required screenshots
+- MOSS ZIP files from each match
 
-5.2	• All captains must not be banned from the KTP discord. All captains must be available to respond to messages within a reasonable time frame via discord message.
+### 4.4 Player Boosting
 
-&nbsp;	
+Boosting is **allowed only if** the destination area is reachable by a single player without a boost. Boosting to access glitched or unintended areas is illegal.
 
-5.3	• If a captain from the opposing team has not notified your team captain after ten minutes of the scheduled match start time, and/or the match has not started due to the other team within fifteen minutes of the scheduled match start time, a FF win may be awarded to your team. 
+### 4.5 Voice Commands and Signals
 
-&nbsp;	
+Voice commands should be used for team communication only. Excessive use to taunt, annoy, or "neg" opponents is not allowed.
 
-5.4	• All captains must schedule games/matches with opposing teams in a fair manner with integrity.
+### 4.6 Forbidden Key Bindings (Attack/Duck)
 
-&nbsp;	
+Players are prohibited from:
+- Binding `+attack` to any key in combination with another action
+- Binding `+attack` or `+duck` to mousewheel to accelerate firing or bypass stamina restrictions
 
-5.5	• All captains must check STEAMIDs and rosters before match play. You cannot dispute for using an unauthorized ringer after a game or match has occurred.
+### 4.7 No Automated Scripts
 
-&nbsp;	
+Players may not use scripts to automate:
+- Player attacking
+- Player movement
+- Rapid-fire
+- Auto-recoil compensation
+- Automated jumping or movement patterns
 
-5.6	• Upon conclusion of a match, the winning team captain is to verify the final score within 1 hour by posting adjusted client scheme screenshots of both end-rounds and producing a tallied final result to the KTP discord scores channel. In the event of a tie, please see overtime rule 1.9.
+### 4.8 Exploiting Movement/Animation
 
-&nbsp;	
+Players may not use hand signals, voice commands, or cvar toggles with movement commands to make their player model harder to hit. Any tactic that warps, jitters, or misaligns your hitbox is illegal.
 
-5.7	• For playoff BO3 matches only, failure to submit your veto to admins by 24 hours from the default start time of your match will result in admins doing your veto for you.
+### 4.9 Glitches and Exploits
 
-&nbsp;	
+The following are considered cheating:
 
-5.8	• Captain Accountability: Captains are expected to ensure their team members understand and follow all the rules. This means captains should remind their players to record demos, run MOSS, use the correct tags, and so on. If a team repeatedly violates rules (for example, multiple players not recording demos or using wrong SteamIDs), the captain may be held partially responsible for failing to enforce league requirements within the team. In serious cases, a captain could face suspension for negligence in managing their team. Being a captain implies leadership – make sure your team is playing fair and adhering to KTP standards.
+| Exploit | Description |
+|---------|-------------|
+| **Weapon Spawning** | Spawning extra weapons/ammo to bypass class limitations |
+| **Grenade Glitch** | Duplicating grenades or bypassing normal mechanics |
+| **Map Bugs** | Clipping through walls, getting under/above map |
+| **Pixel Walking** | Using unintended collision spots for unfair positioning |
+| **Wall Glitching** | Making player model poke through walls to see/shoot other side |
 
+> **General principle:** Any exploit not part of fair, intended gameplay is illegal, even if not explicitly listed.
+
+---
+
+## 5. Captain Rules
+
+> **Section Summary:** This section outlines the specific responsibilities and requirements for team captains.
+
+### 5.1 Captain's In-Game Duties
+
+#### 5.1.a Readable Scoreboards
+Captains must configure their client settings so end-of-half scoreboards are easy to read in screenshots (high-contrast, clear font).
+
+#### 5.1.b RCON Status Screenshot
+Captains must take one `rcon status` screenshot per game to prove player SteamIDs.
+
+### 5.2 Communication and Availability
+
+- Captains must not be banned from KTP Discord
+- Must be reachable and respond to scheduling messages promptly
+- If absent, designate an acting captain and inform admins
+
+### 5.3 Match Punctuality and Forfeit Wins
+
+| Time | Action |
+|------|--------|
+| **+10 minutes** | Document and alert an admin if no word from opposing team |
+| **+15 minutes** | Admin can officially call no-show and award forfeit win |
+
+### 5.4 Fair Scheduling
+
+Captains must schedule with integrity:
+- Be proactive in communication
+- Offer multiple reasonable times
+- Reply promptly
+- Keep records of scheduling communications
+
+### 5.5 Roster and Ringer Checks
+
+Captains must verify player eligibility before match starts:
+- Check opposing players match roster names and SteamIDs
+- Verify any ringers have been approved
+
+> **Important:** Once a match is completed, you cannot dispute based on an ineligible player if you had the opportunity to catch it beforehand.
+
+### 5.6 Reporting Scores
+
+The **winning team captain** must report results within **1 hour of match completion**:
+
+- [ ] Final score for each game/half
+- [ ] Adjusted client scheme screenshots of both end-rounds
+- [ ] Tallied final result
+
+Post in the designated KTP Discord scores channel.
+
+### 5.7 Playoff Map Vetoes (BO3 Matches)
+
+Captains must submit vetoes and map picks **at least 72 hours before default match start time**.
+
+> **Penalty:** Late submissions result in admins performing vetoes on the team's behalf.
+
+### 5.8 Captain Accountability
+
+Captains are responsible for ensuring team members understand and follow all rules. Repeated team violations may result in captain suspension for negligence.
+
+---
+
+**End of Rules Document**
+
+*Last Updated: December 2025*
+
+*Questions? Contact KTP Admins via Discord or the league website.*
