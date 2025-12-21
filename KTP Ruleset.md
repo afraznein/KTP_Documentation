@@ -2,7 +2,7 @@
 
 **Day of Defeat 1.3 Competitive Ruleset**
 
-[![Version](https://img.shields.io/badge/Version-Season%9-2026-blue)](#)
+[![Version](https://img.shields.io/badge/Version-Season_9_2026-blue)](#)
 [![Game](https://img.shields.io/badge/Game-Day%20of%20Defeat%201.3-green)](#)
 
 > **Note:** These rules govern the KTP competitive league for the Half-Life: Day of Defeat mod. They may be updated as needed (see Rule 1.1). All teams and players are expected to know and abide by these rules. Failure to do so can result in penalties, including suspensions and forfeits.
