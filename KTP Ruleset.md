@@ -86,7 +86,29 @@ The half must be fully restarted from the beginning (score 0-0)
 
 > **Mandatory notification:** Teams must inform a league admin immediately when a crash/restart occurs.
 
-### 1.8 Map Exploits and Illegal Spots
+### 1.8 Technical Pauses (Trial Period)
+
+Each team receives 5 minutes of technical pause time per 'game' to address legitimate technical issues. This allowance resets for overtime periods. In best-of-three series, each team receives 5 minutes per individual 'game'.
+
+#### 1.8.a Pause Mechanics
+
+The match plugin automatically triggers a pause 10 seconds after any player disconnect unless the affected team cancels it. Teams may also initiate manual pauses using `.tech` commands. Through use of the plugin, all pauses require confirmation from the opposing team to unpause, followed by an automatic countdown before play resumes. Teams are not charged pause time while waiting for the opposing team to confirm an unpause.
+
+#### 1.8.b Valid Technical Issues
+
+Technical pauses are authorized for disconnects, game crashes, hardware failures, and similar genuine technical problems only. Pauses for tactical discussions, waiting for late players, or deliberate delays are prohibited.
+
+#### 1.8.c Good Faith Requirement
+
+Both teams must act in good faith when using the pause system. Teams must confirm unpauses promptly when their issue is resolved. Abuse of the pause system—including tactical pausing, deliberately delaying unpause confirmation, or false technical claims—will result in warnings, player suspension, or match forfeiture.
+
+#### 1.8.d Trial Status
+
+This pause system is under **TRIAL** evaluation and may be modified or even completely removed based on community usage, feedback, or at admin discretion. This could happen at any point this season.
+
+> **See also:** Rule 1.7 for server crash procedures.
+
+### 1.9 Map Exploits and Illegal Spots
 
 Using restricted or unintended areas of a map is strictly prohibited:
 
@@ -96,7 +118,7 @@ Using restricted or unintended areas of a map is strictly prohibited:
 
 Violations may result in player suspension and/or forfeiture of the game or match.
 
-### 1.9 Tie Games and Overtime
+### 1.10 Tie Games and Overtime
 
 In the event of a tie game, overtime must be played immediately to determine a winner.
 
@@ -107,14 +129,14 @@ In the event of a tie game, overtime must be played immediately to determine a w
 
 > **Penalty:** Failure to complete required overtime rounds will result in a loss being recorded for **both teams**.
 
-### 1.10 Spectators
+### 1.11 Spectators
 
 No unauthorized spectators are allowed in the game server during official matches. The only spectators permitted are:
 
 - KTP admins
 - Official broadcasters (e.g., HLTV proxy with required delay, or league-sanctioned casters)
 
-### 1.11 Team Admission and Participation Eligibility
+### 1.12 Team Admission and Participation Eligibility
 
 KTP reserves the sole and absolute discretion to approve or deny entry to any team. Teams may be denied entry or removed for:
 
@@ -123,7 +145,7 @@ KTP reserves the sole and absolute discretion to approve or deny entry to any te
 | **Disruptive Conduct** | Behavior intended to provoke conflict, interfere with gameplay, or violate league policies |
 | **Operational Unreliability** | Patterns of forfeits, missed matches, excessive roster turnover, or behavior disrupting league scheduling |
 
-### 1.12 BYEs and Forfeit Scoring
+### 1.13 BYEs and Forfeit Scoring
 
 - **BYEs:** Awarded the average point value of all teams in the same division, calculated after all matches complete
 - **Forfeits:** Only scored after the end of regulation
@@ -354,6 +376,29 @@ Every player must use **MOSS (Mission Officer Security Software)** during each m
 - Do not disconnect until match is completely over
 - If you crash, rejoin immediately
 
+#### 4.1.g Character Name Length and Format
+
+All player aliases (handles), team tags, and full in-game names must comply with the following technical requirements to ensure compatibility with the game engine:
+
+**Maximum Length:**
+Player aliases and team tags must not exceed 30 visible characters. Full in-game names (team tag + player handle) must also not exceed 30 visible characters total.
+
+**Character Set Restriction:**
+Only standard ASCII characters are permitted. This includes:
+- Letters: A-Z, a-z
+- Numbers: 0-9
+- Basic symbols: ! @ # $ % ^ & * ( ) - _ = + [ ] { } | \ ; : ' " , . < > ? / ~
+- Spaces (though excessive spacing is discouraged)
+
+**Prohibited:**
+The following are not allowed in player names or team tags:
+- UTF-8, Unicode, or multi-byte characters (e.g., emoji, non-Latin alphabets, special symbols like ™ © ®)
+- Characters outside the standard ASCII range
+- Any characters that may cause display issues or engine instability
+
+**Enforcement:**
+Player names or team tags that violate these requirements must be changed before match play.
+
 ### 4.2 VODs Are Not Acceptable Replacements
 
 Video recordings or Twitch VODs are **NOT** substitutes for demos or MOSS. You must still record in-game demos and run MOSS even if streaming.
@@ -473,6 +518,6 @@ Captains are responsible for ensuring team members understand and follow all rul
 
 **End of Rules Document**
 
-*Last Updated: December 2025*
+*Last Updated: January 2026*
 
 *Questions? Contact KTP Admins via Discord or the league website.*
