@@ -92,7 +92,7 @@ Each team receives 5 minutes of technical pause time per 'game' to address legit
 
 #### 1.8.a Pause Mechanics
 
-The match plugin automatically triggers a pause 10 seconds after any player disconnect unless the affected team cancels it. Teams may also initiate manual pauses using `.tech` commands. Through use of the plugin, all pauses require confirmation from the opposing team to unpause, followed by an automatic countdown before play resumes. Teams are not charged pause time while waiting for the opposing team to confirm an unpause.
+The match plugin automatically triggers a pause 30 seconds after any player disconnect unless the affected team cancels it. Teams may also initiate manual pauses using `.tech` commands. Through use of the plugin, all pauses require confirmation from the opposing team to unpause, followed by an automatic countdown before play resumes. Teams are not charged pause time while waiting for the opposing team to confirm an unpause.
 
 #### 1.8.b Valid Technical Issues
 
