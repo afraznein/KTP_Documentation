@@ -166,30 +166,67 @@ KTP reserves the sole and absolute discretion to approve or deny entry to any te
 
 ### 2.2 Scheduling Default Match Times
 
-| Scenario | Default Time |
-|----------|--------------|
-| **Standard** | Sunday at 9:00 PM Eastern Time (EST) |
-| **International (east of UTC -2)** | Sunday at 3:00 PM EST |
+#### 2.2.a Standard Default Time
+Sunday at 9:00 PM Eastern Time (EST).
+
+#### 2.2.b International Default Time
+When one or both teams are International (majority EU/SA players east of UTC -2 per Rule 2.1), the default match time is Sunday at 3:00 PM EST.
 
 > Times may adjust for daylight savings time.
 
 ### 2.3 Home Team Advantage
 
 #### 2.3.a Standard Matches
-The **HOME** team chooses:
-- Which KTP-approved server the match will be played on
-- Which side (Allies or Axis) their team will start on
+The team listed on the schedule as the **HOME** team has the choice of server usage for both halves as well as the choice of which side (Allies or Axis) to join first.
 
 #### 2.3.b Best-of-Three (BO3) Matches
 Each map is treated independently. The team that picked a map is considered the "home" team for that map.
 
 ### 2.4 Server Selection by Region
 
-| Matchup | Server Location | Side Selection |
-|---------|-----------------|----------------|
-| **NA vs NA** | Central US (default) | Home team chooses |
-| **International vs International** | New York | Home team chooses |
-| **NA vs International** | New York (mandatory) | **NA team always chooses side** |
+#### 2.4.a NA vs NA — Home Team Server Selection
+
+For matches between North American teams (no International team involved), the **HOME** team selects the game server location from the following KTP-approved locations:
+
+| Location | Status |
+|----------|--------|
+| **Chicago** | Available |
+| **Dallas** | Available |
+| **Denver** | Once available and KTP approved |
+
+The HOME team may propose an alternate KTP-approved server location not listed above, but this is subject to the opposing team captain's approval. If the opposing captain does not approve the alternate location, the HOME team must select from the three standard locations listed above.
+
+> **Important:** Matches may never be played on non-KTP-approved servers regardless of mutual agreement.
+
+> **Trial Policy:** This home team server selection policy is being introduced as a trial to evaluate its impact on competitive balance and match quality. The league will monitor usage and may adjust available locations, revert to neutral server assignment, or modify the selection process based on community feedback and competitive outcomes.
+
+#### 2.4.b International vs International
+
+If both teams are International (majority EU/SA players per Rule 2.1), the **HOME** team selects the game server location from the following KTP-approved locations:
+- Atlanta
+- New York
+
+Teams may mutually agree to use a different KTP-approved server location, but this requires both captains' approval.
+
+#### 2.4.c NA vs EU — Server Selection
+
+When a North American team plays against a European team (majority EU players east of UTC -2 per Rule 2.2), the **HOME** team selects the game server location from the following KTP-approved locations:
+- New York
+- Atlanta
+
+These East Coast locations provide reasonable compromise latency for trans-Atlantic connections. Teams may mutually agree to use a different KTP-approved server location, but this requires both captains' approval.
+
+#### 2.4.d NA vs SA — Server Selection
+
+When a North American team plays against a South American team (majority SA players west of UTC -2), the **HOME** team selects the game server location from the following KTP-approved locations:
+- Atlanta
+- New York
+
+These locations provide reasonable compromise latency for South American connections. Teams may mutually agree to use a different KTP-approved server location, but this requires both captains' approval.
+
+#### 2.4.e Side Selection for NA vs EU
+
+When a North American team plays against a European team (majority EU players east of UTC -2 per Rule 2.2), the **NA team always chooses** which side (Allies or Axis) to play on first, regardless of home/away designation. This ensures the NA team, which may experience higher latency against International opponents, can select their preferred starting side.
 
 ### 2.5 Use of Suspended Players
 
@@ -518,6 +555,6 @@ Captains are responsible for ensuring team members understand and follow all rul
 
 **End of Rules Document**
 
-*Last Updated: January 2026*
+*Last Updated: February 2026*
 
 *Questions? Contact KTP Admins via Discord or the league website.*
