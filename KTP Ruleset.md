@@ -39,7 +39,7 @@ Upon an infraction of the rules listed here or the rules listed in the KTP Commu
 
 | Term | Definition |
 |------|------------|
-| **Game** | A single contest between two teams on one map (i.e., one full round on the chosen map) |
+| **Game** | A single contest between two teams on one map consisting of two halves (teams switch sides at halftime) |
 | **Match** | May consist of multiple games between the same teams (e.g., a best-of-three can include up to three separate games on possibly different maps) |
 
 > **Important:** Suspensions are typically given in terms of a number of **games** (or a length of time), rather than entire matches. This distinction is critical for understanding penalty durations.
@@ -86,9 +86,11 @@ The half must be fully restarted from the beginning (score 0-0)
 
 > **Mandatory notification:** Teams must inform a league admin immediately when a crash/restart occurs.
 
+> **Note:** These same crash procedures apply during overtime periods. The 5-minute threshold applies to each overtime half independently.
+
 ### 1.8 Technical Pauses (Trial Period)
 
-Each team receives 5 minutes of technical pause time per 'game' to address legitimate technical issues. This allowance resets for overtime periods. In best-of-three series, each team receives 5 minutes per individual 'game'.
+Each team receives 5 minutes of technical pause time per game (regulation) to address legitimate technical issues. Unused regulation pause time does NOT carry into overtime. Each overtime period provides a fresh 5 minutes of pause time per team. In best-of-three series, each team receives 5 minutes per individual game.
 
 #### 1.8.a Pause Mechanics
 
@@ -128,6 +130,8 @@ In the event of a tie game, overtime must be played immediately to determine a w
 - Use the overtime config files: normal config name with `_ot` appended (e.g., `ktp_harrington_ot.cfg`)
 
 > **Penalty:** Failure to complete required overtime rounds will result in a loss being recorded for **both teams**.
+
+> **Note:** In best-of-three matches, overtime applies to each individual map if that map ends in a tie. Each map must produce a winner.
 
 ### 1.11 Spectators
 
@@ -170,7 +174,7 @@ KTP reserves the sole and absolute discretion to approve or deny entry to any te
 Sunday at 9:00 PM Eastern Time (EST).
 
 #### 2.2.b International Default Time
-When one or both teams are International (majority EU/SA players east of UTC -2 per Rule 2.1), the default match time is Sunday at 3:00 PM EST.
+When one or both teams have majority EU players east of UTC -2, the default match time is Sunday at 3:00 PM EST.
 
 > Times may adjust for daylight savings time.
 
@@ -202,31 +206,50 @@ The HOME team may propose an alternate KTP-approved server location not listed a
 
 #### 2.4.b International vs International
 
-If both teams are International (majority EU/SA players per Rule 2.1), the **HOME** team selects the game server location from the following KTP-approved locations:
-- Atlanta
-- New York
+For matches between International teams (majority EU/SA players per Rule 2.1), the **HOME** team selects the game server location from the following KTP-approved locations:
 
-Teams may mutually agree to use a different KTP-approved server location, but this requires both captains' approval.
+| Location | Status |
+|----------|--------|
+| **Atlanta** | Available |
+| **New York** | Available |
+
+The HOME team may propose an alternate KTP-approved server location not listed above. The alternate location requires the opposing team captain's approval. If the opposing captain does not approve, the HOME team must select from the standard locations listed above.
+
+> **Important:** Matches may never be played on non-KTP-approved servers regardless of mutual agreement.
 
 #### 2.4.c NA vs EU — Server Selection
 
-When a North American team plays against a European team (majority EU players east of UTC -2 per Rule 2.2), the **HOME** team selects the game server location from the following KTP-approved locations:
-- New York
-- Atlanta
+For matches between a North American team and a European team (majority EU players east of UTC -2 per Rule 2.1), the **HOME** team selects the game server location from the following KTP-approved locations:
 
-These East Coast locations provide reasonable compromise latency for trans-Atlantic connections. Teams may mutually agree to use a different KTP-approved server location, but this requires both captains' approval.
+| Location | Status |
+|----------|--------|
+| **New York** | Available |
+| **Atlanta** | Available |
+
+These East Coast locations provide reasonable compromise latency for trans-Atlantic connections.
+
+The HOME team may propose an alternate KTP-approved server location not listed above. The alternate location requires the opposing team captain's approval. If the opposing captain does not approve, the HOME team must select from the standard locations listed above.
+
+> **Important:** Matches may never be played on non-KTP-approved servers regardless of mutual agreement.
 
 #### 2.4.d NA vs SA — Server Selection
 
-When a North American team plays against a South American team (majority SA players west of UTC -2), the **HOME** team selects the game server location from the following KTP-approved locations:
-- Atlanta
-- New York
+For matches between a North American team and a South American team (majority SA players west of UTC -2), the **HOME** team selects the game server location from the following KTP-approved locations:
 
-These locations provide reasonable compromise latency for South American connections. Teams may mutually agree to use a different KTP-approved server location, but this requires both captains' approval.
+| Location | Status |
+|----------|--------|
+| **Atlanta** | Available |
+| **New York** | Available |
+
+These locations provide reasonable compromise latency for South American connections.
+
+The HOME team may propose an alternate KTP-approved server location not listed above. The alternate location requires the opposing team captain's approval. If the opposing captain does not approve, the HOME team must select from the standard locations listed above.
+
+> **Important:** Matches may never be played on non-KTP-approved servers regardless of mutual agreement.
 
 #### 2.4.e Side Selection for NA vs EU
 
-When a North American team plays against a European team (majority EU players east of UTC -2 per Rule 2.2), the **NA team always chooses** which side (Allies or Axis) to play on first, regardless of home/away designation. This ensures the NA team, which may experience higher latency against International opponents, can select their preferred starting side.
+When a North American team plays against a European team (majority EU players east of UTC -2 per Rule 2.1), the **NA team always chooses** which side (Allies or Axis) to play on first, **overriding the home team advantage defined in Rule 2.3.a**. This offsets the scheduling advantage EU teams receive from the earlier default match time.
 
 ### 2.5 Use of Suspended Players
 
@@ -263,9 +286,7 @@ No agreement between team captains can override official rules or active suspens
 
 ### 2.9 Ringers
 
-A **ringer** is a player not on your official roster, temporarily used to fill in. Using ringers requires:
-- Approval from the opposing team before the match
-- Captain's consent
+A **ringer** is a player not on your official roster, temporarily used to fill in. Using ringers requires approval from the opposing team captain before the match begins.
 
 ### 2.10 Roster Minimums in Matches
 
@@ -395,6 +416,11 @@ Every player must use **MOSS (Mission Officer Security Software)** during each m
 - [ ] Be prepared to provide it to admins if requested
 - [ ] Never modify the contents of the MOSS zip
 
+**Storage and Submission:**
+- Keep MOSS files for the duration of the season
+- Files are not submitted weekly unless requested
+- Must provide within 24 hours if admin requests (see Rule 3.8.a)
+
 #### 4.1.f POV Demos and Screenshots
 
 **POV Demos:**
@@ -412,6 +438,9 @@ Every player must use **MOSS (Mission Officer Security Software)** during each m
 **Stay Until Game End:**
 - Do not disconnect until match is completely over
 - If you crash, rejoin immediately
+
+**Overtime Demos:**
+- Record separate POV demos for each overtime half following the same procedure as regulation halves
 
 #### 4.1.g Character Name Length and Format
 
@@ -497,7 +526,7 @@ The following are considered cheating:
 ### 5.1 Captain's In-Game Duties
 
 #### 5.1.a Readable Scoreboards
-Captains must configure their client settings so end-of-half scoreboards are easy to read in screenshots (high-contrast, clear font).
+Captains must configure their client settings via a customized client scheme so end-of-half scoreboards are easy to read in screenshots (high-contrast, clear font).
 
 #### 5.1.b RCON Status Screenshot
 Captains must take one `rcon status` screenshot per game to prove player SteamIDs.
@@ -536,7 +565,7 @@ Captains must verify player eligibility before match starts:
 The **winning team captain** must report results within **1 hour of match completion**:
 
 - [ ] Final score for each game/half
-- [ ] Adjusted client scheme screenshots of both end-rounds
+- [ ] Screenshots of both end-of-half scoreboards (configured per Rule 5.1.a for legibility) in .png or .jpg format
 - [ ] Tallied final result
 
 Post in the designated KTP Discord scores channel.
