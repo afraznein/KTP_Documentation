@@ -219,16 +219,16 @@ The HOME team may propose an alternate KTP-approved server location not listed a
 
 #### 2.4.c NA vs EU — Server Selection
 
-For matches between a North American team and a European team (majority EU players east of UTC -2 per Rule 2.1), the **HOME** team selects the game server location from the following KTP-approved locations:
+For matches between a North American team and a European team (majority EU players east of UTC -2 per Rule 2.1), the **HOME** team selects the game server location from the following KTP-approved locations, with priority given to New York:
 
 | Location | Status |
 |----------|--------|
-| **New York** | Available |
-| **Atlanta** | Available |
+| **New York** | Primary |
+| **Atlanta** | Backup only (if New York is unavailable) |
 
-These East Coast locations provide reasonable compromise latency for trans-Atlantic connections.
+New York must be used whenever it is available. Atlanta may only be selected if no New York servers are available at the time of scheduling or match start. These East Coast locations provide reasonable compromise latency for trans-Atlantic connections.
 
-The HOME team may propose an alternate KTP-approved server location not listed above. The alternate location requires the opposing team captain's approval. If the opposing captain does not approve, the HOME team must select from the standard locations listed above.
+The HOME team may propose an alternate KTP-approved server location not listed above. The alternate location requires the opposing team captain's approval. If the opposing captain does not approve, the HOME team must select from the standard locations listed above, following the priority order.
 
 > **Important:** Matches may never be played on non-KTP-approved servers regardless of mutual agreement.
 
