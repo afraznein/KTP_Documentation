@@ -68,6 +68,7 @@ These CVARs must be set to the exact value specified. The server will automatica
 | `cl_lc` | `1` | Server-side hit computation and lag compensation. **Do not change.** |
 | `cl_lw` | `1` | Client-side weapon firing prediction. **Do not change.** Disabling also disables lag compensation. |
 | `cl_mousegrab` | `1` | Linux gold source update 2013. MOSS implications, no gameplay effect |
+| `rate` | `100000` | Client to server transmission rate (bytes/sec). **Do not change.** |
 
 ### HUD & Interface
 
@@ -84,13 +85,11 @@ These CVARs must be within the specified range. Values outside the range will be
 
 | CVAR | Range | Default | Description |
 |------|-------|---------|-------------|
-| `lightgamma` | **1.81** - **3.0** | 2.5 | Lighting gamma value. Values below 1.81 crash DoD |
-| `cl_smoothtime` | **0** - **0.1** | 0.1 | View smoothing after prediction error. 0 shows actual player positions (may cause jumps) |
+| `lightgamma` | **1.809** - **3.0** | 2.5 | Lighting gamma value. Values below 1.809 crash DoD |
 | `cl_bob` | **0** - **0.011** | 0.005 | Amount that view bobs while running |
-| `cl_updaterate` | **100** - **200** | - | Updates requested from server per second. **KTP required.** |
+| `cl_updaterate` | **100** - **120** | - | Updates requested from server per second. **KTP required.** |
 | `cl_cmdrate` | **100** - **500** | - | Times per second client updates the server. **KTP required.** |
-| `rate` | **100000** - **1000000** | - | Client to server transmission rate (bytes/sec). **KTP required.** |
-| `ex_interp` | **0** - **0.03** | - | Interpolation time between updates. Set to 0 for auto (1/cl_updaterate). **KTP required.** |
+| `ex_interp` | **0.01** - **0.05** | - | Interpolation time between updates. **KTP required.** |
 | `fps_max` | **60** - **750** | - | Maximum frames per second. **KTP required.** |
 
 ---
@@ -103,7 +102,7 @@ These CVARs must be within the specified range. Values outside the range will be
 cl_updaterate 101
 cl_cmdrate 101
 rate 100000
-ex_interp 0
+ex_interp 0.01
 fps_max 100
 ```
 
@@ -127,6 +126,6 @@ To check your current CVAR values in-game, open the console (`~`) and type the C
 
 ---
 
-*Last Updated: February 2026*
+*Last Updated: March 2026*
 
 *Questions? Contact KTP Admins via Discord or the league website.*
