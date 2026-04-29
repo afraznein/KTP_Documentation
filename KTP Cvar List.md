@@ -36,13 +36,16 @@ These CVARs must be set to the exact value specified. The server will automatica
 | `gl_nobind` | `0` | Replaces textures with alphanumeric characters when enabled |
 | `gl_nocolors` | `0` | Disable colors (OpenGL only) |
 | `gl_overbright` | `0` | Maximum brightness mode |
+| `gl_picmip` | `0` | Texture mipmap level. High values reduce wall textures to solid-color blocks; locked to 0 to prevent contrast-wallhack abuse. **Do not change.** |
 | `gl_playermip` | `0` | Player rendering quality. Higher = faster but lower quality |
 | `r_drawentities` | `1` | Drawing player models and sprites (0=none, 1=normal, 2=no textures, 3=hitbox, 4=translucent hitboxes) |
 | `r_drawviewmodel` | `1` | Toggles drawing player weapon model |
 | `r_dynamic` | `1` | Dynamic lighting (flashlight reflections, etc.) |
 | `r_fullbright` | `0` | Maximum brightness in local games only |
+| `r_glowshellfreq` | `0` | Glow shell update frequency. Locked to 0 to disable the glow-shell rendering path that ESP overlays historically hooked. **Do not change.** |
 | `r_lightmap` | `0` | Software rendering - displays lightmaps (0-3) |
 | `r_luminance` | `0` | Makes the map look blue/green when enabled |
+| `r_traceglow` | `0` | Glow-shell trace debug. Pairs with `r_glowshellfreq`; locked to 0 to close the through-walls glow visibility surface. **Do not change.** |
 | `texgamma` | `2` | Texture gamma level |
 
 ### Audio
@@ -59,16 +62,27 @@ These CVARs must be set to the exact value specified. The server will automatica
 | `cl_bobup` | `0.5` | Amount of movement before view-bob kicks in |
 | `cl_pitchdown` | `89` | Maximum angle to look down |
 | `cl_pitchup` | `89` | Maximum angle to look up |
+| `cl_pitchspeed` | `225` | Keyboard look-up/down speed (degrees per second). Locked to GoldSrc default to prevent alias-based no-recoil scripts. **Do not change.** |
+| `cl_yawspeed` | `210` | Keyboard look-left/right speed (degrees per second). Locked to GoldSrc default. **Do not change.** |
+| `cl_anglespeedkey` | `0.67` | Multiplier applied to `cl_pitchspeed`/`cl_yawspeed` while +speed is held. Locked to GoldSrc default. **Do not change.** |
 | `m_pitch` | `0.022` | Mouse pitch (up/down) speed sensitivity multiplier |
+| `m_side` | `0.8` | Mouse side-strafe speed multiplier. Locked to GoldSrc default. **Do not change.** |
 
 ### Network & Prediction
 
 | CVAR | Value | Description |
 |------|-------|-------------|
-| `cl_lc` | `1` | Server-side hit computation and lag compensation. **Do not change.** |
-| `cl_lw` | `1` | Client-side weapon firing prediction. **Do not change.** Disabling also disables lag compensation. |
 | `cl_mousegrab` | `1` | Linux gold source update 2013. MOSS implications, no gameplay effect |
 | `rate` | `100000` | Client to server transmission rate (bytes/sec). **Do not change.** |
+
+#### Player-tunable network cvars (no enforcement)
+
+These cvars affect your own client behavior. KTPCvarChecker does NOT enforce them — your choice. Defaults shown.
+
+| CVAR | Default | Notes |
+|------|---------|-------|
+| `cl_lc` | `1` | Server-side lag compensation for YOUR shots. `0` disables rewind — you must lead targets by your full ping. **Self-handicap, not an exploit.** Some players prefer `0` to eliminate "shot through wall" feel; most leave it at `1`. |
+| `cl_lw` | `1` | Client-side weapon prediction. `0` makes weapon animations server-authoritative (feels laggy at non-LAN ping). Setting `0` also disables lag compensation (gates require both `lc=1` AND `lw=1`). **Self-handicap, not an exploit.** |
 
 ### HUD & Interface
 
@@ -88,7 +102,7 @@ These CVARs must be within the specified range. Values outside the range will be
 | `lightgamma` | **1.809** - **3.0** | 2.5 | Lighting gamma value. Values below 1.809 crash DoD |
 | `cl_bob` | **0** - **0.011** | 0.005 | Amount that view bobs while running |
 | `cl_updaterate` | **100** - **120** | - | Updates requested from server per second. **KTP required.** |
-| `cl_cmdrate` | **100** - **500** | - | Times per second client updates the server. **KTP required.** |
+| `cl_cmdrate` | **100** - **1000** | - | Times per second client updates the server. Useful range = ≤ your client fps; setting higher than fps wastes bandwidth. v7.25: ceiling raised from 500 to 1000 to enable testing high-resolution input on 1000fps clients. **KTP required.** |
 | `ex_interp` | **0.01** - **0.05** | - | Interpolation time between updates. **KTP required.** |
 | `fps_max` | **60** - **750** | - | Maximum frames per second. **KTP required.** |
 
@@ -126,6 +140,6 @@ To check your current CVAR values in-game, open the console (`~`) and type the C
 
 ---
 
-*Last Updated: March 2026*
+*Last Updated: April 2026 (v7.25 dropped cl_lc and cl_lw from enforcement after engine-source audit confirmed self-handicap-only behavior; raised cl_cmdrate ceiling 500→1000 for high-fps client testing. v7.24 had added 7 cvars: cl_pitchspeed / cl_yawspeed / cl_anglespeedkey / m_side for keyboard-look defense, gl_picmip / r_glowshellfreq / r_traceglow for visual-exploit defense.)*
 
 *Questions? Contact KTP Admins via Discord or the league website.*
