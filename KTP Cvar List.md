@@ -42,10 +42,10 @@ These CVARs must be set to the exact value specified. The server will automatica
 | `r_drawviewmodel` | `1` | Toggles drawing player weapon model |
 | `r_dynamic` | `1` | Dynamic lighting (flashlight reflections, etc.) |
 | `r_fullbright` | `0` | Maximum brightness in local games only |
-| `r_glowshellfreq` | `0` | Glow shell update frequency. Locked to 0 to disable the glow-shell rendering path that ESP overlays historically hooked. **Do not change.** |
+| `r_glowshellfreq` | `2.2` | Glow shell animation speed — DoD engine default. Used by flag-carrier glow shimmer. Enforced at the engine default value as an integrity check (catches autoexec overrides). **Do not change.** |
 | `r_lightmap` | `0` | Software rendering - displays lightmaps (0-3) |
 | `r_luminance` | `0` | Makes the map look blue/green when enabled |
-| `r_traceglow` | `0` | Glow-shell trace debug. Pairs with `r_glowshellfreq`; locked to 0 to close the through-walls glow visibility surface. **Do not change.** |
+| `r_traceglow` | `0` | Glow-shell trace debug — DoD engine default. Enforced at default as an integrity check. **Do not change.** |
 | `texgamma` | `2` | Texture gamma level |
 
 ### Audio
@@ -140,6 +140,6 @@ To check your current CVAR values in-game, open the console (`~`) and type the C
 
 ---
 
-*Last Updated: April 2026 (v7.25 dropped cl_lc and cl_lw from enforcement after engine-source audit confirmed self-handicap-only behavior; raised cl_cmdrate ceiling 500→1000 for high-fps client testing. v7.24 had added 7 cvars: cl_pitchspeed / cl_yawspeed / cl_anglespeedkey / m_side for keyboard-look defense, gl_picmip / r_glowshellfreq / r_traceglow for visual-exploit defense.)*
+*Last Updated: April 2026 (v7.26 fixed `r_glowshellfreq` enforcement value 0 → 2.2 to match the DoD engine default — clients with the natural default were being kicked under the previous v7.24 enforcement of 0; that "0" rationale didn't actually block ESP attackers and broke flag-carrier glow rendering. v7.25 dropped cl_lc and cl_lw from enforcement after engine-source audit confirmed self-handicap-only behavior; raised cl_cmdrate ceiling 500→1000 for high-fps client testing. v7.24 had added 7 cvars: cl_pitchspeed / cl_yawspeed / cl_anglespeedkey / m_side for keyboard-look defense, gl_picmip / r_glowshellfreq / r_traceglow for visual-exploit defense — gl_picmip enforcement still active for picmip wallhack defense.)*
 
 *Questions? Contact KTP Admins via Discord or the league website.*
