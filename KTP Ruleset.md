@@ -488,13 +488,13 @@ Voice commands should be used for team communication only. Excessive use to taun
 
 **Principle:** one physical actuation equals one in-game input. A device may change *when* a single key registers (its actuation/reset point); it may not multiply one physical action into several inputs, auto-repeat an input, or resolve an input for you.
 
-**Permitted:** Rapid Trigger and adjustable actuation points — these change only *where* in a key's travel a single press registers. One press is still one input, so the player remains the rate limiter.
+**Permitted:** Rapid Trigger and adjustable actuation points — these change only *where* in a key's travel a single press registers. One press is still one input, so the player remains the rate limiter. ("Rapid Trigger" is the industry-standard term — used by Wooting, Razer, SteelSeries, Corsair, etc. — for a dynamic/continuous reset point on Hall-effect/analog keyboards. It is **not** the same as the prohibited "Rapid Fire" / "Turbo" auto-repeat below.)
 
 **Prohibited:**
 - Binding `+attack` to any key in combination with another action
 - Binding `+attack`, `+jump`, or `+duck` to the mousewheel (accelerates firing / bypasses stamina restrictions)
 - "Rapid Fire," "Turbo," or multi-tap keyboard/mouse modes that emit repeated inputs from a single press
-- "Snap Tap" / SOCD handling / null-cancel binds that auto-release one of two opposing movement keys
+- "Snap Tap" / SOCD handling / null-cancel binds that auto-release one of two opposing movement keys (**SOCD** is the generic term; "Snap Tap" is Razer's brand name)
 
 ### 4.7 No Automated Scripts
 
