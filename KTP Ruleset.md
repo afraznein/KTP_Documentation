@@ -330,7 +330,7 @@ Cheating includes (but is not limited to):
 - Aimbots (automatic target acquisition)
 - Illegally modifying game files
 - Any external program giving unfair advantage
-- Snap tap, rapid trigger, or any mechanical or software-based input enhancements that allow firing beyond intended game limits
+- Input multiplication — "Snap Tap" / SOCD null-cancel, "Rapid Fire" / Turbo (auto-repeat) modes, or any bind or device feature that produces more than one input from a single physical actuation, accelerates firing, or bypasses stamina (see Rule 4.6)
 
 ### 3.5 Allowed & Prohibited Game Files
 
@@ -484,11 +484,17 @@ Boosting is **allowed only if** the destination area is reachable by a single pl
 
 Voice commands should be used for team communication only. Excessive use to taunt, annoy, or "neg" opponents is not allowed.
 
-### 4.6 Forbidden Key Bindings (Attack/Duck)
+### 4.6 Input Bindings & Device Features
 
-Players are prohibited from:
+**Principle:** one physical actuation equals one in-game input. A device may change *when* a single key registers (its actuation/reset point); it may not multiply one physical action into several inputs, auto-repeat an input, or resolve an input for you.
+
+**Permitted:** Rapid Trigger and adjustable actuation points — these change only *where* in a key's travel a single press registers. One press is still one input, so the player remains the rate limiter.
+
+**Prohibited:**
 - Binding `+attack` to any key in combination with another action
-- Binding `+attack` or `+duck` to mousewheel to accelerate firing or bypass stamina restrictions
+- Binding `+attack`, `+jump`, or `+duck` to the mousewheel (accelerates firing / bypasses stamina restrictions)
+- "Rapid Fire," "Turbo," or multi-tap keyboard/mouse modes that emit repeated inputs from a single press
+- "Snap Tap" / SOCD handling / null-cancel binds that auto-release one of two opposing movement keys
 
 ### 4.7 No Automated Scripts
 
@@ -584,6 +590,6 @@ Captains are responsible for ensuring team members understand and follow all rul
 
 **End of Rules Document**
 
-*Last Updated: February 2026*
+*Last Updated: June 2026*
 
 *Questions? Contact KTP Admins via Discord or the league website.*
