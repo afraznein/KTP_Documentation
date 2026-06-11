@@ -492,7 +492,7 @@ Voice commands should be used for team communication only. Excessive use to taun
 
 **Prohibited:**
 - Binding `+attack` to any key in combination with another action
-- Binding `+attack`, `+jump`, or `+duck` to the mousewheel (accelerates firing / bypasses stamina restrictions)
+- Binding `+attack` or `+duck` to the mousewheel (accelerates firing / bypasses stamina restrictions)
 - "Rapid Fire," "Turbo," or multi-tap keyboard/mouse modes that emit repeated inputs from a single press
 - "Snap Tap" / SOCD handling / null-cancel binds that auto-release one of two opposing movement keys (**SOCD** is the generic term; "Snap Tap" is Razer's brand name)
 
