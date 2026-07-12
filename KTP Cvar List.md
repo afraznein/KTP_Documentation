@@ -74,7 +74,6 @@ These CVARs must be set to the exact value specified. The server will automatica
 
 | CVAR | Value | Description |
 |------|-------|-------------|
-| `cl_mousegrab` | `1` | Linux gold source update 2013. MOSS implications, no gameplay effect |
 | `rate` | `100000` | Client to server transmission rate (bytes/sec). **Do not change.** |
 
 #### Player-tunable network cvars (no enforcement)
@@ -83,6 +82,7 @@ These cvars affect your own client behavior. KTPCvarChecker does NOT enforce the
 
 | CVAR | Default | Notes |
 |------|---------|-------|
+| `cl_mousegrab` | `1` | Whether the engine confines your mouse cursor to the game window. Client-only — the server never sees it, no gameplay/aim effect (aim uses raw input regardless). `1` makes the cursor catch monitor corners and break on alt-tab / multi-monitor in windowed mode. **Recommended: `0` for windowed or multi-monitor play, `1` for exclusive fullscreen.** (No longer enforced as of KTPCvarChecker 7.30.) |
 | `cl_lc` | `1` | Server-side lag compensation for YOUR shots. `0` disables rewind — you must lead targets by your full ping. **Self-handicap, not an exploit.** Some players prefer `0` to eliminate "shot through wall" feel; most leave it at `1`. **Recommended: 1.** |
 | `cl_lw` | `1` | Client-side weapon prediction. `0` makes weapon animations server-authoritative (feels laggy at non-LAN ping). Setting `0` also disables lag compensation (gates require both `lc=1` AND `lw=1`). **Self-handicap, not an exploit.** **Recommended: 1.** |
 | `cl_fixtimerate` | `7.5` | How aggressively your client corrects its local clock toward the server's timestamp (ms of correction allowed per frame). No competitive surface — clock sync happens regardless. The default is a known cause of **weapon viewmodel animation skipping** in GoldSrc; if your weapon animations stutter, lower it (toward `0`) for smoother viewmodels. **Recommended: 7.5 unless you see weapon skipping.** |
