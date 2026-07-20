@@ -70,7 +70,7 @@ These CVARs must be set to the exact value specified. The server will automatica
 
 ### Network & Prediction
 
-> 📖 For the full explanation of these settings — how GoldSrc networking works, why each value is what it is, and when it's legitimate to deviate — see the **[KTP Netcode Guide](http://74.91.112.242/netcode/)**.
+> 📖 For the full explanation of these settings — how GoldSrc networking works, why each value is what it is, and when it's legitimate to deviate — see the **[KTP Netcode Guide](https://netcode.ktpdod.com/)**.
 
 | CVAR | Value | Description |
 |------|-------|-------------|
@@ -107,7 +107,7 @@ These CVARs must be within the specified range. Values outside the range will be
 | `cl_bob` | **0** - **0.011** | 0.005 | Amount that view bobs while running |
 | `cl_updaterate` | **100** - **120** | - | Updates requested from server per second. The client internally caps processing at **102** — values 103-120 pass the check but do nothing, so set exactly `102`. **KTP required.** |
 | `cl_cmdrate` | **100** - **1000** | - | Times per second client updates the server. Useful range = ≤ your client fps; setting higher than fps wastes bandwidth. v7.25: ceiling raised from 500 to 1000 to enable testing high-resolution input on 1000fps clients. **KTP required.** |
-| `ex_interp` | **0.01** - **0.05** | - | Interpolation time between updates. **Set 0.01** on a clean connection. Raise ONLY for loss/jitter on your own connection (check `net_graph 1`): 0.02 rides through a single lost packet; 0.02-0.03 for chronically jittery routes; above 0.03 has no legitimate case. Ping alone — yours or your opponents' — is not a reason: latency delays the stream uniformly and lag compensation accounts for it (the server rewinds by ping + interp, so higher interp costs reaction time, not hit registration). **KTP required.** |
+| `ex_interp` | **0.009** - **0.05** | - | Interpolation time between updates. **Set 0.01** on a clean connection. Raise ONLY for loss/jitter on your own connection (check `net_graph 1`): 0.02 rides through a single lost packet; 0.02-0.03 for chronically jittery routes; above 0.03 has no legitimate case. Ping alone — yours or your opponents' — is not a reason: latency delays the stream uniformly and lag compensation accounts for it (the server rewinds by ping + interp, so higher interp costs reaction time, not hit registration). **KTP required.** |
 | `fps_max` | **60** - **750** | - | Maximum frames per second. **KTP required.** |
 
 ---
@@ -130,7 +130,7 @@ cl_smoothtime 0.01   // near-instant prediction-error correction — 0.1 default
 
 If you run a higher frame cap than 100, raise `cl_cmdrate` to match it (e.g. `fps_max 240` → `cl_cmdrate 250`).
 
-Full reasoning behind every value, plus troubleshooting: **[KTP Netcode Guide](http://74.91.112.242/netcode/)**.
+Full reasoning behind every value, plus troubleshooting: **[KTP Netcode Guide](https://netcode.ktpdod.com/)**.
 
 ### Verify Your Settings
 
@@ -152,6 +152,6 @@ To check your current CVAR values in-game, open the console (`~`) and type the C
 
 ---
 
-*Last Updated: July 2026 (quick-reference refreshed against the live fleet config + KTPCvarChecker 7.29: `cl_updaterate` recommendation corrected 101 → 102 [true client cap], per-setting context added, `cl_lc`/`cl_lw`/`cl_fixtimerate`/`cl_smoothtime` guidance added to the player-tunable section. Prior update April 2026: v7.26 fixed `r_glowshellfreq` enforcement value 0 → 2.2 to match the DoD engine default — clients with the natural default were being kicked under the previous v7.24 enforcement of 0; that "0" rationale didn't actually block ESP attackers and broke flag-carrier glow rendering. v7.25 dropped cl_lc and cl_lw from enforcement after engine-source audit confirmed self-handicap-only behavior; raised cl_cmdrate ceiling 500→1000 for high-fps client testing. v7.24 had added 7 cvars: cl_pitchspeed / cl_yawspeed / cl_anglespeedkey / m_side for keyboard-look defense, gl_picmip / r_glowshellfreq / r_traceglow for visual-exploit defense — gl_picmip enforcement still active for picmip wallhack defense.)*
+*Last Updated: July 2026 (quick-reference refreshed against the live fleet config + KTPCvarChecker 7.30: `cl_updaterate` recommendation corrected 101 → 102 [true client cap], per-setting context added, `cl_lc`/`cl_lw`/`cl_fixtimerate`/`cl_smoothtime` guidance added to the player-tunable section. Prior update April 2026: v7.26 fixed `r_glowshellfreq` enforcement value 0 → 2.2 to match the DoD engine default — clients with the natural default were being kicked under the previous v7.24 enforcement of 0; that "0" rationale didn't actually block ESP attackers and broke flag-carrier glow rendering. v7.25 dropped cl_lc and cl_lw from enforcement after engine-source audit confirmed self-handicap-only behavior; raised cl_cmdrate ceiling 500→1000 for high-fps client testing. v7.24 had added 7 cvars: cl_pitchspeed / cl_yawspeed / cl_anglespeedkey / m_side for keyboard-look defense, gl_picmip / r_glowshellfreq / r_traceglow for visual-exploit defense — gl_picmip enforcement still active for picmip wallhack defense.)*
 
 *Questions? Contact KTP Admins via Discord or the league website.*

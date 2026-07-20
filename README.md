@@ -12,6 +12,7 @@ Welcome to the official documentation repository for the **KTP Competitive Leagu
 | Document | Description |
 |----------|-------------|
 | [KTP Ruleset](KTP%20Ruleset.md) | Official league rules and regulations |
+| [KTP Cvar List](KTP%20Cvar%20List.md) | Required and recommended client CVAR settings |
 
 ---
 

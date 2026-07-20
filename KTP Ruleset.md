@@ -94,7 +94,7 @@ Each team receives 5 minutes of technical pause time per game (regulation) to ad
 
 #### 1.8.a Pause Mechanics
 
-The match plugin automatically triggers a pause 30 seconds after any player disconnect unless the affected team cancels it. Teams may also initiate manual pauses using `.tech` commands. Through use of the plugin, all pauses require confirmation from the opposing team to unpause, followed by an automatic countdown before play resumes. Teams are not charged pause time while waiting for the opposing team to confirm an unpause.
+The match plugin automatically triggers a pause 30 seconds after any player disconnect unless the affected team cancels it by typing `.nodc` (or `.stopdc`) in chat during the countdown. Teams may also initiate manual pauses using `.tech` commands. Through use of the plugin, all pauses require confirmation from the opposing team to unpause, followed by an automatic countdown before play resumes. Teams are not charged pause time while waiting for the opposing team to confirm an unpause.
 
 #### 1.8.b Valid Technical Issues
 
@@ -196,7 +196,7 @@ For matches between North American teams (no International team involved), the *
 |----------|--------|
 | **Chicago** | Available |
 | **Dallas** | Available |
-| **Denver** | Once available and KTP approved |
+| **Denver** | Available |
 
 The HOME team may propose an alternate KTP-approved server location not listed above, but this is subject to the opposing team captain's approval. If the opposing captain does not approve the alternate location, the HOME team must select from the three standard locations listed above.
 
