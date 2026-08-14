@@ -147,7 +147,7 @@ To check your current CVAR values in-game, open the console (`~`) and type the C
 
 1. **Automatic Enforcement**: The KTP server automatically checks and corrects CVARs that are out of compliance
 2. **cl_filterstuffcmd**: Must be set to `0` to allow the server to correct your CVARs
-3. **Recording**: These settings do not affect your ability to record demos or run MOSS
+3. **Recording**: These settings do not affect your ability to record demos or run KTPAntiCheat
 4. **Performance**: If you experience performance issues, contact a KTP admin before changing any locked CVARs
 
 ---

@@ -2,7 +2,7 @@
 
 **Day of Defeat 1.3 Competitive Ruleset**
 
-[![Version](https://img.shields.io/badge/Version-Season_9_2026-blue)](#)
+[![Version](https://img.shields.io/badge/Version-Season_10_2026-blue)](#)
 [![Game](https://img.shields.io/badge/Game-Day%20of%20Defeat%201.3-green)](#)
 
 > **Note:** These rules govern the KTP competitive league for the Half-Life: Day of Defeat mod. They may be updated as needed (see Rule 1.1). All teams and players are expected to know and abide by these rules. Failure to do so can result in penalties, including suspensions and forfeits.
@@ -125,9 +125,8 @@ Violations may result in player suspension and/or forfeiture of the game or matc
 In the event of a tie game, overtime must be played immediately to determine a winner.
 
 **Overtime format:**
-- Two additional halves of **5 minutes each** (teams switch sides for the second OT half)
-- If still tied, continue playing additional 5-minute overtime halves until a winner is decided
-- Use the overtime config files: normal config name with `_ot` appended (e.g., `ktp_harrington_ot.cfg`)
+- Two additional halves of **10 minutes each** (teams switch sides for the second OT half)
+- If still tied, continue playing additional 10-minute overtime halves until a winner is decided
 
 > **Penalty:** Failure to complete required overtime rounds will result in a loss being recorded for **both teams**.
 
@@ -312,7 +311,7 @@ League administrators reserve the right to issue suspensions, forfeits, or other
 ### 3.2 Investigations and Evidence
 
 KTP admins may investigate any player or team for suspicious behavior, including:
-- Requesting player POV demos or MOSS anti-cheat files at random
+- Requesting player POV demos at random, and reviewing KTPAntiCheat records
 - Conducting spot-checks at any time
 
 **Failure to provide requested materials can result in:**
@@ -323,6 +322,12 @@ KTP admins may investigate any player or team for suspicious behavior, including
 
 Any player found cheating will be suspended (or banned) from KTP, and any influenced match results are subject to being overturned or forfeited.
 
+#### 3.3.a Scope of a Ban
+
+A ban may be applied to a player, and where there is evidence of ban evasion, to the hardware used to evade it. A ban applies across all KTP-operated servers.
+
+Where hardware is shared — a venue machine, a household, a shared computer — a hardware ban must not be applied without evidence connecting the specific player to the evasion. A person affected by a hardware ban who was not party to the evasion may contest it under Rule 3.9.a and, on a successful contest, must be restored.
+
 ### 3.4 Definition of Cheating
 
 Cheating includes (but is not limited to):
@@ -330,7 +335,7 @@ Cheating includes (but is not limited to):
 - Aimbots (automatic target acquisition)
 - Illegally modifying game files
 - Any external program giving unfair advantage
-- Input multiplication — "Snap Tap" / SOCD null-cancel, "Rapid Fire" / Turbo (auto-repeat) modes, or any bind or device feature that produces more than one input from a single physical actuation, accelerates firing, or bypasses stamina (see Rule 4.6)
+- Input multiplication — "Snap Tap" / SOCD null-cancel, "Rapid Fire" / Turbo (auto-repeat) modes, or any bind, script, or device feature that produces more than one input from a single physical actuation, accelerates firing, or bypasses stamina (see Rule 4.6)
 
 ### 3.5 Allowed & Prohibited Game Files
 
@@ -370,17 +375,30 @@ Disputes must be filed by the team captain **within 24 hours** of match completi
 #### 3.8.a Evidence Submission Deadline
 Players have **24 hours from notification** to submit:
 - POV demos
-- MOSS files
 - Any other requested materials
 
 #### 3.8.b Consequences and Investigation
 - Failure to provide files may result in suspension and/or forfeit
-- Admins may review demos and MOSS files from prior/subsequent matches
+- Admins may review demos and KTPAntiCheat records from prior/subsequent matches
 - Player may be subject to additional scrutiny in future games
 
-### 3.9 MOSS Anti-Cheat Submissions
+### 3.9 KTPAntiCheat Records
 
-MOSS files are **not collected weekly** on a routine basis. However, in the event of a dispute or random check, players must provide their MOSS file and demos from the match in question.
+KTPAntiCheat records are produced automatically by the client and held by the league; players are not required to submit them. In the event of a dispute or random check, players must provide their POV demos from the match in question.
+
+Every session is scored on KTP's servers from the submitted evidence. Sessions may be re-scored when detection methods change, including sessions from earlier in the season; a re-score can change a previous outcome in either direction.
+
+**Retention:** Session uploads are kept for **60 days** and match telemetry for **30 days**; session records and outcomes are kept for the season. A finding can only be re-examined while the underlying evidence is retained.
+
+#### 3.9.a Contesting a KTPAntiCheat Finding
+
+A player may contest a KTPAntiCheat finding, including a coverage finding, by notifying an admin within **14 days** of being informed of it. Findings are re-examined from the original evidence where it is still retained (see Rule 3.9).
+
+A player may review their own uploaded sessions at any time through the KTP league website (ktpleague.gg), including screenshots, configuration files, and device inventory, and may download their own copy.
+
+An admin who did not make the original finding reviews the contest. The outcome is one of: finding upheld, finding withdrawn, or finding varied. The player is told which, and why.
+
+Automated output is never by itself a final outcome — a person reviews any finding before a penalty is applied.
 
 ---
 
@@ -404,22 +422,19 @@ All players agree to abide by the **KTP Community Rules** at all times.
 - Minor formatting variations allowed (color codes, abbreviations)
 
 #### 4.1.d File Integrity and CVAR Checks
-All players must comply with file-integrity and CVAR checks. Players must not interfere with or bypass these systems.
+All players must comply with file-integrity, CVAR, and anti-cheat checks. Players must not interfere with or bypass these systems.
 
-#### 4.1.e MOSS Anti-Cheat and Recording
+#### 4.1.e KTPAntiCheat
 
-Every player must use **MOSS (Mission Officer Security Software)** during each match.
+Every player must run the current version of **KTPAntiCheat** for the duration of each match they play. A match is covered when the player's KTPAntiCheat session is running before the match begins and remains running until it ends.
 
-**Requirements:**
-- [ ] Do not alter or tamper with the MOSS ZIP file
-- [ ] Rename the file after match (e.g., `PlayerName_vs_TeamX_Week3.zip`)
-- [ ] Be prepared to provide it to admins if requested
-- [ ] Never modify the contents of the MOSS zip
+Players must not alter, tamper with, or interfere with the client, its session records, or its uploads, and must not submit or cause to be submitted any record that is not their own.
 
-**Storage and Submission:**
-- Keep MOSS files for the duration of the season
-- Files are not submitted weekly unless requested
-- Must provide within 24 hours if admin requests (see Rule 3.8.a)
+A player whose match is not covered is subject to the same handling as any other Section 4 violation. Repeated failure to cover matches may be treated as evasion.
+
+Coverage is determined from KTPAntiCheat's own records. A player may contest a coverage finding under Rule 3.9.a.
+
+Technical failure — a crash, a disconnect, or a KTPAntiCheat outage — is not a violation, provided the player reports it to an admin before the next match. Admins may accept an uncovered match at their discretion where the cause is evident.
 
 #### 4.1.f POV Demos and Screenshots
 
@@ -467,14 +482,15 @@ Player names or team tags that violate these requirements must be changed before
 
 ### 4.2 VODs Are Not Acceptable Replacements
 
-Video recordings or Twitch VODs are **NOT** substitutes for demos or MOSS. You must still record in-game demos and run MOSS even if streaming.
+Video recordings or Twitch VODs are **NOT** substitutes for demos or KTPAntiCheat. You must still record in-game demos and run KTPAntiCheat even if streaming.
 
 ### 4.3 File Retention
 
 Retain all match files **for the duration of the season**:
 - POV demos for each half
 - All required screenshots
-- MOSS ZIP files from each match
+
+> **Note:** There is no anti-cheat file for players to keep — KTPAntiCheat records are produced and retained by the league (see Rule 3.9).
 
 ### 4.4 Player Boosting
 
@@ -488,13 +504,18 @@ Voice commands should be used for team communication only. Excessive use to taun
 
 **Principle:** one physical actuation equals one in-game input. A device may change *when* a single key registers (its actuation/reset point); it may not multiply one physical action into several inputs, auto-repeat an input, or resolve an input for you.
 
-**Permitted:** Rapid Trigger and adjustable actuation points — these change only *where* in a key's travel a single press registers. One press is still one input, so the player remains the rate limiter. ("Rapid Trigger" is the industry-standard term — used by Wooting, Razer, SteelSeries, Corsair, etc. — for a dynamic/continuous reset point on Hall-effect/analog keyboards. It is **not** the same as the prohibited "Rapid Fire" / "Turbo" auto-repeat below.)
+**Permitted:** Rapid Trigger and adjustable actuation points — these change only *where* in a key's travel a single press registers. One press is still one input, so the player remains the rate limiter. ("Rapid Trigger" is the industry-standard term — used by Wooting, Razer, SteelSeries, Corsair, etc. — for a dynamic/continuous reset point on Hall-effect/analog keyboards and analog mouse switches. Rapid Trigger is permitted on both keyboards and mice. It is **not** the same as the prohibited "Rapid Fire" / "Turbo" auto-repeat below.)
 
 **Prohibited:**
-- Binding `+attack` to any key in combination with another action
+- **A key bound to `+attack` must issue `+attack` and nothing else.** Binding or aliasing `+attack` together with any additional command — directly, through an alias, or through an exec'd config — is prohibited.
 - Binding `+attack` or `+duck` to the mousewheel (accelerates firing / bypasses stamina restrictions)
 - "Rapid Fire," "Turbo," or multi-tap keyboard/mouse modes that emit repeated inputs from a single press
 - "Snap Tap" / SOCD handling / null-cancel binds that auto-release one of two opposing movement keys (**SOCD** is the generic term; "Snap Tap" is Razer's brand name)
+
+**Notes:**
+- Rebinding is unaffected. `+attack` may be bound to any key, and other commands may have their own keys. Only combining them on the fire key is prohibited.
+- Stock commands are not suspicious in themselves. `+lookup`, `+lookdown`, `+left`, `+right`, and `centerview` ship as Half-Life defaults and appear in most configs.
+- Wheel `+jump` remains permitted (bunny-hopping).
 
 ### 4.7 No Automated Scripts
 
@@ -590,6 +611,6 @@ Captains are responsible for ensuring team members understand and follow all rul
 
 **End of Rules Document**
 
-*Last Updated: June 2026*
+*Last Updated: August 2026*
 
 *Questions? Contact KTP Admins via Discord or the league website.*
