@@ -579,6 +579,22 @@ Captains must schedule with integrity:
 - Reply promptly
 - Keep records of scheduling communications
 
+#### 5.4.a Regulation Scheduling Deadline
+
+All regular-season matches must be completed by the **midnight that ends the
+final regular-season Sunday** (00:00 Eastern on the following day). A match
+still unplayed or without a confirmed time at that deadline is referred to the
+admin team together with its full scheduling record — every proposed time,
+every response, and every reminder the league attempted to deliver.
+
+- **No automatic forfeits.** The deadline flags a match for admin review; it
+  never decides a result. Admins rule under §1.13 and §3.1, weighing who
+  proposed times, who went silent, and — as a distinct fact — whether a team's
+  captains could be reached at all.
+- A team whose captains were unreachable by every channel the league has is a
+  different case from a team that was reached and did not respond. The
+  scheduling record shows which is which.
+
 ### 5.5 Roster and Ringer Checks
 
 Captains must verify player eligibility before match starts:
