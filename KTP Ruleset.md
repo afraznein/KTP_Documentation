@@ -268,7 +268,21 @@ A team is allowed to change its name **once** during the course of a season. Aft
 | **Maximum roster size** | 10 players |
 | **Lock timing** | End of team registration period |
 | **After lock** | No changes to roster, team name, player handles, or SteamIDs |
-| **Exception** | Captain may request to remove a player via support ticket |
+| **Exception** | Changes may still be made by admin decision — see Rule 2.7.a |
+
+#### 2.7.a Requesting a Roster Change
+
+Roster changes are requested on the league website (ktpleague.gg) under your account settings, not by support ticket.
+
+| When | Captain | Player asking to leave |
+|------|---------|------------------------|
+| **Registration open** | Edits the roster directly; admins are notified of what changed | Files a request |
+| **Registration closed, before the lock** | Files a request; staff review it | Files a request |
+| **After the lock** | The captain's form closes — ask an admin | Files a request |
+
+A player may ask to leave a roster **at any time, before or after the lock**, from their own account settings. It is a request in every case: the player stays on the roster until an admin acts on it, and a request that would leave a team with no captain is not applied until another captain is in place.
+
+Every request and every decision stays on the record.
 
 ### 2.7.1 Mid-Season Roster Window
 
@@ -605,19 +619,40 @@ Captains must verify player eligibility before match starts:
 
 ### 5.6 Reporting Scores
 
-The **winning team captain** must report results within **1 hour of match completion**:
+Results are reported on the match page at the league website (ktpleague.gg) within **1 hour of match completion**. The obligation to report within the hour rests on the **winning team captain**; either captain may enter the result, and a losing captain who enters it first discharges it.
 
-- [ ] Final score for each game/half
-- [ ] Screenshots of both end-of-half scoreboards (configured per Rule 5.1.a for legibility) in .png or .jpg format
-- [ ] Tallied final result
+Reporting is two-sided. One captain enters the result, the **opposing** captain confirms it, and the result is recorded — and the standings move — only on that confirmation. A captain cannot confirm their own team's report.
 
-Post in the designated KTP Discord scores channel.
+**Reporting captain:**
 
-### 5.7 Playoff Map Vetoes (BO3 Matches)
+- [ ] Enter each team's final point total for the match
+- [ ] Check the winner the site names back to you before sending — a reversed score is the common mistake, and the other captain is the only person who can catch it
 
-Captains must submit vetoes and map picks **at least 72 hours before default match start time**.
+**Opposing captain:**
 
-> **Penalty:** Late submissions result in admins performing vetoes on the team's behalf.
+- [ ] Confirm the result, or dispute it with a reason, **within 24 hours** of being asked to
+
+A captain who disagrees with an entered result disputes it instead of confirming it. A disputed result is never recorded; it goes to the admin team with both captains' accounts of it.
+
+Screenshots are **not** uploaded with the report. Captains still take them (Rule 5.1.a, Rule 5.1.b), retain them for the season (Rule 4.3), and must produce them on request — a disputed result is settled from them.
+
+> **Note:** Playoff series results and forfeits are recorded by admins, not through captain reporting. Send playoff scores to an admin when the series is done.
+
+> **If the site cannot take the report:** post it in the designated KTP Discord scores channel within the same hour and tell an admin. That is a fallback for an outage, not a second reporting route.
+
+### 5.7 Playoff Map Vetoes
+
+Vetoes are run for playoff matches only. They take place in the veto room on the match page at the league website (ktpleague.gg): both captains act in turn — bans, picks, and starting sides — against the published playoff map pool. The site decides whose turn it is and refuses an illegal move, so there is nothing to submit anywhere else.
+
+Captains must complete the veto **at least 72 hours before the round's default match start time** (Rule 2.2). The deadline is measured from the default time, not from any later time the two captains agree between themselves.
+
+> **Penalty:** If the veto is not complete at that deadline, admins perform the outstanding steps on the late team's behalf. A step taken that way is marked as a staff action in the match's veto log, which is public.
+
+Series length is set by admins on the match. Most playoff matches are best-of-three; the veto runs the same way for a best-of-one or a best-of-five.
+
+#### 5.7.a When a Round Resolves Late
+
+A playoff match has no teams until the round before it is decided. Where both teams become known **less than 72 hours before** the round's default start, the 72-hour deadline cannot have been met and is not counted against either team. The veto is instead due **as soon as both captains have had a reasonable chance to run it**, and admins may perform outstanding steps once the match is otherwise due to be played.
 
 ### 5.8 Captain Accountability
 
