@@ -648,7 +648,7 @@ Captains must complete the veto **at least 72 hours before the round's default m
 
 > **Penalty:** If the veto is not complete at that deadline, admins perform the outstanding steps on the late team's behalf. A step taken that way is marked as a staff action in the match's veto log, which is public.
 
-Series length is set by admins on the match. Most playoff matches are best-of-three; the veto runs the same way for a best-of-one or a best-of-five.
+Playoff matches are best-of-three, in every division and every round, unless the league announces a different series length before the season begins. Admins record the series length on the match. The veto procedure in this section does not depend on series length, so it runs the same way for a best-of-one or a best-of-five should a season adopt one.
 
 #### 5.7.a When a Round Resolves Late
 
