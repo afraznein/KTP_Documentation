@@ -457,7 +457,7 @@ Every session is scored on KTP's servers from the submitted evidence. Sessions m
 
 A player may contest a KTPAntiCheat finding, including a coverage finding, by notifying an admin within **14 days** of being informed of it. Findings are re-examined from the original evidence where it is still retained (see Rule 3.9).
 
-A player may review their own uploaded sessions at any time through the KTP league website (ktpleague.gg), including screenshots, configuration files, and device inventory, and may download their own copy.
+A player may review their own uploaded sessions at any time through the KTP league website (ktpleague.gg), including screenshots, configuration files, and device inventory, and may download their own copy. Individual artifacts may be withheld from that copy where releasing them would disclose how KTPAntiCheat detects cheating. Where anything is withheld, the player is told that material was withheld, and an admin who did not make the original finding will explain the reason on request. Withheld material is still examined in full when a contest under this rule is reviewed.
 
 An admin who did not make the original finding reviews the contest. The outcome is one of: finding upheld, finding withdrawn, or finding varied. The player is told which, and why.
 
