@@ -195,6 +195,14 @@ Where both teams forfeit, the match is **voided** instead (§1.13.c) — neither
 A match **voided** by admin decision scores nothing for either team, does not contribute to any
 average, and does not hold a BYE or the season open.
 
+### 1.15 Language and Translations
+
+The English text of this ruleset is the official and controlling version. Translations into other languages are provided for convenience only.
+
+Where a translation and the English text differ — in wording, in meaning, or through an error or omission in translation — the English text governs. All rulings, penalties, and dispute decisions are made on the basis of the English rules, and no ruling may be appealed on the ground that a translation said something different.
+
+> **Important:** If a translated rule is unclear or appears to conflict with the English, read the English version or ask a KTP admin before acting on it. A misreading of a translation is not a defense to a rule violation.
+
 ---
 
 ## 2. Teams, Regions, Home/Away, and Ringer Rules
