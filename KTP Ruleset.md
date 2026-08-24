@@ -154,6 +154,14 @@ KTP reserves the sole and absolute discretion to approve or deny entry to any te
 - **Forfeits:** Only scored after the end of regulation
 - **Special case:** If a BYE is awaiting a potential forfeit that is confirmed at regulation end, it will be treated as a BYE and scored using the average point value method
 
+### 1.15 Language and Translations
+
+The English text of this ruleset is the official and controlling version. Translations into other languages are provided for convenience only.
+
+Where a translation and the English text differ — in wording, in meaning, or through an error or omission in translation — the English text governs. All rulings, penalties, and dispute decisions are made on the basis of the English rules, and no ruling may be appealed on the ground that a translation said something different.
+
+> **Important:** If a translated rule is unclear or appears to conflict with the English, read the English version or ask a KTP admin before acting on it. A misreading of a translation is not a defense to a rule violation.
+
 ---
 
 ## 2. Teams, Regions, Home/Away, and Ringer Rules
