@@ -150,9 +150,50 @@ KTP reserves the sole and absolute discretion to approve or deny entry to any te
 
 ### 1.13 BYEs and Forfeit Scoring
 
-- **BYEs:** Awarded the average point value of all teams in the same division, calculated after all matches complete
-- **Forfeits:** Only scored after the end of regulation
-- **Special case:** If a BYE is awaiting a potential forfeit that is confirmed at regulation end, it will be treated as a BYE and scored using the average point value method
+A **BYE** is a regular season week in which a team has no match because its division holds an odd
+number of teams. A **forfeit** is a match awarded without play.
+
+#### 1.13.a Scoring a BYE
+
+A BYE is worth the **average of the scores the division's other teams posted that week**, on that
+week's map. Each match played in the division that week contributes two scores — one per team — and
+the BYE team is credited with their mean, both as points scored and as points conceded.
+
+The average is taken **per week**, because each week is played on one map and maps do not score
+alike. It is never taken across the season.
+
+*Worked example.* Silver has nine teams, so one sits out each week. In week 4, on dod_harrington,
+the other eight play four matches finishing 429-243, 312-300, 500-180 and 260-411. The eight scores
+average 329.375, so the team on BYE is credited 329.375 points for and 329.375 points against.
+
+Crediting the average both as points scored and as points conceded is deliberate: it means a BYE
+moves a team's point differential by exactly zero. A BYE is **not a result** — it adds no win and no loss, and it does not make records
+comparable between teams that have played a different number of matches.
+
+#### 1.13.b Scoring a forfeit
+
+A forfeited match is scored the same way — the average of the scores the division's other teams
+posted that week — and is credited to the **non-forfeiting team only**. The team that forfeited
+receives no points for that match, neither scored nor conceded.
+
+A team that turned up to a match its opponent did not play is in the same position as a team on a
+BYE: it had no opponent, through no fault of its own. The team that caused that is not owed the
+same treatment, and the loss on its record is not the whole of the consequence.
+
+A forfeited match contributes nothing to the average it is scored from. It has no scoreline.
+
+Where both teams forfeit, the match is **voided** instead (§1.13.c) — neither team collects.
+
+#### 1.13.c When each becomes final
+
+- A **BYE** is final as soon as every other match that division played that week has been scored. It
+  does not wait on the rest of the season. Until then it is provisional and moves with each result.
+- A **forfeit** is scored **only at the end of the regular season**, once it is settled that no
+  makeup match will be played. Until then the non-forfeiting team is credited nothing, so a fixture
+  that is eventually played instead never carried a credit.
+
+A match **voided** by admin decision scores nothing for either team, does not contribute to any
+average, and does not hold a BYE or the season open.
 
 ---
 
