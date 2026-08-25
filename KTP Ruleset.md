@@ -195,6 +195,60 @@ Where both teams forfeit, the match is **voided** instead (§1.13.c) — neither
 A match **voided** by admin decision scores nothing for either team, does not contribute to any
 average, and does not hold a BYE or the season open.
 
+### 1.14 Standings and Tiebreakers
+
+Standings count **regular season matches only**. Playoff matches never affect the league table. A
+match voided by admin decision counts for neither team — not a win, not a loss, and in no total.
+
+Teams are ordered by:
+
+1. **Record** — most wins, then fewest losses.
+2. **Head-to-head** — the results between the teams that are level on record (see below).
+3. **Point differential** — round points scored minus round points conceded across the whole
+   regular season.
+
+#### 1.14.a How head-to-head is applied
+
+- The **tied group** is every team in the division with an identical record. Head-to-head is applied
+  to the whole group at once — it is **not** a series of pairwise comparisons. Comparing pairs is
+  not transitive: with three or more teams it produces a different answer depending on which pair is
+  compared first, and can produce no answer at all.
+- The group is ranked on a **mini-table** of the matches those teams played against each other,
+  counting the same matches the standings count (regular season, played or forfeited). A forfeit is
+  a head-to-head result like any other.
+- The mini-table is ranked on **record only** — most mini-table wins, then fewest mini-table losses.
+  **Mini-table point differential is deliberately not used**, at any step. See §1.14.c.
+- Head-to-head applies **only when every team in the group has played at least one of the others**.
+  If any tied team has played none of them, head-to-head is skipped for the entire group and the tie
+  is settled on point differential. An unplayed head-to-head is never treated as an 0-0 record.
+- Teams still level after the mini-table fall through to point differential. The mini-table is
+  applied once; the rule does not recurse into a smaller tie inside the group.
+
+#### 1.14.b Worked example
+
+Two teams finish 5-2. One is +500 on differential, the other +100. The +100 team won the match
+between them, so it finishes ahead — head-to-head is applied before differential. The visible
+columns cannot show this on their own, which is why the standings page marks such a row and names
+the result that placed it.
+
+#### 1.14.b.i Teams still level after all three steps
+
+If two or more teams remain exactly level after record, head-to-head and point differential, and the
+order decides a playoff seed or any other consequence, **a KTP admin rules on the order and the
+ruling is recorded publicly.** No further automatic criterion is applied.
+
+⛔ **The order shown on the standings page is not authoritative in this case.** The site breaks the
+remaining tie on an internal identifier purely so the table does not reshuffle between page loads.
+That has no sporting meaning. Until an admin has ruled, treat those rows as unordered.
+
+#### 1.14.c Why the mini-table ignores point differential
+
+In a circular three-way tie every team is 1-1 inside the group, so the mini-table separates nobody
+and the tie falls through to **overall** point differential. This is settled league precedent: the
+Season 4, 5 and 8 Silver three-way ties were all resolved that way. Adding a mini-table differential
+step would reverse those results. The step is absent on purpose — it is not an oversight to be
+tidied up later.
+
 ### 1.15 Language and Translations
 
 The English text of this ruleset is the official and controlling version. Translations into other languages are provided for convenience only.
