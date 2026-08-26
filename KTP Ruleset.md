@@ -505,7 +505,7 @@ KTPAntiCheat records are produced automatically by the client and held by the le
 
 Every session is scored on KTP's servers from the submitted evidence. Sessions may be re-scored when detection methods change, including sessions from earlier in the season; a re-score can change a previous outcome in either direction.
 
-**Retention:** Session uploads are kept for **60 days** and match telemetry for **30 days**; session records and outcomes are kept for the season. A finding can only be re-examined while the underlying evidence is retained.
+**Retention:** Session uploads are retained indefinitely for integrity review, so a finding can always be re-examined from the original evidence. Match telemetry is kept for **30 days**; session records and outcomes are kept for the season. A finding resting on telemetry can only be re-examined while that telemetry is still retained.
 
 #### 3.9.a Contesting a KTPAntiCheat Finding
 
