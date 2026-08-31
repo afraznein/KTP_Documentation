@@ -1,0 +1,155 @@
+name: Translation debt
+
+# When the English ruleset changes, the Spanish and Portuguese translations
+# become stale. ktpleague.gg detects that at render time and warns readers;
+# this is the other half — it tells US that we owe the work.
+#
+# TIMING IS THE WHOLE DESIGN. Rule changes go through a vote, so the debt is
+# created by APPROVAL, not by proposal:
+#
+#   * on a pull request  -> INFORMATIONAL ONLY. Says what merging would imply.
+#                           It must never fail, and must never be a required
+#                           check: gating a proposal on a finished translation
+#                           would force translating rules that may never pass.
+#   * on push to main    -> the enforcement. The vote is won and the change is
+#                           merged, so file a tracking issue.
+#
+# There is deliberately NO `paths:` filter. A path filter that silently fails
+# to match is a workflow that never fires and always looks green — and the
+# filename contains a space, which is exactly where that goes wrong. Both jobs
+# run on every event and decide from `git diff --name-only`, so the decision is
+# an exact string comparison that can be read and tested.
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+env:
+  RULESET: KTP Ruleset.md
+
+jobs:
+  notify:
+    name: Ruleset change implies a translation update
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    # Belt and braces with the `exit 0` below: this job must not be able to
+    # report a failure onto the PR. It is advice, not a gate.
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Say what merging this would make stale
+        env:
+          # The SHAs the event carries, rather than a remote-tracking ref:
+          # `fetch-depth: 0` guarantees both objects are present, and no ref
+          # has to be conjured for a fork.
+          BASE: ${{ github.event.pull_request.base.sha }}
+          HEAD: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -u
+
+          # Captured, printed, THEN matched. Testing the diff inline would make
+          # a failed diff produce an empty match, which reads exactly like
+          # "the ruleset did not change" — a silent false negative in the one
+          # check that is supposed to notice.
+          if ! changed="$(git diff --name-only "$BASE" "$HEAD")"; then
+            echo "::warning title=Translation-debt check could not run::git diff $BASE..$HEAD failed; this PR was NOT checked for translation debt."
+            exit 0
+          fi
+          echo "files changed in this PR:"
+          printf '%s\n' "$changed" | sed 's/^/  /'
+
+          if printf '%s\n' "$changed" | grep -qxF "$RULESET"; then
+            {
+              echo "### The English ruleset changes in this PR"
+              echo
+              echo "If this merges, \`KTP Ruleset.es.md\` and \`KTP Ruleset.pt.md\` become **stale**."
+              echo "ktpleague.gg will show readers of those pages a warning until they are updated."
+              echo
+              echo "Nothing is blocked. A tracking issue is opened automatically once this lands"
+              echo "on \`main\` — the translation is owed after the rule is approved, not before."
+            } >> "$GITHUB_STEP_SUMMARY"
+            echo "::notice title=Translation update owed on merge::This PR changes ${RULESET}; es/pt will need updating after it merges."
+          else
+            echo "${RULESET} is unchanged in this PR — no translation debt." >> "$GITHUB_STEP_SUMMARY"
+          fi
+          exit 0
+
+  track:
+    name: Open a translation-debt issue
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: File the issue if the ruleset moved
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BEFORE: ${{ github.event.before }}
+          AFTER: ${{ github.sha }}
+          COMPARE: ${{ github.event.compare }}
+        run: |
+          set -euo pipefail
+
+          # A branch's first push reports an all-zero `before`; fall back to the
+          # commit's own parent so the diff is still a real one.
+          if [ -z "$BEFORE" ] || [ "$BEFORE" = "0000000000000000000000000000000000000000" ]; then
+            BEFORE="$(git rev-parse "${AFTER}^")"
+          fi
+
+          changed="$(git diff --name-only "$BEFORE" "$AFTER")"
+          echo "changed files:"; printf '%s\n' "$changed" | sed 's/^/  /'
+
+          if ! printf '%s\n' "$changed" | grep -qxF "$RULESET"; then
+            echo "${RULESET} unchanged — no translation is owed."
+            exit 0
+          fi
+
+          # Which rules moved, rather than the whole diff: a reviewer needs to
+          # know what to re-translate, and a 700-line document produces an
+          # issue nobody reads.
+          sections="$(git diff --unified=0 "$BEFORE" "$AFTER" -- "$RULESET" \
+            | grep -E '^[+-]#{1,6} ' | grep -v '^[+-][+-]' | head -40 || true)"
+          stat="$(git diff --stat "$BEFORE" "$AFTER" -- "$RULESET")"
+
+          {
+            echo "The English ruleset changed on \`main\`, so the translations are now stale."
+            echo
+            echo "**Owed:** update \`KTP Ruleset.es.md\` and \`KTP Ruleset.pt.md\`, and refresh the"
+            echo "\`source-sha256\` in each file's \`ktp-translation\` header. Until then ktpleague.gg"
+            echo "shows readers of those pages a staleness warning."
+            echo
+            echo "**Reviewer:** chi (KTP Admin)."
+            echo
+            echo "### What changed"
+            echo
+            echo '```'
+            echo "$stat"
+            echo '```'
+            if [ -n "$sections" ]; then
+              echo
+              echo "Headings added or removed:"
+              echo
+              echo '```diff'
+              echo "$sections"
+              echo '```'
+            fi
+            echo
+            echo "Full diff: $COMPARE"
+          } > body.md
+
+          gh issue create \
+            --repo "${{ github.repository }}" \
+            --title "Translations owed: KTP Ruleset.md changed in ${AFTER:0:7}" \
+            --body-file body.md
