@@ -53,7 +53,19 @@ jobs:
           HEAD: ${{ github.event.pull_request.head.sha }}
         run: |
           set -u
-          if git diff --name-only "$BASE" "$HEAD" | grep -qxF "$RULESET"; then
+
+          # Captured, printed, THEN matched. Testing the diff inline would make
+          # a failed diff produce an empty match, which reads exactly like
+          # "the ruleset did not change" — a silent false negative in the one
+          # check that is supposed to notice.
+          if ! changed="$(git diff --name-only "$BASE" "$HEAD")"; then
+            echo "::warning title=Translation-debt check could not run::git diff $BASE..$HEAD failed; this PR was NOT checked for translation debt."
+            exit 0
+          fi
+          echo "files changed in this PR:"
+          printf '%s\n' "$changed" | sed 's/^/  /'
+
+          if printf '%s\n' "$changed" | grep -qxF "$RULESET"; then
             {
               echo "### The English ruleset changes in this PR"
               echo
