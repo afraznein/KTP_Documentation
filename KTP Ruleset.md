@@ -159,8 +159,17 @@ A BYE is worth the **average of the scores the division's other teams posted tha
 week's map. Each match played in the division that week contributes two scores — one per team — and
 the BYE team is credited with their mean, both as points scored and as points conceded.
 
+Only a **played** match contributes scores to that average. A forfeited or voided match has no
+scoreline, so it feeds nothing — it *receives* the average rather than supplying it. A team is also
+never part of its own average. Where a week contains a second BYE or a forfeit, the average is taken
+from whatever matches that division actually played.
+
 The average is taken **per week**, because each week is played on one map and maps do not score
 alike. It is never taken across the season.
+
+The average is a **fraction and is kept as one**. Standings carry it to four decimal places and
+display it trimmed — a whole number shows no decimals. It is never rounded to an integer before the
+tiebreakers are applied, because rounding eight scores to whole points can reorder a division.
 
 *Worked example.* Silver has nine teams, so one sits out each week. In week 4, on dod_harrington,
 the other eight play four matches finishing 429-243, 312-300, 500-180 and 260-411. The eight scores
@@ -233,6 +242,11 @@ the result that placed it.
 
 #### 1.14.b.i Teams still level after all three steps
 
+> **Placement note.** This rule is numbered under §1.14.b (the worked example) but applies to
+> §1.14.a and to the tiebreakers generally, not only to the example above. The identifier and heading
+> level are left unchanged deliberately: the site builds anchors from the rule number, and both
+> translations mirror this structure line for line.
+
 If two or more teams remain exactly level after record, head-to-head and point differential, and the
 order decides a playoff seed or any other consequence, **a KTP admin rules on the order and the
 ruling is recorded publicly.** No further automatic criterion is applied.
@@ -273,7 +287,7 @@ Where a translation and the English text differ — in wording, in meaning, or t
 ### 2.2 Scheduling Default Match Times
 
 #### 2.2.a Standard Default Time
-Sunday at 9:00 PM Eastern Time (EST).
+Sunday at 9:00 PM Eastern Time (ET — US Eastern, observing daylight saving).
 
 #### 2.2.b International Default Time
 When one or both teams have majority EU players east of UTC -2, the default match time is Sunday at 3:00 PM EST.
