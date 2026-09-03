@@ -169,10 +169,19 @@ Un BYE vale el **promedio de los puntajes que los demás equipos de la división
 mapa de esa semana. Cada partido jugado en la división esa semana aporta dos puntajes —uno por equipo— y
 al equipo con BYE se le acredita su media, tanto como puntos a favor como puntos en contra.
 
+Solo un partido **jugado** aporta puntuaciones a ese promedio. Un partido perdido por forfeit o anulado no
+tiene marcador, por lo que no aporta nada: recibe el promedio en lugar de suministrarlo. Además, un equipo
+nunca forma parte de su propio promedio. Si en una semana hay un segundo BYE o un forfeit, el promedio se
+calcula a partir de los partidos que esa división haya jugado realmente.
+
 El promedio se toma **por semana**, porque cada semana se juega en un mapa y los mapas no puntúan
 igual. Nunca se toma a lo largo de toda la temporada.
 
-*Ejemplo resuelto.* Silver tiene nueve equipos, así que uno descansa cada semana. En la semana 4, en dod_harrington,
+El promedio es una fracción y se mantiene como tal. La tabla de posiciones lo calcula con hasta cuatro decimales
+y lo muestra recortado (un número entero no muestra decimales). Nunca se redondea a un número entero antes de
+aplicar los desempates, ya que redondear ocho puntuaciones a puntos enteros podría reordenar una división.
+
+*Ejemplo práctico.* Silver tiene nueve equipos, así que uno no juega cada semana. En la semana 4, en dod_harrington,
 los otros ocho juegan cuatro partidos que terminan 429-243, 312-300, 500-180 y 260-411. Los ocho puntajes
 promedian 329.375, así que al equipo con BYE se le acreditan 329.375 puntos a favor y 329.375 puntos en contra.
 
@@ -234,7 +243,7 @@ Los equipos se ordenan por:
 - Los equipos que sigan igualados después de la mini-tabla pasan a la diferencia de puntos. La mini-tabla se
   aplica una sola vez; la regla no recurre a un empate más pequeño dentro del grupo.
 
-#### 1.14.b Ejemplo resuelto
+#### 1.14.b Ejemplo práctico
 
 Dos equipos terminan 5-2. Uno está en +500 de diferencia, el otro en +100. El equipo de +100 ganó el partido
 entre ambos, así que termina por delante — el enfrentamiento directo se aplica antes que la diferencia. Las columnas
@@ -242,6 +251,10 @@ visibles no pueden mostrar esto por sí solas, y por eso la página de posicione
 el resultado que la ubicó.
 
 #### 1.14.b.i Equipos que siguen igualados después de los tres pasos
+
+> **Nota de ubicación.** Esta regla está numerada bajo el §1.14.b (el ejemplo práctico) pero aplica al §1.14.a y a los desempates
+> en general, no solo al ejemplo anterior. El identificador y el nivel del encabezado se dejan sin cambios a propósito: el sitio
+> web genera anclajes a partir del número de regla, y ambas traducciones reflejan esta estructura línea por línea.
 
 Si dos o más equipos permanecen exactamente igualados después del registro, el enfrentamiento directo y la diferencia de puntos, y el
 orden decide una siembra de playoffs o cualquier otra consecuencia, **un administrador de KTP resuelve el orden y la
@@ -515,7 +528,7 @@ Los registros de KTPAntiCheat son producidos automáticamente por el cliente y c
 
 Cada sesión se evalúa en los servidores de KTP a partir de la evidencia presentada. Las sesiones pueden reevaluarse cuando cambian los métodos de detección, incluidas sesiones de etapas anteriores de la temporada; una reevaluación puede cambiar un resultado previo en cualquiera de las dos direcciones.
 
-**Conservación:** Las cargas de sesiones se conservan indefinidamente para revisión de integridad, de modo que una determinación siempre pueda reexaminarse a partir de la evidencia original. La telemetría de partido se conserva por **30 días**; los registros de sesión y sus resultados se conservan durante la temporada. Una determinación que se apoye en telemetría solo puede reexaminarse mientras esa telemetría siga conservada.
+**Conservación:** Las cargas de sesiones se conservan indefinidamente para revisión de integridad, de modo que una determinación siempre pueda reexaminarse a partir de la evidencia original. La telemetría de partido se conserva por **30 días**; los registros de sesión y sus resultados se conservan durante toda la temporada. Una determinación que se apoye en telemetría solo puede reexaminarse mientras esa telemetría siga conservada.
 
 #### 3.9.a Impugnación de una Determinación de KTPAntiCheat
 
