@@ -169,8 +169,17 @@ Um BYE vale a **média dos placares que os demais times da divisão registraram 
 mapa daquela semana. Cada partida disputada na divisão naquela semana contribui com dois placares — um por time — e
 o time em BYE é creditado com a média deles, tanto como pontos marcados quanto como pontos sofridos.
 
+Apenas uma partida jogada contribui com placares para essa média. Uma partida perdida por W.O. ou anulada não tem
+placar, portanto não fornece nada: ela recebe a média em vez de fornecê-la. Além disso, um time nunca faz parte
+de sua própria média. Nos casos em que uma semana contiver um segundo BYE ou um W.O., a média será extraída das
+partidas que aquela divisão realmente jogou.
+
 A média é calculada **por semana**, porque cada semana é jogada em um mapa e os mapas não pontuam
 da mesma forma. Ela nunca é calculada ao longo da temporada.
+
+A média é uma fração e é mantida como tal. A classificação a calcula com até quatro casas decimais e a exibe aparada
+(um número inteiro não mostra decimais). Ela nunca é arredondada para um número inteiro antes que os critérios de
+desempate sejam aplicados, porque o arredondamento de oito placares para pontos inteiros pode reordenar uma divisão.
 
 *Exemplo prático.* A Silver tem nove times, então um fica de fora a cada semana. Na semana 4, em dod_harrington,
 os outros oito disputam quatro partidas que terminam em 429-243, 312-300, 500-180 e 260-411. Os oito placares
@@ -242,6 +251,10 @@ não conseguem mostrar isso sozinhas, e é por isso que a página de classifica�
 o resultado que a posicionou.
 
 #### 1.14.b.i Times ainda igualados após todas as três etapas
+
+> Nota de localização: Esta regra está numerada sob o §1.14.b (o exemplo prático), mas se aplica ao §1.14.a e aos critérios
+> de desempate em geral, não apenas ao exemplo acima. O identificador e o nível do cabeçalho são deixados inalterados de
+> propósito: o site cria âncoras a partir do número da regra, e ambas as decisões espelham essa estrutura linha por linha.
 
 Se dois ou mais times permanecerem exatamente igualados após campanha, confronto direto e saldo de pontos, e a
 ordem definir um seed de playoff ou qualquer outra consequência, **um administrador da KTP decide a ordem e a
@@ -340,7 +353,7 @@ Em partidas entre um time norte-americano e um time europeu (maioria de jogadore
 
 New York deve ser usada sempre que estiver disponível. Atlanta só pode ser escolhida se nenhum servidor de New York estiver disponível no momento do agendamento ou do início da partida. Essas localizações da Costa Leste oferecem uma latência de compromisso razoável para conexões transatlânticas.
 
-O time HOME pode propor uma localização alternativa de servidor aprovado pela KTP não listada acima. A localização alternativa exige a aprovação do capitão do time adversário. Se o capitão adversário não aprovar, o time HOME deve escolher entre as localizações padrão listadas acima, seguindo a ordem de prioridade.
+O time HOME pode propor uma localização alternativa de servidor aprovado pela KTP não listada acima. A localização alternativa exige a aprovação do capitão do time adversário. Se o capitão adversário não aprovar, o time HOME deverá selecionar uma das localizações padrão listadas acima, respeitando estritamente a ordem de prioridade (New York como primária obrigatória).
 
 > **Importante:** As partidas nunca podem ser jogadas em servidores não aprovados pela KTP, independentemente de acordo mútuo.
 
