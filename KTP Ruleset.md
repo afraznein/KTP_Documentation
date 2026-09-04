@@ -422,6 +422,8 @@ The floor reads the roster a player **leaves**, never the one they join, and it 
 
 **A swap is judged on its end state.** Two teams exchanging players each finish with the roster size they started with, so a swap does not breach the floor even though either move, taken alone, would appear to.
 
+**A swap moves players, not captaincy.** Its end state is who is on each roster; it never decides who leads one. A player arriving in a swap joins as a player or co-captain, and a team whose only captain is one of the two halves does not swap until another captain is in place — the same hold that governs any other departure. Captaincy changes on its own, afterwards, through the roster form.
+
 ⛔ **These holds bind captains and players. They do not bind admins.** An admin may move a player at any time, including during a lock — that is what makes a hold safe rather than a trap, and a team stuck behind one should ask an admin.
 
 > ⚠️ **While rosters are locked, a player who leaves cannot join another team for the rest of the season.** Additions are governed by Rule 2.7.1's window, and outside that window there is none — an admin may still place them, but nobody should count on it. A player leaving a team mid-season should be told this before they act.
