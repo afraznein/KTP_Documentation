@@ -291,8 +291,12 @@ Where a translation and the English text differ — in wording, in meaning, or t
 
 | Team Type | Definition |
 |-----------|------------|
-| **International** | Majority of players (4+) based outside North America (EU, SA, etc.) |
-| **North American** | Majority of North American players |
+| **International** | **4 or more** rostered players based outside North America (EU, SA, etc.) |
+| **North American** | Any team that is not International |
+
+Four is a majority of the **six** a team fields (§2.10), which is where the threshold comes from — not a majority of the ten-player maximum roster (§2.7).
+
+> **Measured against the roster at lock, not the lineup on the night.** A team's type has to be known before the schedule is generated, because the default match time is stamped once (§2.2). A team with four or more international players is therefore International even if it fields fewer on a given Sunday — the classification errs toward granting the accommodation, not withholding it.
 
 ### 2.2 Scheduling Default Match Times
 
