@@ -323,7 +323,7 @@ The team listed on the schedule as the **HOME** team has the choice of server us
 #### 2.3.b Best-of-Three (BO3) Matches
 Each map is treated independently. The team that picked a map is considered the "home" team for that map.
 
-Home status for a map carries the **side choice only** (§2.3.a) — which side to join first on that map. The **server** does not move with the map: it is selected once for the whole series by the team listed on the schedule as HOME, under §2.4, and stays fixed from the first map to the last.
+Home status for a map carries the full §2.3.a advantage **for that map**: the server it is played on and which side to join first. **The server moves with the map** — the team that picked a map selects the server for it, so the server may differ from one map to the next within a series. §2.4 still governs which locations are eligible for each of those choices.
 
 ### 2.4 Server Selection by Region
 
