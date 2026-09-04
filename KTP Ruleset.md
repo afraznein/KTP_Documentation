@@ -739,6 +739,10 @@ Captains must take one `rcon status` screenshot per game to prove player SteamID
 
 The clock runs from the match's **actual scheduled start time** — the time on the match page, which is the time the captains agreed to where the match was rescheduled. It does not run from the §2.2 default. A rescheduled match that both captains agreed to is the real appointment.
 
+**A no-show at +15 does not normally end the fixture.** KTP prefers a **make-up match**, and admins arrange one wherever both teams can still play. The +15 mark is what entitles an admin to call the no-show and start that conversation — it is not a result. A forfeit win is generally awarded only at the **end of the regular season**, for a fixture no make-up ever recovered.
+
+> §1.13.c already sets this out from the scoring side: a forfeit is scored *“only at the end of the regular season, once it is settled that no makeup match will be played.”* A forfeit **declared** and a forfeit **credited** are different moments, and neither is automatic — both are admin decisions.
+
 ### 5.4 Fair Scheduling
 
 Captains must schedule with integrity:
