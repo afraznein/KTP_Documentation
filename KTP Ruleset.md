@@ -300,7 +300,7 @@ Where a translation and the English text differ — in wording, in meaning, or t
 Sunday at 9:00 PM Eastern Time (ET — US Eastern, observing daylight saving).
 
 #### 2.2.b International Default Time
-When one or both teams have majority EU players east of UTC -2, the default match time is Sunday at 3:00 PM EST.
+When one or both teams have majority EU players east of UTC -2, the default match time is Sunday at 3:00 PM Eastern Time (ET — US Eastern, observing daylight saving).
 
 > Times may adjust for daylight savings time.
 
