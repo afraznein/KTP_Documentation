@@ -424,7 +424,7 @@ The floor reads the roster a player **leaves**, never the one they join, and it 
 
 ⛔ **These holds bind captains and players. They do not bind admins.** An admin may move a player at any time, including during a lock — that is what makes a hold safe rather than a trap, and a team stuck behind one should ask an admin.
 
-> ⚠️ **While rosters are locked, a player who leaves cannot join another team for the rest of the season.** Additions are governed by Rule 2.7.1's window, and outside that window there is none. A player leaving a team mid-season should be told this before they act.
+> ⚠️ **While rosters are locked, a player who leaves cannot join another team for the rest of the season.** Additions are governed by Rule 2.7.1's window, and outside that window there is none — an admin may still place them, but nobody should count on it. A player leaving a team mid-season should be told this before they act.
 
 An **addition** remains a request in every case.
 
