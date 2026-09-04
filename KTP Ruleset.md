@@ -221,20 +221,24 @@ match voided by admin decision counts for neither team — not a win, not a loss
 
 Teams are ordered by:
 
-1. **Record** — most wins, then fewest losses.
+1. **Record** — most wins. Losses are shown for information only and never order the table: a BYE
+   is not a result (§1.13.a), so within a division every team's wins and losses add up to the same
+   total, and a further step on losses could never separate teams that wins had not.
 2. **Head-to-head** — the results between the teams that are level on record (see below).
 3. **Point differential** — round points scored minus round points conceded across the whole
    regular season.
 
 #### 1.14.a How head-to-head is applied
 
-- The **tied group** is every team in the division with an identical record. Head-to-head is applied
-  to the whole group at once — it is **not** a series of pairwise comparisons. Comparing pairs is
-  not transitive: with three or more teams it produces a different answer depending on which pair is
-  compared first, and can produce no answer at all.
+- The **tied group** is every team in the division that is level after step 1 of §1.14 — the same
+  number of wins. Head-to-head is applied to the whole group at once — it is **not** a series of
+  pairwise comparisons. Comparing pairs is not transitive: with three or more teams it produces a
+  different answer depending on which pair is compared first, and can produce no answer at all.
 - The group is ranked on a **mini-table** of the matches those teams played against each other,
-  counting the same matches the standings count (regular season, played or forfeited). A forfeit is
-  a head-to-head result like any other.
+  counting the same matches the standings count (regular season, played or forfeited). Head-to-head
+  reads **the win and the loss only, never the scoreline**. That is why a forfeit is a head-to-head
+  result like any other: it has a winner from the moment it is declared, even though it carries no
+  score until the end of the regular season (§1.13.c).
 - The mini-table is ranked on **record only** — most mini-table wins, then fewest mini-table losses.
   **Mini-table point differential is deliberately not used**, at any step. See §1.14.c.
 - Head-to-head applies **only when every team in the group has played at least one of the others**.
@@ -258,12 +262,15 @@ the result that placed it.
 > translations mirror this structure line for line.
 
 If two or more teams remain exactly level after record, head-to-head and point differential, and the
-order decides a playoff seed or any other consequence, **a KTP admin rules on the order and the
-ruling is recorded publicly.** No further automatic criterion is applied.
+order decides **a playoff berth, a playoff seed, or a relegation or promotion position**, **a KTP
+admin rules on the order and the ruling is recorded publicly.** No further automatic criterion is
+applied. Where the order decides none of those three things, the teams stay tied and no ruling is
+made.
 
 ⛔ **The order shown on the standings page is not authoritative in this case.** The site breaks the
 remaining tie on an internal identifier purely so the table does not reshuffle between page loads.
-That has no sporting meaning. Until an admin has ruled, treat those rows as unordered.
+That has no sporting meaning. Treat those rows as unordered until an admin has ruled — and for good,
+where no ruling is triggered.
 
 #### 1.14.c Why the mini-table ignores point differential
 
@@ -316,6 +323,8 @@ The team listed on the schedule as the **HOME** team has the choice of server us
 #### 2.3.b Best-of-Three (BO3) Matches
 Each map is treated independently. The team that picked a map is considered the "home" team for that map.
 
+Home status for a map carries the full §2.3.a advantage **for that map**: the server it is played on and which side to join first. **The server moves with the map** — the team that picked a map selects the server for it, so the server may differ from one map to the next within a series. §2.4 still governs which locations are eligible for each of those choices. ⚠️ **Exception:** in an NA vs EU match the server does not follow the map at all — §2.4.c gives every map's server to the NA team, and §2.4.e gives it every side choice.
+
 ### 2.4 Server Selection by Region
 
 #### 2.4.a NA vs NA — Home Team Server Selection
@@ -349,7 +358,7 @@ The HOME team may propose an alternate KTP-approved server location not listed a
 
 #### 2.4.c NA vs EU — Server Selection
 
-For matches between a North American team and a European team (majority EU players east of UTC -2 per Rule 2.1), the **HOME** team selects the game server location from the following KTP-approved locations, with priority given to New York:
+For matches between a North American team and a European team (majority EU players east of UTC -2 per Rule 2.1), the **NA team** selects the game server location from the following KTP-approved locations, with priority given to New York. **This overrides the home team's server choice under §2.3.a, and the per-map server choice under §2.3.b** — the NA team selects for every map of the series, whichever team picked it. Together with §2.4.e's side choice it offsets the earlier default kickoff §2.2.b gives the European team:
 
 | Location | Status |
 |----------|--------|
@@ -358,7 +367,9 @@ For matches between a North American team and a European team (majority EU playe
 
 New York must be used whenever it is available. Atlanta may only be selected if no New York servers are available at the time of scheduling or match start. These East Coast locations provide reasonable compromise latency for trans-Atlantic connections.
 
-The HOME team may propose an alternate KTP-approved server location not listed above. The alternate location requires the opposing team captain's approval. If the opposing captain does not approve, the HOME team must select from the standard locations listed above, following the priority order.
+"At the time of scheduling or match start" is **inclusive**: New York being unavailable at either moment is enough for Atlanta to be selected. Where the two moments disagree, **match start governs**, because that is when the match needs a server — a New York server that is available at match start is used even if none was when the match was scheduled, and one that has become unavailable by match start does not hold the match to New York. In a best-of-three the server is chosen per map (§2.3.b), so this test is applied at **each map's start**, not once for the series — a series may therefore run in different locations from map to map.
+
+The NA team may propose an alternate KTP-approved server location not listed above. The alternate location requires the opposing team captain's approval. If the opposing captain does not approve, the NA team must select from the standard locations listed above, following the priority order.
 
 > **Important:** Matches may never be played on non-KTP-approved servers regardless of mutual agreement.
 
@@ -373,6 +384,8 @@ For matches between a North American team and a South American team (majority SA
 
 These locations provide reasonable compromise latency for South American connections.
 
+The **HOME** team selects here, unlike §2.4.c. That is deliberate: the NA team's server and side choice in §2.4.c/§2.4.e exists to offset the **earlier kickoff time**, and a South American team does not receive one — §2.2.b's 3:00 PM default is for majority-EU teams east of UTC -2 only. A South American team is International under §2.1 and still plays at the standard time, so there is nothing to offset.
+
 The HOME team may propose an alternate KTP-approved server location not listed above. The alternate location requires the opposing team captain's approval. If the opposing captain does not approve, the HOME team must select from the standard locations listed above.
 
 > **Important:** Matches may never be played on non-KTP-approved servers regardless of mutual agreement.
@@ -380,6 +393,8 @@ The HOME team may propose an alternate KTP-approved server location not listed a
 #### 2.4.e Side Selection for NA vs EU
 
 When a North American team plays against a European team (majority EU players east of UTC -2 per Rule 2.1), the **NA team always chooses** which side (Allies or Axis) to play on first, **overriding the home team advantage defined in Rule 2.3.a**. This offsets the scheduling advantage EU teams receive from the earlier default match time.
+
+The NA team also selects the server under §2.4.c, so in an NA vs EU match **both the side and the server sit with the NA team**, on every map, regardless of which team is HOME or picked the map. A European team gains neither by being HOME nor by picking a map; what it holds instead is the earlier default kickoff time under §2.2.b.
 
 ### 2.5 Use of Suspended Players
 
@@ -441,7 +456,13 @@ A **ringer** is a player not on your official roster, temporarily used to fill i
 
 ### 2.11 Team Forfeits and Removal
 
-Teams that repeatedly forfeit may be removed from the league. More than one forfeit in a season may result in removal at admin discretion.
+A team that forfeits **twice in a season** may be removed from the league at admin discretion. That is the only threshold.
+
+Only a forfeit **charged to** a team counts toward it. A forfeit win (§5.3) never counts against the team that turned up — that team is in the same position as a team on a BYE (§1.13.b), and is not charged for an opponent who did not appear.
+
+A forfeit is **charged when it is scored** under §1.13.c — at the end of the regular season, once it is settled that no make-up match will be played. **A fixture recovered by a make-up is never charged**, so a team that was declared a no-show under §5.3 and then played the match does not count it toward this threshold.
+
+> Where a match is **voided** because both teams forfeited (§1.13.c), the forfeit is charged to **each** team.
 
 ---
 
@@ -720,6 +741,12 @@ Captains must take one `rcon status` screenshot per game to prove player SteamID
 | **+10 minutes** | Document and alert an admin if no word from opposing team |
 | **+15 minutes** | Admin can officially call no-show and award forfeit win |
 
+The clock runs from the match's **actual scheduled start time** — the time on the match page, which is the time the captains agreed to where the match was rescheduled. It does not run from the §2.2 default. A rescheduled match that both captains agreed to is the real appointment.
+
+**A no-show at +15 does not normally end the fixture.** KTP prefers a **make-up match**, and admins arrange one wherever both teams can still play. The +15 mark is what entitles an admin to call the no-show and start that conversation — it is not a result. A forfeit win is generally awarded only at the **end of the regular season**, for a fixture no make-up ever recovered.
+
+> §1.13.c already sets this out from the scoring side: a forfeit is scored *“only at the end of the regular season, once it is settled that no makeup match will be played.”* A forfeit **declared** and a forfeit **credited** are different moments, and neither is automatic — both are admin decisions.
+
 ### 5.4 Fair Scheduling
 
 Captains must schedule with integrity:
@@ -769,17 +796,21 @@ Reporting is two-sided. One captain enters the result, the **opposing** captain 
 
 A captain who disagrees with an entered result disputes it instead of confirming it. A disputed result is never recorded; it goes to the admin team with both captains' accounts of it.
 
+The 1-hour duty is a **conduct** matter for the winning captain, not a condition of the result. A result the opposing captain confirms inside their 24 hours **stands whenever it was entered**; a late report is a matter for the captain, and never voids the result. If **neither** captain has entered a result 24 hours after the match's scheduled start (§5.3), the fixture goes to the admin team for adjudication. Nothing is awarded automatically.
+
 Screenshots are **not** uploaded with the report. Captains still take them (Rule 5.1.a, Rule 5.1.b), retain them for the season (Rule 4.3), and must produce them on request — a disputed result is settled from them.
 
-> **Note:** Playoff series results and forfeits are recorded by admins, not through captain reporting. Send playoff scores to an admin when the series is done.
+> **Note:** Playoff series results and forfeits are recorded by admins, not through captain reporting. Send playoff scores to an admin when the series is done. In playoffs the duty to record the result is the **admin's**, and no 1-hour clock runs on a captain while an admin is present. Captains report **only if no admin is present** when the series ends — and then the 1-hour clock applies.
 
-> **If the site cannot take the report:** post it in the designated KTP Discord scores channel within the same hour and tell an admin. That is a fallback for an outage, not a second reporting route.
+> **If the site cannot take the report:** post it in the designated KTP Discord scores channel within the same hour and tell an admin. That is a fallback for an outage, not a second reporting route. A result posted there **still needs the opposing captain's confirmation**, within the same 24 hours, before it is recorded — Discord is a channel for reporting, not a second authority. The one exception is an admin entering the result directly, which supersedes captain reporting.
 
 ### 5.7 Playoff Map Vetoes
 
 Vetoes are run for playoff matches only. They take place in the veto room on the match page at the league website (ktpleague.gg): both captains act in turn — bans, picks, and starting sides — against the published playoff map pool. The site decides whose turn it is and refuses an illegal move, so there is nothing to submit anywhere else.
 
 Captains must complete the veto **at least 72 hours before the round's default match start time** (Rule 2.2). The deadline is measured from the default time, not from any later time the two captains agree between themselves.
+
+A playoff round is a scheduled week with a date, exactly as a regular-season week is. A round's default date is **its week's Sunday**, and the 72 hours run back from the §2.2 default time on that date. ⚠️ **Playoff rounds are not always consecutive Sundays** — a bracket can hold a bye week. Season 10's rounds fall on 15 November, 22 November and 6 December, with 29 November off — so the anchor is the round's own published date, never "the following Sunday".
 
 > **Penalty:** If the veto is not complete at that deadline, admins perform the outstanding steps on the late team's behalf. A step taken that way is marked as a staff action in the match's veto log, which is public.
 
@@ -788,6 +819,8 @@ Series length is set by admins on the match. Most playoff matches are best-of-th
 #### 5.7.a When a Round Resolves Late
 
 A playoff match has no teams until the round before it is decided. Where both teams become known **less than 72 hours before** the round's default start, the 72-hour deadline cannot have been met and is not counted against either team. The veto is instead due **as soon as both captains have had a reasonable chance to run it**, and admins may perform outstanding steps once the match is otherwise due to be played.
+
+Both captains have had **a reasonable chance** once the full 72-hour window of §5.7 has elapsed with the fixture reachable by both of them — both teams known, and the veto room open to both captains — measured forward from the moment it became reachable. A match is **otherwise due to be played** when it is scheduled within its own playoff week.
 
 ### 5.8 Captain Accountability
 
