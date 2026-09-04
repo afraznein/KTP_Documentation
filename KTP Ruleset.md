@@ -367,7 +367,7 @@ For matches between a North American team and a European team (majority EU playe
 
 New York must be used whenever it is available. Atlanta may only be selected if no New York servers are available at the time of scheduling or match start. These East Coast locations provide reasonable compromise latency for trans-Atlantic connections.
 
-"At the time of scheduling or match start" is **inclusive**: New York being unavailable at either moment is enough for Atlanta to be selected. Where the two moments disagree, **match start governs**, because that is when the match needs a server — a New York server that is available at match start is used even if none was when the match was scheduled, and one that has become unavailable by match start does not hold the match to New York.
+"At the time of scheduling or match start" is **inclusive**: New York being unavailable at either moment is enough for Atlanta to be selected. Where the two moments disagree, **match start governs**, because that is when the match needs a server — a New York server that is available at match start is used even if none was when the match was scheduled, and one that has become unavailable by match start does not hold the match to New York. In a best-of-three the server is chosen per map (§2.3.b), so this test is applied at **each map's start**, not once for the series — a series may therefore run in different locations from map to map.
 
 The HOME team may propose an alternate KTP-approved server location not listed above. The alternate location requires the opposing team captain's approval. If the opposing captain does not approve, the HOME team must select from the standard locations listed above, following the priority order.
 
@@ -392,7 +392,7 @@ The HOME team may propose an alternate KTP-approved server location not listed a
 
 When a North American team plays against a European team (majority EU players east of UTC -2 per Rule 2.1), the **NA team always chooses** which side (Allies or Axis) to play on first, **overriding the home team advantage defined in Rule 2.3.a**. This offsets the scheduling advantage EU teams receive from the earlier default match time.
 
-The override covers the **side choice only**. A European team that is HOME keeps the server choice §2.4.c gives it; the NA team's side choice does not move the server.
+The override covers the **side choice only**. A European team that is HOME **for a map** keeps the server choice §2.4.c gives it for that map; the NA team's side choice does not move the server.
 
 ### 2.5 Use of Suspended Players
 
