@@ -384,6 +384,8 @@ For matches between a North American team and a South American team (majority SA
 
 These locations provide reasonable compromise latency for South American connections.
 
+The **HOME** team selects here, unlike §2.4.c. That is deliberate: the NA team's server and side choice in §2.4.c/§2.4.e exists to offset the **earlier kickoff time**, and a South American team does not receive one — §2.2.b's 3:00 PM default is for majority-EU teams east of UTC -2 only. A South American team is International under §2.1 and still plays at the standard time, so there is nothing to offset.
+
 The HOME team may propose an alternate KTP-approved server location not listed above. The alternate location requires the opposing team captain's approval. If the opposing captain does not approve, the HOME team must select from the standard locations listed above.
 
 > **Important:** Matches may never be played on non-KTP-approved servers regardless of mutual agreement.
