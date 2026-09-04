@@ -323,7 +323,7 @@ The team listed on the schedule as the **HOME** team has the choice of server us
 #### 2.3.b Best-of-Three (BO3) Matches
 Each map is treated independently. The team that picked a map is considered the "home" team for that map.
 
-Home status for a map carries the full §2.3.a advantage **for that map**: the server it is played on and which side to join first. **The server moves with the map** — the team that picked a map selects the server for it, so the server may differ from one map to the next within a series. §2.4 still governs which locations are eligible for each of those choices.
+Home status for a map carries the full §2.3.a advantage **for that map**: the server it is played on and which side to join first. **The server moves with the map** — the team that picked a map selects the server for it, so the server may differ from one map to the next within a series. §2.4 still governs which locations are eligible for each of those choices. ⚠️ **Exception:** in an NA vs EU match the server does not follow the map at all — §2.4.c gives every map's server to the NA team, and §2.4.e gives it every side choice.
 
 ### 2.4 Server Selection by Region
 
@@ -358,7 +358,7 @@ The HOME team may propose an alternate KTP-approved server location not listed a
 
 #### 2.4.c NA vs EU — Server Selection
 
-For matches between a North American team and a European team (majority EU players east of UTC -2 per Rule 2.1), the **HOME** team selects the game server location from the following KTP-approved locations, with priority given to New York:
+For matches between a North American team and a European team (majority EU players east of UTC -2 per Rule 2.1), the **NA team** selects the game server location from the following KTP-approved locations, with priority given to New York. **This overrides the home team's server choice under §2.3.a, and the per-map server choice under §2.3.b** — the NA team selects for every map of the series, whichever team picked it. Together with §2.4.e's side choice it offsets the earlier default kickoff §2.2.b gives the European team:
 
 | Location | Status |
 |----------|--------|
@@ -369,7 +369,7 @@ New York must be used whenever it is available. Atlanta may only be selected if 
 
 "At the time of scheduling or match start" is **inclusive**: New York being unavailable at either moment is enough for Atlanta to be selected. Where the two moments disagree, **match start governs**, because that is when the match needs a server — a New York server that is available at match start is used even if none was when the match was scheduled, and one that has become unavailable by match start does not hold the match to New York. In a best-of-three the server is chosen per map (§2.3.b), so this test is applied at **each map's start**, not once for the series — a series may therefore run in different locations from map to map.
 
-The HOME team may propose an alternate KTP-approved server location not listed above. The alternate location requires the opposing team captain's approval. If the opposing captain does not approve, the HOME team must select from the standard locations listed above, following the priority order.
+The NA team may propose an alternate KTP-approved server location not listed above. The alternate location requires the opposing team captain's approval. If the opposing captain does not approve, the NA team must select from the standard locations listed above, following the priority order.
 
 > **Important:** Matches may never be played on non-KTP-approved servers regardless of mutual agreement.
 
@@ -392,7 +392,7 @@ The HOME team may propose an alternate KTP-approved server location not listed a
 
 When a North American team plays against a European team (majority EU players east of UTC -2 per Rule 2.1), the **NA team always chooses** which side (Allies or Axis) to play on first, **overriding the home team advantage defined in Rule 2.3.a**. This offsets the scheduling advantage EU teams receive from the earlier default match time.
 
-The override covers the **side choice only**. A European team that is HOME **for a map** keeps the server choice §2.4.c gives it for that map; the NA team's side choice does not move the server.
+The NA team also selects the server under §2.4.c, so in an NA vs EU match **both the side and the server sit with the NA team**, on every map, regardless of which team is HOME or picked the map. A European team gains neither by being HOME nor by picking a map; what it holds instead is the earlier default kickoff time under §2.2.b.
 
 ### 2.5 Use of Suspended Players
 
