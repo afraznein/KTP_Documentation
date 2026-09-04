@@ -128,7 +128,7 @@ In the event of a tie game, overtime must be played immediately to determine a w
 - Two additional halves of **10 minutes each** (teams switch sides for the second OT half)
 - If still tied, continue playing additional 10-minute overtime halves until a winner is decided
 
-> **Penalty:** Failure to complete required overtime rounds will result in a loss being recorded for **both teams**.
+> **Penalty:** Failure to complete required overtime rounds is treated as a forfeit by whichever team caused it, scored under §1.13.b. Where **both** teams are responsible, the match is **voided** under §1.13.c and neither team collects — it is not recorded as a loss for both.
 
 > **Note:** In best-of-three matches, overtime applies to each individual map if that map ends in a tie. Each map must produce a winner.
 
@@ -159,8 +159,17 @@ A BYE is worth the **average of the scores the division's other teams posted tha
 week's map. Each match played in the division that week contributes two scores — one per team — and
 the BYE team is credited with their mean, both as points scored and as points conceded.
 
+Only a **played** match contributes scores to that average. A forfeited or voided match has no
+scoreline, so it feeds nothing — it *receives* the average rather than supplying it. A team is also
+never part of its own average. Where a week contains a second BYE or a forfeit, the average is taken
+from whatever matches that division actually played.
+
 The average is taken **per week**, because each week is played on one map and maps do not score
 alike. It is never taken across the season.
+
+The average is a **fraction and is kept as one**. Standings carry it to four decimal places and
+display it trimmed — a whole number shows no decimals. It is never rounded to an integer before the
+tiebreakers are applied, because rounding eight scores to whole points can reorder a division.
 
 *Worked example.* Silver has nine teams, so one sits out each week. In week 4, on dod_harrington,
 the other eight play four matches finishing 429-243, 312-300, 500-180 and 260-411. The eight scores
@@ -176,6 +185,11 @@ A forfeited match is scored the same way — the average of the scores the divis
 posted that week — and is credited to the **non-forfeiting team only**. The team that forfeited
 receives no points for that match, neither scored nor conceded.
 
+The non-forfeiting team is credited that average **both as points scored and as points conceded**,
+exactly as a BYE is under §1.13.a. **A forfeit therefore moves point differential by zero**, the same
+as a BYE: a team is not rewarded in the differential tiebreak for an opponent who did not turn up,
+any more than it is for sitting out.
+
 A team that turned up to a match its opponent did not play is in the same position as a team on a
 BYE: it had no opponent, through no fault of its own. The team that caused that is not owed the
 same treatment, and the loss on its record is not the whole of the consequence.
@@ -186,8 +200,13 @@ Where both teams forfeit, the match is **voided** instead (§1.13.c) — neither
 
 #### 1.13.c When each becomes final
 
-- A **BYE** is final as soon as every other match that division played that week has been scored. It
-  does not wait on the rest of the season. Until then it is provisional and moves with each result.
+- A **BYE** is final as soon as no other match that division played that week is still awaiting a
+  result — that is, once every one of them has been **recorded, forfeited, or voided**. It does not
+  wait on the rest of the season. Until then it is provisional and moves with each result.
+  **A forfeit in that week does not hold the BYE open.** A forfeited match has an outcome the moment
+  it is declared; what waits until the end of the regular season is the *forfeit's own credit*
+  (§1.13.b), not the week's completeness. A voided match neither holds the week open nor feeds the
+  average.
 - A **forfeit** is scored **only at the end of the regular season**, once it is settled that no
   makeup match will be played. Until then the non-forfeiting team is credited nothing, so a fixture
   that is eventually played instead never carried a credit.
@@ -233,6 +252,11 @@ the result that placed it.
 
 #### 1.14.b.i Teams still level after all three steps
 
+> **Placement note.** This rule is numbered under §1.14.b (the worked example) but applies to
+> §1.14.a and to the tiebreakers generally, not only to the example above. The identifier and heading
+> level are left unchanged deliberately: the site builds anchors from the rule number, and both
+> translations mirror this structure line for line.
+
 If two or more teams remain exactly level after record, head-to-head and point differential, and the
 order decides a playoff seed or any other consequence, **a KTP admin rules on the order and the
 ruling is recorded publicly.** No further automatic criterion is applied.
@@ -273,7 +297,7 @@ Where a translation and the English text differ — in wording, in meaning, or t
 ### 2.2 Scheduling Default Match Times
 
 #### 2.2.a Standard Default Time
-Sunday at 9:00 PM Eastern Time (EST).
+Sunday at 9:00 PM Eastern Time (ET — US Eastern, observing daylight saving).
 
 #### 2.2.b International Default Time
 When one or both teams have majority EU players east of UTC -2, the default match time is Sunday at 3:00 PM EST.
@@ -640,6 +664,10 @@ Players may not use scripts to automate:
 - Player attacking
 - Player movement
 - Rapid-fire
+  ⚠️ **“Rapid-fire” here means auto-repeat — one press producing repeated inputs.** It does
+  **not** mean **Rapid Trigger**, the analogue actuation feature of Hall-effect keyboards, which
+  §4.6 permits explicitly. Rapid Trigger shortens *when* a key registers; it never multiplies a
+  press into more than one input. See §4.6.
 - Auto-recoil compensation
 - Automated jumping or movement patterns
 
