@@ -413,10 +413,16 @@ Roster changes are requested on the league website (ktpleague.gg) under your acc
 
 A player may leave a roster **at any time, before or after the lock**, from their own account settings, and a captain may drop a player at any time. **A drop applies immediately.** It is not a request and needs no approval: removing a player adds nobody and can create no competitive advantage, so the roster lock has nothing to protect against it.
 
-Two drops are **held** rather than applied, for the same reason — each would leave the team unable to play:
+A **transfer out** lowers the origin team's roster exactly as a drop does, and is treated as one here. Two departures are **held** rather than applied, for the same reason — each would leave the team unable to play:
 
 - one that would leave a team with **no captain** is not applied until another captain is in place;
 - one that would leave a team with **fewer than four rostered players** is not applied until the team has four again, because Rule 2.10 requires four rostered players in every match.
+
+The floor reads the roster a player **leaves**, never the one they join, and it counts the **roster** — not the six fielded in a match.
+
+**A swap is judged on its end state.** Two teams exchanging players each finish with the roster size they started with, so a swap does not breach the floor even though either move, taken alone, would appear to.
+
+⛔ **These holds bind captains and players. They do not bind admins.** An admin may move a player at any time, including during a lock — that is what makes a hold safe rather than a trap, and a team stuck behind one should ask an admin.
 
 > ⚠️ **While rosters are locked, a player who leaves cannot join another team for the rest of the season.** Additions are governed by Rule 2.7.1's window, and outside that window there is none. A player leaving a team mid-season should be told this before they act.
 
