@@ -460,6 +460,10 @@ A team that forfeits **twice in a season** may be removed from the league at adm
 
 Only a forfeit **charged to** a team counts toward it. A forfeit win (§5.3) never counts against the team that turned up — that team is in the same position as a team on a BYE (§1.13.b), and is not charged for an opponent who did not appear.
 
+A forfeit is **charged when it is scored** under §1.13.c — at the end of the regular season, once it is settled that no make-up match will be played. **A fixture recovered by a make-up is never charged**, so a team that was declared a no-show under §5.3 and then played the match does not count it toward this threshold.
+
+> Where a match is **voided** because both teams forfeited (§1.13.c), the forfeit is charged to **each** team.
+
 ---
 
 ## 3. Cheating, Penalties, and Disputes
