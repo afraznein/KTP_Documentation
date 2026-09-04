@@ -398,7 +398,7 @@ A team is allowed to change its name **once** during the course of a season. Aft
 |------|---------|
 | **Maximum roster size** | 10 players |
 | **Lock timing** | End of team registration period |
-| **After lock** | No changes to roster, team name, player handles, or SteamIDs |
+| **After lock** | No changes to team name, player handles, or SteamIDs. No roster **additions** except through the window in Rule 2.7.1. A **drop** is always allowed — see Rule 2.7.a |
 | **Exception** | Changes may still be made by admin decision — see Rule 2.7.a |
 
 #### 2.7.a Requesting a Roster Change
@@ -409,15 +409,24 @@ Roster changes are requested on the league website (ktpleague.gg) under your acc
 |------|---------|------------------------|
 | **Registration open** | Edits the roster directly; admins are notified of what changed | Files a request |
 | **Registration closed, before the lock** | Files a request; staff review it | Files a request |
-| **After the lock** | The captain's form closes — ask an admin | Files a request |
+| **After the lock** | The captain's form closes for **additions** — ask an admin. A **drop** applies at once | Leaves at once |
 
-A player may ask to leave a roster **at any time, before or after the lock**, from their own account settings. It is a request in every case: the player stays on the roster until an admin acts on it, and a request that would leave a team with no captain is not applied until another captain is in place.
+A player may leave a roster **at any time, before or after the lock**, from their own account settings, and a captain may drop a player at any time. **A drop applies immediately.** It is not a request and needs no approval: removing a player adds nobody and can create no competitive advantage, so the roster lock has nothing to protect against it.
+
+Two drops are **held** rather than applied, for the same reason — each would leave the team unable to play:
+
+- one that would leave a team with **no captain** is not applied until another captain is in place;
+- one that would leave a team with **fewer than four rostered players** is not applied until the team has four again, because Rule 2.10 requires four rostered players in every match.
+
+> ⚠️ **While rosters are locked, a player who leaves cannot join another team for the rest of the season.** Additions are governed by Rule 2.7.1's window, and outside that window there is none. A player leaving a team mid-season should be told this before they act.
+
+An **addition** remains a request in every case.
 
 Every request and every decision stays on the record.
 
 ### 2.7.1 Mid-Season Roster Window
 
-One roster addition window will occur mid-season, announced at least one week in advance.
+One roster addition window will occur mid-season, announced at least one week in advance. It governs **additions only** — drops are always allowed and are never gated by it (Rule 2.7.a).
 
 | Division | Requirements |
 |----------|--------------|
