@@ -104,7 +104,7 @@ These CVARs must be within the specified range. Values outside the range will be
 | CVAR | Range | Default | Description |
 |------|-------|---------|-------------|
 | `lightgamma` | **1.809** - **3.0** | 2.5 | Lighting gamma value. Values below 1.809 crash DoD |
-| `cl_bob` | **0** - **0.011** | 0.005 | Amount that view bobs while running |
+| `cl_bob` | **0** - **0.01** | 0.005 | Amount that view bobs while running |
 | `cl_updaterate` | **100** - **120** | - | Updates requested from server per second. The client internally caps processing at **102** — values 103-120 pass the check but do nothing, so set exactly `102`. **KTP required.** |
 | `cl_cmdrate` | **100** - **1000** | - | Times per second client updates the server. Useful range = ≤ your client fps; setting higher than fps wastes bandwidth. v7.25: ceiling raised from 500 to 1000 to enable testing high-resolution input on 1000fps clients. **KTP required.** |
 | `ex_interp` | **0.01** - **0.05** | - | Interpolation time between updates. **Set 0.01** on a clean connection. Raise ONLY for loss/jitter on your own connection (check `net_graph 1`): 0.02 rides through a single lost packet; 0.02-0.03 for chronically jittery routes; 0.03-0.05 only for genuinely high-latency routes, which is why the ceiling is 0.05 and not lower. Ping alone — yours or your opponents' — is not a reason: latency delays the stream uniformly and lag compensation accounts for it (the server rewinds by ping + interp, so higher interp costs reaction time, not hit registration). **KTP required.** |
