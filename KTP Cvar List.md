@@ -65,7 +65,7 @@ These CVARs must be set to the exact value specified. The server will automatica
 | `cl_pitchspeed` | `225` | Keyboard look-up/down speed (degrees per second). Locked to GoldSrc default to prevent alias-based no-recoil scripts. **Do not change.** |
 | `cl_yawspeed` | `210` | Keyboard look-left/right speed (degrees per second). Locked to GoldSrc default. **Do not change.** |
 | `cl_anglespeedkey` | `0.67` | Multiplier applied to `cl_pitchspeed`/`cl_yawspeed` while +speed is held. Locked to GoldSrc default. **Do not change.** |
-| `m_pitch` | `0.022` | Mouse pitch (up/down) speed sensitivity multiplier |
+| `m_pitch` | `0.022` or `-0.022` | Mouse pitch (up/down) speed sensitivity multiplier. **Inverted-mouse players set `-0.022`** — the negative is explicitly accepted, and a negative value outside tolerance is corrected to `-0.022`, never flipped positive. You are not required to give up inverted pitch to be compliant. |
 | `m_side` | `0.8` | Mouse side-strafe speed multiplier. Locked to GoldSrc default. **Do not change.** |
 
 ### Network & Prediction
@@ -92,7 +92,7 @@ These cvars affect your own client behavior. KTPCvarChecker does NOT enforce the
 
 | CVAR | Value | Description |
 |------|-------|-------------|
-| `hud_takesshots` | `1` | Auto-save a scoreboard screenshot at the end of a map |
+| `hud_takesshots` | `1` | Auto-save a scoreboard screenshot at the end of a map. Enforced in **competitive matches only** (`.ktp`, `.ktpOT`) — on `.12man`, `.scrim` and `.draft` the server does not check or correct it. |
 | `cl_showevents` | `0` | Shows events like weapon firing (events listed in dod/events/) |
 
 ---
@@ -152,6 +152,6 @@ To check your current CVAR values in-game, open the console (`~`) and type the C
 
 ---
 
-*Last Updated: July 2026 (quick-reference refreshed against the live fleet config + KTPCvarChecker 7.30: `cl_updaterate` recommendation corrected 101 → 102 [true client cap], per-setting context added, `cl_lc`/`cl_lw`/`cl_fixtimerate`/`cl_smoothtime` guidance added to the player-tunable section. Prior update April 2026: v7.26 fixed `r_glowshellfreq` enforcement value 0 → 2.2 to match the DoD engine default — clients with the natural default were being kicked under the previous v7.24 enforcement of 0; that "0" rationale didn't actually block ESP attackers and broke flag-carrier glow rendering. v7.25 dropped cl_lc and cl_lw from enforcement after engine-source audit confirmed self-handicap-only behavior; raised cl_cmdrate ceiling 500→1000 for high-fps client testing. v7.24 had added 7 cvars: cl_pitchspeed / cl_yawspeed / cl_anglespeedkey / m_side for keyboard-look defense, gl_picmip / r_glowshellfreq / r_traceglow for visual-exploit defense — gl_picmip enforcement still active for picmip wallhack defense.)*
+*Last Updated: September 2026 — audited value-by-value against `ktp_cvar.sma` at KTPCvarChecker **7.39**. Every enforced cvar on this page was compared to `gs_calvalues[]` / `gs_altvalues[]` at source. Recent enforcement corrections reflected here: **7.39** `cl_bob` ceiling 0.011 → 0.01; **7.38** `ex_interp` floor 0.009 → 0.01, with the correction the server sends now taken from the bound's own string, so it can no longer instruct a value it then rejects; the `ex_interp` ceiling is **0.05**, not 0.03. Two behaviours this page had never stated are now written down: `m_pitch` accepts `-0.022` for inverted pitch, and `hud_takesshots` is enforced in competitive matches only. Prior update July 2026 (quick-reference refreshed against the live fleet config + KTPCvarChecker 7.30: `cl_updaterate` recommendation corrected 101 → 102 [true client cap], per-setting context added, `cl_lc`/`cl_lw`/`cl_fixtimerate`/`cl_smoothtime` guidance added to the player-tunable section. Prior update April 2026: v7.26 fixed `r_glowshellfreq` enforcement value 0 → 2.2 to match the DoD engine default — clients with the natural default were being kicked under the previous v7.24 enforcement of 0; that "0" rationale didn't actually block ESP attackers and broke flag-carrier glow rendering. v7.25 dropped cl_lc and cl_lw from enforcement after engine-source audit confirmed self-handicap-only behavior; raised cl_cmdrate ceiling 500→1000 for high-fps client testing. v7.24 had added 7 cvars: cl_pitchspeed / cl_yawspeed / cl_anglespeedkey / m_side for keyboard-look defense, gl_picmip / r_glowshellfreq / r_traceglow for visual-exploit defense — gl_picmip enforcement still active for picmip wallhack defense.)*
 
 *Questions? Contact KTP Admins via Discord or the league website.*
