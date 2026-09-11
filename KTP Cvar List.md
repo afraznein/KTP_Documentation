@@ -108,7 +108,7 @@ These CVARs must be within the specified range. Values outside the range will be
 | `cl_updaterate` | **100** - **120** | - | Updates requested from server per second. The client internally caps processing at **102** — values 103-120 pass the check but do nothing, so set exactly `102`. **KTP required.** |
 | `cl_cmdrate` | **100** - **1000** | - | Times per second client updates the server. Useful range = ≤ your client fps; setting higher than fps wastes bandwidth. v7.25: ceiling raised from 500 to 1000 to enable testing high-resolution input on 1000fps clients. **KTP required.** |
 | `ex_interp` | **0.01** - **0.05** | - | Interpolation time between updates. **Set 0.01** on a clean connection. Raise ONLY for loss/jitter on your own connection (check `net_graph 1`): 0.02 rides through a single lost packet; 0.02-0.03 for chronically jittery routes; 0.03-0.05 only for genuinely high-latency routes, which is why the ceiling is 0.05 and not lower. Ping alone — yours or your opponents' — is not a reason: latency delays the stream uniformly and lag compensation accounts for it (the server rewinds by ping + interp, so higher interp costs reaction time, not hit registration). **KTP required.** |
-| `fps_max` | **60** - **750** | - | Maximum frames per second. **KTP required.** |
+| `fps_max` | **60** - **750** | - | Maximum frames per second. **Set 100.5**, not a flat 100: a flat 100 can land a hair under 100 and drop a frame now and then, which makes shooting feel choppy, and 100.5 gives the limiter headroom to hold a steady 100. **KTP required.** |
 
 ---
 
@@ -121,14 +121,14 @@ rate 100000          // locked by the server — anything else is auto-corrected
 cl_updaterate 102    // the true client maximum (client caps at 102 internally)
 cl_cmdrate 101       // match your fps_max — can't send more packets than frames
 ex_interp 0.01       // one update interval of buffer; you see enemies closest to true position
-fps_max 100          // full physics fidelity; use your monitor refresh (144/240) if higher
+fps_max 100.5        // a steady 100 (a flat 100 can dip under and feel choppy); use your monitor refresh (144/240) if higher
 cl_lc 1              // lag compensation for your shots — 0 means leading by your full ping
 cl_lw 1              // client weapon prediction — 0 also disables lag compensation
 cl_fixtimerate 7.5   // client clock-sync speed (default) — lower toward 0 only if weapon animations skip
 cl_smoothtime 0.01   // near-instant prediction-error correction — 0.1 default is the high-ping comfort option
 ```
 
-If you run a higher frame cap than 100, raise `cl_cmdrate` to match it (e.g. `fps_max 240` → `cl_cmdrate 250`).
+If you run a higher frame cap than 100.5, raise `cl_cmdrate` to match it (e.g. `fps_max 240` → `cl_cmdrate 250`).
 
 Full reasoning behind every value, plus troubleshooting: **[KTP Netcode Guide](https://netcode.ktpdod.com/)**.
 
@@ -152,6 +152,6 @@ To check your current CVAR values in-game, open the console (`~`) and type the C
 
 ---
 
-*Last Updated: September 2026 — audited value-by-value against `ktp_cvar.sma` at KTPCvarChecker **7.39**. Every enforced cvar on this page was compared to `gs_calvalues[]` / `gs_altvalues[]` at source. Recent enforcement corrections reflected here: **7.39** `cl_bob` ceiling 0.011 → 0.01; **7.38** `ex_interp` floor 0.009 → 0.01, with the correction the server sends now taken from the bound's own string, so it can no longer instruct a value it then rejects; the `ex_interp` ceiling is **0.05**, not 0.03. Two behaviours this page had never stated are now written down: `m_pitch` accepts `-0.022` for inverted pitch, and `hud_takesshots` is enforced in competitive matches only. Prior update July 2026 (quick-reference refreshed against the live fleet config + KTPCvarChecker 7.30: `cl_updaterate` recommendation corrected 101 → 102 [true client cap], per-setting context added, `cl_lc`/`cl_lw`/`cl_fixtimerate`/`cl_smoothtime` guidance added to the player-tunable section. Prior update April 2026: v7.26 fixed `r_glowshellfreq` enforcement value 0 → 2.2 to match the DoD engine default — clients with the natural default were being kicked under the previous v7.24 enforcement of 0; that "0" rationale didn't actually block ESP attackers and broke flag-carrier glow rendering. v7.25 dropped cl_lc and cl_lw from enforcement after engine-source audit confirmed self-handicap-only behavior; raised cl_cmdrate ceiling 500→1000 for high-fps client testing. v7.24 had added 7 cvars: cl_pitchspeed / cl_yawspeed / cl_anglespeedkey / m_side for keyboard-look defense, gl_picmip / r_glowshellfreq / r_traceglow for visual-exploit defense — gl_picmip enforcement still active for picmip wallhack defense.)*
+*Last Updated: September 2026 — audited value-by-value against `ktp_cvar.sma` at KTPCvarChecker **7.39**. Every enforced cvar on this page was compared to `gs_calvalues[]` / `gs_altvalues[]` at source. Recommendation change 2026-09-11: `fps_max` 100 → **100.5** (a recommendation, not an enforcement change; 7.39 accepts it inside its 60-750 range). Recent enforcement corrections reflected here: **7.39** `cl_bob` ceiling 0.011 → 0.01; **7.38** `ex_interp` floor 0.009 → 0.01, with the correction the server sends now taken from the bound's own string, so it can no longer instruct a value it then rejects; the `ex_interp` ceiling is **0.05**, not 0.03. Two behaviours this page had never stated are now written down: `m_pitch` accepts `-0.022` for inverted pitch, and `hud_takesshots` is enforced in competitive matches only. Prior update July 2026 (quick-reference refreshed against the live fleet config + KTPCvarChecker 7.30: `cl_updaterate` recommendation corrected 101 → 102 [true client cap], per-setting context added, `cl_lc`/`cl_lw`/`cl_fixtimerate`/`cl_smoothtime` guidance added to the player-tunable section. Prior update April 2026: v7.26 fixed `r_glowshellfreq` enforcement value 0 → 2.2 to match the DoD engine default — clients with the natural default were being kicked under the previous v7.24 enforcement of 0; that "0" rationale didn't actually block ESP attackers and broke flag-carrier glow rendering. v7.25 dropped cl_lc and cl_lw from enforcement after engine-source audit confirmed self-handicap-only behavior; raised cl_cmdrate ceiling 500→1000 for high-fps client testing. v7.24 had added 7 cvars: cl_pitchspeed / cl_yawspeed / cl_anglespeedkey / m_side for keyboard-look defense, gl_picmip / r_glowshellfreq / r_traceglow for visual-exploit defense — gl_picmip enforcement still active for picmip wallhack defense.)*
 
 *Questions? Contact KTP Admins via Discord or the league website.*
