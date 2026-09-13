@@ -29,22 +29,17 @@ These CVARs must be set to the exact value specified. The server will automatica
 
 | CVAR | Value | Description |
 |------|-------|-------------|
-| `fastsprites` | `0` | Sets the complexity of smoke sprites. 0 looks the best (range: 0-2) |
 | `gl_clear` | `0` | When 1, makes cracks between textures visible |
 | `gl_d3dflip` | `0` | When 1, makes cracks between textures visible |
 | `gl_monolights` | `0` | Uniform light source with no shadows (OpenGL only) |
-| `gl_nobind` | `0` | Replaces textures with alphanumeric characters when enabled |
-| `gl_nocolors` | `0` | Disable colors (OpenGL only) |
 | `gl_overbright` | `0` | Maximum brightness mode |
 | `gl_picmip` | `0` | Texture mipmap level. High values reduce wall textures to solid-color blocks; locked to 0 to prevent contrast-wallhack abuse. **Do not change.** |
-| `gl_playermip` | `0` | Player rendering quality. Higher = faster but lower quality |
 | `r_drawentities` | `1` | Drawing player models and sprites (0=none, 1=normal, 2=no textures, 3=hitbox, 4=translucent hitboxes) |
 | `r_drawviewmodel` | `1` | Toggles drawing player weapon model |
 | `r_dynamic` | `1` | Dynamic lighting (flashlight reflections, etc.) |
 | `r_fullbright` | `0` | Maximum brightness in local games only |
 | `r_glowshellfreq` | `2.2` | Glow shell animation speed — DoD engine default. Used by flag-carrier glow shimmer. Enforced at the engine default value as an integrity check (catches autoexec overrides). **Do not change.** |
 | `r_lightmap` | `0` | Software rendering - displays lightmaps (0-3) |
-| `r_luminance` | `0` | Makes the map look blue/green when enabled |
 | `r_traceglow` | `0` | Glow-shell trace debug — DoD engine default. Enforced at default as an integrity check. **Do not change.** |
 | `texgamma` | `2` | Texture gamma level |
 
@@ -152,6 +147,6 @@ To check your current CVAR values in-game, open the console (`~`) and type the C
 
 ---
 
-*Last Updated: September 2026 — audited value-by-value against `ktp_cvar.sma` at KTPCvarChecker **7.39**. Every enforced cvar on this page was compared to `gs_calvalues[]` / `gs_altvalues[]` at source. Recommendation change 2026-09-11: `fps_max` 100 → **100.5** (a recommendation, not an enforcement change; 7.39 accepts it inside its 60-750 range). Recent enforcement corrections reflected here: **7.39** `cl_bob` ceiling 0.011 → 0.01; **7.38** `ex_interp` floor 0.009 → 0.01, with the correction the server sends now taken from the bound's own string, so it can no longer instruct a value it then rejects; the `ex_interp` ceiling is **0.05**, not 0.03. Two behaviours this page had never stated are now written down: `m_pitch` accepts `-0.022` for inverted pitch, and `hud_takesshots` is enforced in competitive matches only. Prior update July 2026 (quick-reference refreshed against the live fleet config + KTPCvarChecker 7.30: `cl_updaterate` recommendation corrected 101 → 102 [true client cap], per-setting context added, `cl_lc`/`cl_lw`/`cl_fixtimerate`/`cl_smoothtime` guidance added to the player-tunable section. Prior update April 2026: v7.26 fixed `r_glowshellfreq` enforcement value 0 → 2.2 to match the DoD engine default — clients with the natural default were being kicked under the previous v7.24 enforcement of 0; that "0" rationale didn't actually block ESP attackers and broke flag-carrier glow rendering. v7.25 dropped cl_lc and cl_lw from enforcement after engine-source audit confirmed self-handicap-only behavior; raised cl_cmdrate ceiling 500→1000 for high-fps client testing. v7.24 had added 7 cvars: cl_pitchspeed / cl_yawspeed / cl_anglespeedkey / m_side for keyboard-look defense, gl_picmip / r_glowshellfreq / r_traceglow for visual-exploit defense — gl_picmip enforcement still active for picmip wallhack defense.)*
+*Last Updated: September 2026 — audited value-by-value against `ktp_cvar.sma` at KTPCvarChecker **7.39**. Every enforced cvar on this page was compared to `gs_calvalues[]` / `gs_altvalues[]` at source. Removed 2026-09-12: `fastsprites`, `gl_nobind`, `gl_nocolors`, `gl_playermip` and `r_luminance`. Day of Defeat does not have these settings, so the server was never able to check them and nobody was ever corrected for them; dropping them changes nothing for players. Recommendation change 2026-09-11: `fps_max` 100 → **100.5** (a recommendation, not an enforcement change; 7.39 accepts it inside its 60-750 range). Recent enforcement corrections reflected here: **7.39** `cl_bob` ceiling 0.011 → 0.01; **7.38** `ex_interp` floor 0.009 → 0.01, with the correction the server sends now taken from the bound's own string, so it can no longer instruct a value it then rejects; the `ex_interp` ceiling is **0.05**, not 0.03. Two behaviours this page had never stated are now written down: `m_pitch` accepts `-0.022` for inverted pitch, and `hud_takesshots` is enforced in competitive matches only. Prior update July 2026 (quick-reference refreshed against the live fleet config + KTPCvarChecker 7.30: `cl_updaterate` recommendation corrected 101 → 102 [true client cap], per-setting context added, `cl_lc`/`cl_lw`/`cl_fixtimerate`/`cl_smoothtime` guidance added to the player-tunable section. Prior update April 2026: v7.26 fixed `r_glowshellfreq` enforcement value 0 → 2.2 to match the DoD engine default — clients with the natural default were being kicked under the previous v7.24 enforcement of 0; that "0" rationale didn't actually block ESP attackers and broke flag-carrier glow rendering. v7.25 dropped cl_lc and cl_lw from enforcement after engine-source audit confirmed self-handicap-only behavior; raised cl_cmdrate ceiling 500→1000 for high-fps client testing. v7.24 had added 7 cvars: cl_pitchspeed / cl_yawspeed / cl_anglespeedkey / m_side for keyboard-look defense, gl_picmip / r_glowshellfreq / r_traceglow for visual-exploit defense — gl_picmip enforcement still active for picmip wallhack defense.)*
 
 *Questions? Contact KTP Admins via Discord or the league website.*
