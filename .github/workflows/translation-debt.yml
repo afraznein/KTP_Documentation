@@ -1,8 +1,7 @@
 name: Translation debt
 
-# When the English ruleset changes, the Spanish and Portuguese translations
-# become stale. ktpleague.gg detects that at render time and warns readers;
-# this is the other half — it tells US that we owe the work.
+# When an English source document changes, its Spanish and Portuguese
+# translations become stale. This tells US that we owe the work.
 #
 # TIMING IS THE WHOLE DESIGN. Rule changes go through a vote, so the debt is
 # created by APPROVAL, not by proposal:
@@ -12,11 +11,11 @@ name: Translation debt
 #                           check: gating a proposal on a finished translation
 #                           would force translating rules that may never pass.
 #   * on push to main    -> the enforcement. The vote is won and the change is
-#                           merged, so file a tracking issue.
+#                           merged, so file a tracking issue per changed source.
 #
 # There is deliberately NO `paths:` filter. A path filter that silently fails
 # to match is a workflow that never fires and always looks green — and the
-# filename contains a space, which is exactly where that goes wrong. Both jobs
+# filenames contain spaces, which is exactly where that goes wrong. Both jobs
 # run on every event and decide from `git diff --name-only`, so the decision is
 # an exact string comparison that can be read and tested.
 
@@ -29,11 +28,16 @@ permissions:
   contents: read
 
 env:
-  RULESET: KTP Ruleset.md
+  # One English source per line. Each has `<name>.es.md` and `<name>.pt.md`
+  # translations beside it (or owes them). Adding a document here is the whole
+  # of opting it in.
+  TRACKED: |
+    KTP Ruleset.md
+    KTP Cvar List.md
 
 jobs:
   notify:
-    name: Ruleset change implies a translation update
+    name: A tracked source change implies a translation update
     if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     # Belt and braces with the `exit 0` below: this job must not be able to
@@ -56,7 +60,7 @@ jobs:
 
           # Captured, printed, THEN matched. Testing the diff inline would make
           # a failed diff produce an empty match, which reads exactly like
-          # "the ruleset did not change" — a silent false negative in the one
+          # "nothing tracked changed" — a silent false negative in the one
           # check that is supposed to notice.
           if ! changed="$(git diff --name-only "$BASE" "$HEAD")"; then
             echo "::warning title=Translation-debt check could not run::git diff $BASE..$HEAD failed; this PR was NOT checked for translation debt."
@@ -65,19 +69,27 @@ jobs:
           echo "files changed in this PR:"
           printf '%s\n' "$changed" | sed 's/^/  /'
 
-          if printf '%s\n' "$changed" | grep -qxF "$RULESET"; then
-            {
-              echo "### The English ruleset changes in this PR"
-              echo
-              echo "If this merges, \`KTP Ruleset.es.md\` and \`KTP Ruleset.pt.md\` become **stale**."
-              echo "ktpleague.gg will show readers of those pages a warning until they are updated."
-              echo
-              echo "Nothing is blocked. A tracking issue is opened automatically once this lands"
-              echo "on \`main\` — the translation is owed after the rule is approved, not before."
-            } >> "$GITHUB_STEP_SUMMARY"
-            echo "::notice title=Translation update owed on merge::This PR changes ${RULESET}; es/pt will need updating after it merges."
-          else
-            echo "${RULESET} is unchanged in this PR — no translation debt." >> "$GITHUB_STEP_SUMMARY"
+          owed=0
+          while IFS= read -r src; do
+            [ -n "$src" ] || continue
+            if printf '%s\n' "$changed" | grep -qxF "$src"; then
+              owed=1
+              stem="${src%.md}"
+              {
+                echo "### \`$src\` changes in this PR"
+                echo
+                echo "If this merges, \`$stem.es.md\` and \`$stem.pt.md\` become **stale**."
+                echo
+                echo "Nothing is blocked. A tracking issue is opened automatically once this lands"
+                echo "on \`main\` — the translation is owed after the change is approved, not before."
+                echo
+              } >> "$GITHUB_STEP_SUMMARY"
+              echo "::notice title=Translation update owed on merge::This PR changes ${src}; es/pt will need updating after it merges."
+            fi
+          done <<< "$TRACKED"
+
+          if [ "$owed" -eq 0 ]; then
+            echo "No tracked source changes in this PR — no translation debt." >> "$GITHUB_STEP_SUMMARY"
           fi
           exit 0
 
@@ -93,7 +105,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: File the issue if the ruleset moved
+      - name: File an issue for each tracked source that moved
         env:
           GH_TOKEN: ${{ github.token }}
           BEFORE: ${{ github.event.before }}
@@ -111,45 +123,53 @@ jobs:
           changed="$(git diff --name-only "$BEFORE" "$AFTER")"
           echo "changed files:"; printf '%s\n' "$changed" | sed 's/^/  /'
 
-          if ! printf '%s\n' "$changed" | grep -qxF "$RULESET"; then
-            echo "${RULESET} unchanged — no translation is owed."
-            exit 0
-          fi
-
-          # Which rules moved, rather than the whole diff: a reviewer needs to
-          # know what to re-translate, and a 700-line document produces an
-          # issue nobody reads.
-          sections="$(git diff --unified=0 "$BEFORE" "$AFTER" -- "$RULESET" \
-            | grep -E '^[+-]#{1,6} ' | grep -v '^[+-][+-]' | head -40 || true)"
-          stat="$(git diff --stat "$BEFORE" "$AFTER" -- "$RULESET")"
-
-          {
-            echo "The English ruleset changed on \`main\`, so the translations are now stale."
-            echo
-            echo "**Owed:** update \`KTP Ruleset.es.md\` and \`KTP Ruleset.pt.md\`, and refresh the"
-            echo "\`source-sha256\` in each file's \`ktp-translation\` header. Until then ktpleague.gg"
-            echo "shows readers of those pages a staleness warning."
-            echo
-            echo "**Reviewer:** chi (KTP Admin)."
-            echo
-            echo "### What changed"
-            echo
-            echo '```'
-            echo "$stat"
-            echo '```'
-            if [ -n "$sections" ]; then
-              echo
-              echo "Headings added or removed:"
-              echo
-              echo '```diff'
-              echo "$sections"
-              echo '```'
+          filed=0
+          while IFS= read -r src; do
+            [ -n "$src" ] || continue
+            if ! printf '%s\n' "$changed" | grep -qxF "$src"; then
+              echo "${src} unchanged — no translation is owed for it."
+              continue
             fi
-            echo
-            echo "Full diff: $COMPARE"
-          } > body.md
+            stem="${src%.md}"
 
-          gh issue create \
-            --repo "${{ github.repository }}" \
-            --title "Translations owed: KTP Ruleset.md changed in ${AFTER:0:7}" \
-            --body-file body.md
+            # Which sections moved, rather than the whole diff: a reviewer needs
+            # to know what to re-translate, and a long document produces an issue
+            # nobody reads.
+            sections="$(git diff --unified=0 "$BEFORE" "$AFTER" -- "$src" \
+              | grep -E '^[+-]#{1,6} ' | grep -v '^[+-][+-]' | head -40 || true)"
+            stat="$(git diff --stat "$BEFORE" "$AFTER" -- "$src")"
+
+            {
+              echo "\`$src\` changed on \`main\`, so its translations are now stale."
+              echo
+              echo "**Owed:** bring \`$stem.es.md\` and \`$stem.pt.md\` up to date (create them if they"
+              echo "do not exist yet), and refresh the \`source-sha256\` in each file's"
+              echo "\`ktp-translation\` header."
+              echo
+              echo "**Reviewer:** chi (KTP Admin)."
+              echo
+              echo "### What changed"
+              echo
+              echo '```'
+              echo "$stat"
+              echo '```'
+              if [ -n "$sections" ]; then
+                echo
+                echo "Headings added or removed:"
+                echo
+                echo '```diff'
+                echo "$sections"
+                echo '```'
+              fi
+              echo
+              echo "Full diff: $COMPARE"
+            } > body.md
+
+            gh issue create \
+              --repo "${{ github.repository }}" \
+              --title "Translations owed: ${src} changed in ${AFTER:0:7}" \
+              --body-file body.md
+            filed=$((filed + 1))
+          done <<< "$TRACKED"
+
+          echo "translation-debt issues filed: $filed"
