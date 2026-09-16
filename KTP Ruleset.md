@@ -621,24 +621,13 @@ Technical failure — a crash, a disconnect, or a KTPAntiCheat outage — is not
 
 #### 4.1.f POV Demos and Screenshots
 
-**POV Demos:**
-- Record one POV demo for each half (two demos per full game)
-- Start recording before first round, stop when half ends
+**Record every half.** Start your POV demo before the first round and stop it when the half ends. Each overtime half gets its own demo. HLTV records the match from the server, but that is not your demo, and neither is a stream or a video capture (Rule 4.2). If an admin asks, only your own recording counts.
 
-**Pre-Game Screenshot:**
-- Take screenshot showing at least one player model from each team
-- Verifies player models/skins are correct
+**Take the screenshots.** One before the match starts, with at least one player from each team in the shot: it shows which models and skins were in use. Then one of the scoreboard at the end of each half. Your captain attaches both halves to the score report, which is how the result gets recorded, so keep your own copies in case the two do not match.
 
-**End-of-Half Scoreboard Screenshots:**
-- Screenshot the scoreboard at the end of each half
-- Used to verify score and player participation
+**Stay to the end.** Do not disconnect before the match is over. If you crash, rejoin and start recording again.
 
-**Stay Until Game End:**
-- Do not disconnect until match is completely over
-- If you crash, rejoin immediately
-
-**Overtime Demos:**
-- Record separate POV demos for each overtime half following the same procedure as regulation halves
+**Keep all of it until the season ends** (Rule 4.3), and be ready to send it within 24 hours of an admin asking (Rule 3.8.a). Admins ask at random as well as during disputes, so you will not know in advance which match matters. A file you no longer have counts the same as one you refused to send: the game can be forfeited and you can be suspended (Rule 3.2).
 
 #### 4.1.g Character Name Length and Format
 
