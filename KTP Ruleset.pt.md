@@ -1,7 +1,7 @@
 <!-- ktp-translation
 locale: pt
 source: KTP Ruleset.md
-source-sha256: 5f160e48fdbefb97096fbeefa2edc8357980efc462432cf7ff2f4613adc028e2
+source-sha256: 1355e9a73faeb5a0e82dc6b7f6c2580988427aafb3d0d327e43a406142ecf9e5
 
 Records which revision of the English ruleset this translation was made from.
 ktpleague.gg re-checks it on every render and warns readers when it no longer
@@ -138,7 +138,7 @@ Em caso de jogo empatado, a prorrogação deve ser disputada imediatamente para 
 - Dois tempos adicionais de **10 minutos cada** (os times trocam de lado para o segundo tempo da prorrogação)
 - Se o empate persistir, continue jogando tempos adicionais de prorrogação de 10 minutos até que um vencedor seja definido
 
-> **Penalidade:** Deixar de completar os rounds de prorrogação exigidos resultará no registro de uma derrota para **ambos os times**.
+> **Penalidade:** Deixar de completar os rounds de prorrogação exigidos é tratado como um W.O. do time que o tiver causado, pontuado conforme o §1.13.b. Quando **ambos** os times forem responsáveis, a partida é **anulada** conforme o §1.13.c e nenhum dos dois recebe nada — não é registrada como derrota para ambos.
 
 > **Nota:** Em partidas de melhor de três, a prorrogação se aplica a cada mapa individualmente, caso aquele mapa termine empatado. Cada mapa deve produzir um vencedor.
 
@@ -167,24 +167,38 @@ número ímpar de times. Um **W.O.** é uma partida concedida sem que seja jogad
 
 Um BYE vale a **média dos placares que os demais times da divisão registraram naquela semana**, no
 mapa daquela semana. Cada partida disputada na divisão naquela semana contribui com dois placares — um por time — e
-o time em BYE é creditado com a média deles, tanto como pontos marcados quanto como pontos sofridos.
+o time em BYE é creditado com a média deles **apenas como pontos marcados**. Nada é creditado contra ele:
+um BYE não tem adversário, portanto não há placar a sofrer.
+
+Apenas uma partida jogada contribui com placares para essa média. Uma partida perdida por W.O. ou anulada não tem
+placar, portanto não fornece nada: ela recebe a média em vez de fornecê-la. Além disso, um time nunca faz parte
+de sua própria média. Nos casos em que uma semana contiver um segundo BYE ou um W.O., a média será extraída das
+partidas que aquela divisão realmente jogou.
 
 A média é calculada **por semana**, porque cada semana é jogada em um mapa e os mapas não pontuam
 da mesma forma. Ela nunca é calculada ao longo da temporada.
 
+A média é uma fração e é mantida como tal. A classificação a calcula com até quatro casas decimais e a exibe aparada
+(um número inteiro não mostra decimais). Ela nunca é arredondada para um número inteiro antes que os critérios de
+desempate sejam aplicados, porque o arredondamento de oito placares para pontos inteiros pode reordenar uma divisão.
+
 *Exemplo prático.* A Silver tem nove times, então um fica de fora a cada semana. Na semana 4, em dod_harrington,
 os outros oito disputam quatro partidas que terminam em 429-243, 312-300, 500-180 e 260-411. Os oito placares
-têm média de 329,375, então o time em BYE é creditado com 329,375 pontos a favor e 329,375 pontos contra.
+têm média de 329,375, então o time em BYE é creditado com 329,375 pontos a favor e 0 pontos contra.
 
-Creditar a média tanto como pontos marcados quanto como pontos sofridos é deliberado: significa que um BYE
-altera o saldo de pontos de um time em exatamente zero. Um BYE **não é um resultado** — não adiciona vitória nem derrota, e não torna as campanhas
-comparáveis entre times que disputaram um número diferente de partidas.
+Portanto, um BYE altera o saldo de pontos de um time pelo total dessa média, o que pode mover um time no
+critério de desempate por saldo (§1.14). Um BYE **não é um resultado** — não adiciona vitória nem derrota, e
+não torna as campanhas comparáveis entre times que disputaram um número diferente de
+partidas.
 
 #### 1.13.b Pontuação de um W.O.
 
 Uma partida perdida por W.O. é pontuada da mesma forma — a média dos placares que os demais times da divisão
 registraram naquela semana — e é creditada **somente ao time que não deu W.O.** O time que deu W.O.
 não recebe pontos por aquela partida, nem marcados nem sofridos.
+
+O time que não deu W.O. é creditado com essa média **apenas como pontos marcados**, exatamente como um BYE
+é creditado conforme o §1.13.a. Nada é creditado contra ele.
 
 Um time que compareceu a uma partida que seu adversário não jogou está na mesma posição de um time em
 BYE: ficou sem adversário, sem culpa própria. O time que causou isso não merece o
@@ -196,8 +210,12 @@ Quando ambos os times dão W.O., a partida é **anulada** em vez disso (§1.13.c
 
 #### 1.13.c Quando cada um se torna definitivo
 
-- Um **BYE** é definitivo assim que todas as demais partidas que aquela divisão disputou naquela semana forem pontuadas. Ele
-  não espera pelo restante da temporada. Até lá, é provisório e se move a cada resultado.
+- Um **BYE** é definitivo assim que nenhuma outra partida que aquela divisão disputou naquela semana ainda
+  estiver aguardando um resultado — ou seja, uma vez que todas elas tenham sido **registradas, perdidas por W.O.
+  ou anuladas**. Ele não espera pelo restante da temporada. Até lá, é provisório e se move a cada resultado.
+  **Um W.O. naquela semana não mantém o BYE em aberto.** Uma partida perdida por W.O. tem um desfecho no momento
+  em que é declarada; o que espera até o fim da temporada regular é *o crédito do próprio W.O.* (§1.13.b), e não
+  a completude da semana. Uma partida anulada não mantém a semana em aberto nem alimenta a média.
 - Um **W.O.** é pontuado **somente ao fim da temporada regular**, uma vez definido que nenhuma
   partida de reposição será disputada. Até lá, o time que não deu W.O. não recebe crédito algum, de modo que um confronto
   que acabe sendo disputado nunca chegou a carregar um crédito.
@@ -212,20 +230,26 @@ partida anulada por decisão administrativa não conta para nenhum dos times —
 
 Os times são ordenados por:
 
-1. **Campanha** — mais vitórias, depois menos derrotas.
+1. **Campanha** — mais vitórias. As derrotas são exibidas apenas a título informativo e nunca ordenam a tabela:
+   um BYE não é um resultado (§1.13.a), portanto, dentro de uma divisão, as vitórias e as derrotas de cada time
+   somam o mesmo total, e uma etapa adicional sobre as derrotas jamais poderia separar times que as vitórias não
+   tivessem separado.
 2. **Confronto direto** — os resultados entre os times que estão igualados na campanha (ver abaixo).
 3. **Saldo de pontos** — pontos de round marcados menos pontos de round sofridos ao longo de toda a
    temporada regular.
 
 #### 1.14.a Como o confronto direto é aplicado
 
-- O **grupo empatado** é composto por todos os times da divisão com campanha idêntica. O confronto direto é aplicado
-  ao grupo inteiro de uma só vez — ele **não** é uma sequência de comparações par a par. Comparar pares não
+- O **grupo empatado** é composto por todos os times da divisão que ficam igualados após a etapa 1 do §1.14 — o
+  mesmo número de vitórias. O confronto direto é aplicado ao grupo inteiro de uma só vez — ele **não** é uma
+  sequência de comparações par a par. Comparar pares não
   é transitivo: com três ou mais times, produz uma resposta diferente dependendo de qual par for
   comparado primeiro, e pode não produzir resposta alguma.
 - O grupo é ordenado por uma **mini-tabela** das partidas que esses times disputaram entre si,
-  contando as mesmas partidas que a classificação conta (temporada regular, disputadas ou perdidas por W.O.). Um W.O. é
-  um resultado de confronto direto como qualquer outro.
+  contando as mesmas partidas que a classificação conta (temporada regular, disputadas ou perdidas por W.O.). O
+  confronto direto lê **apenas a vitória e a derrota, nunca o placar**. É por isso que um W.O. é um resultado de
+  confronto direto como qualquer outro: ele tem um vencedor desde o momento em que é declarado, ainda que não
+  carregue placar algum até o fim da temporada regular (§1.13.c).
 - A mini-tabela é ordenada **somente pela campanha** — mais vitórias na mini-tabela, depois menos derrotas na mini-tabela.
   **O saldo de pontos da mini-tabela deliberadamente não é usado**, em nenhuma etapa. Ver §1.14.c.
 - O confronto direto se aplica **somente quando todo time do grupo tiver jogado contra pelo menos um dos outros**.
@@ -243,13 +267,19 @@ o resultado que a posicionou.
 
 #### 1.14.b.i Times ainda igualados após todas as três etapas
 
+> Nota de localização: Esta regra está numerada sob o §1.14.b (o exemplo prático), mas se aplica ao §1.14.a e aos critérios
+> de desempate em geral, não apenas ao exemplo acima. O identificador e o nível do cabeçalho são deixados inalterados de
+> propósito: o site cria âncoras a partir do número da regra, e ambas as traduções espelham essa estrutura linha por linha.
+
 Se dois ou mais times permanecerem exatamente igualados após campanha, confronto direto e saldo de pontos, e a
-ordem definir um seed de playoff ou qualquer outra consequência, **um administrador da KTP decide a ordem e a
-decisão é registrada publicamente.** Nenhum critério automático adicional é aplicado.
+ordem definir **uma vaga de playoff, um seed de playoff, ou uma posição de rebaixamento ou acesso**, **um
+administrador da KTP decide a ordem e a decisão é registrada publicamente.** Nenhum critério automático adicional
+é aplicado. Quando a ordem não definir nenhuma dessas três coisas, os times permanecem empatados e nenhuma decisão
+é tomada.
 
 ⛔ **A ordem exibida na página de classificação não é autoritativa nesse caso.** O site desempata o
 restante com base em um identificador interno puramente para que a tabela não se reorganize entre carregamentos de página.
-Isso não tem significado esportivo. Até que um administrador tenha decidido, trate essas linhas como não ordenadas.
+Isso não tem significado esportivo. Trate essas linhas como não ordenadas até que um administrador tenha decidido — e em definitivo, quando nenhuma decisão for acionada.
 
 #### 1.14.c Por que a mini-tabela ignora o saldo de pontos
 
@@ -277,8 +307,12 @@ Quando uma tradução e o texto em inglês divergirem — na redação, no signi
 
 | Tipo de Time | Definição |
 |-----------|------------|
-| **Internacional** | Maioria dos jogadores (4+) sediados fora da América do Norte (UE, SA etc.) |
-| **Norte-Americano** | Maioria de jogadores norte-americanos |
+| **Internacional** | **4 ou mais** jogadores do roster sediados fora da América do Norte (UE, SA etc.) |
+| **Norte-Americano** | Qualquer time que não seja Internacional |
+
+Quatro é a maioria dos **seis** que um time escala (§2.10), que é de onde vem o limiar — e não uma maioria do roster máximo de dez jogadores (§2.7).
+
+> **Medido pelo roster no momento da trava, e não pela escalação da noite.** O tipo de um time precisa ser conhecido antes de a tabela de jogos ser gerada, porque o horário padrão da partida é definido uma única vez (§2.2). Portanto, um time com quatro ou mais jogadores internacionais é Internacional mesmo que escale menos deles em um domingo específico — a classificação pende para conceder a adaptação, não para negá-la.
 
 ### 2.2 Horários Padrão de Agendamento das Partidas
 
@@ -297,6 +331,8 @@ O time listado na tabela de jogos como time **HOME** tem a escolha do uso do ser
 
 #### 2.3.b Partidas de Melhor de Três (BO3)
 Cada mapa é tratado de forma independente. O time que escolheu um mapa é considerado o time "home" naquele mapa.
+
+A condição de home em um mapa carrega toda a vantagem do §2.3.a **naquele mapa**: o servidor em que ele é jogado e qual lado ocupar primeiro. **O servidor acompanha o mapa** — o time que escolheu um mapa seleciona o servidor para ele, de modo que o servidor pode diferir de um mapa para outro dentro de uma série. O §2.4 continua governando quais localizações são elegíveis para cada uma dessas escolhas. ⚠️ **Exceção:** em uma partida NA vs EU o servidor não acompanha o mapa de forma alguma — o §2.4.c dá o servidor de cada mapa ao time NA, e o §2.4.e lhe dá cada escolha de lado.
 
 ### 2.4 Seleção de Servidor por Região
 
@@ -331,7 +367,7 @@ O time HOME pode propor uma localização alternativa de servidor aprovado pela 
 
 #### 2.4.c NA vs EU — Seleção de Servidor
 
-Em partidas entre um time norte-americano e um time europeu (maioria de jogadores da UE a leste de UTC -2 conforme a Regra 2.1), o time **HOME** seleciona a localização do servidor de jogo entre as seguintes localizações aprovadas pela KTP, com prioridade para New York:
+Em partidas entre um time norte-americano e um time europeu (maioria de jogadores da UE a leste de UTC -2 conforme a Regra 2.1), o **time NA** seleciona a localização do servidor de jogo entre as seguintes localizações aprovadas pela KTP, com prioridade para New York. **Isso se sobrepõe à escolha de servidor do time HOME conforme o §2.3.a, e à escolha de servidor por mapa conforme o §2.3.b** — o time NA seleciona para cada mapa da série, independentemente de qual time o escolheu. Junto com a escolha de lado do §2.4.e, isso compensa o horário de início padrão mais cedo que o §2.2.b concede ao time europeu:
 
 | Localização | Status |
 |----------|--------|
@@ -340,7 +376,9 @@ Em partidas entre um time norte-americano e um time europeu (maioria de jogadore
 
 New York deve ser usada sempre que estiver disponível. Atlanta só pode ser escolhida se nenhum servidor de New York estiver disponível no momento do agendamento ou do início da partida. Essas localizações da Costa Leste oferecem uma latência de compromisso razoável para conexões transatlânticas.
 
-O time HOME pode propor uma localização alternativa de servidor aprovado pela KTP não listada acima. A localização alternativa exige a aprovação do capitão do time adversário. Se o capitão adversário não aprovar, o time HOME deve escolher entre as localizações padrão listadas acima, seguindo a ordem de prioridade.
+"No momento do agendamento ou do início da partida" é **inclusivo**: New York estar indisponível em qualquer um dos dois momentos já basta para que Atlanta seja escolhida. Quando os dois momentos divergem, **o início da partida prevalece**, porque é quando a partida precisa de um servidor — um servidor de New York disponível no início da partida é usado mesmo que não houvesse nenhum no momento do agendamento, e um que tenha ficado indisponível até o início da partida não prende a partida a New York. Em uma melhor de três o servidor é escolhido por mapa (§2.3.b), então esse teste é aplicado no **início de cada mapa**, e não uma única vez para a série — uma série pode, portanto, ocorrer em localizações diferentes de um mapa para outro.
+
+O time NA pode propor uma localização alternativa de servidor aprovado pela KTP não listada acima. A localização alternativa exige a aprovação do capitão do time adversário. Se o capitão adversário não aprovar, o time NA deverá selecionar uma das localizações padrão listadas acima, respeitando estritamente a ordem de prioridade (New York como primária obrigatória).
 
 > **Importante:** As partidas nunca podem ser jogadas em servidores não aprovados pela KTP, independentemente de acordo mútuo.
 
@@ -355,6 +393,8 @@ Em partidas entre um time norte-americano e um time sul-americano (maioria de jo
 
 Essas localizações oferecem uma latência de compromisso razoável para conexões sul-americanas.
 
+Aqui quem seleciona é o time **HOME**, diferentemente do §2.4.c. Isso é deliberado: a escolha de servidor e de lado que o §2.4.c/§2.4.e dão ao time NA existe para compensar o **horário de início mais cedo**, e um time sul-americano não recebe nenhum — o horário padrão das 15h00 do §2.2.b vale somente para times com maioria da UE a leste de UTC -2. Um time sul-americano é Internacional conforme o §2.1 e ainda assim joga no horário padrão, portanto não há nada a compensar.
+
 O time HOME pode propor uma localização alternativa de servidor aprovado pela KTP não listada acima. A localização alternativa exige a aprovação do capitão do time adversário. Se o capitão adversário não aprovar, o time HOME deve escolher entre as localizações padrão listadas acima.
 
 > **Importante:** As partidas nunca podem ser jogadas em servidores não aprovados pela KTP, independentemente de acordo mútuo.
@@ -362,6 +402,8 @@ O time HOME pode propor uma localização alternativa de servidor aprovado pela 
 #### 2.4.e Escolha de Lado em NA vs EU
 
 Quando um time norte-americano joga contra um time europeu (maioria de jogadores da UE a leste de UTC -2 conforme a Regra 2.1), **o time NA sempre escolhe** em qual lado (Allies ou Axis) jogará primeiro, **sobrepondo-se à vantagem do time home definida na Regra 2.3.a**. Isso compensa a vantagem de agendamento que os times da UE recebem do horário padrão de partida mais cedo.
+
+O time NA também seleciona o servidor conforme o §2.4.c, de modo que em uma partida NA vs EU **tanto o lado quanto o servidor ficam com o time NA**, em cada mapa, independentemente de qual time é HOME ou escolheu o mapa. Um time europeu não ganha nada por ser HOME nem por escolher um mapa; o que ele tem em troca é o horário de início padrão mais cedo, conforme o §2.2.b.
 
 ### 2.5 Uso de Jogadores Suspensos
 
@@ -380,7 +422,7 @@ Um time pode mudar de nome **uma vez** ao longo de uma temporada. Depois de usar
 |------|---------|
 | **Tamanho máximo do roster** | 10 jogadores |
 | **Momento da trava** | Fim do período de registro de times |
-| **Após a trava** | Nenhuma alteração de roster, nome do time, aliases dos jogadores ou SteamIDs |
+| **Após a trava** | Nenhuma alteração de nome do time, aliases dos jogadores ou SteamIDs. Nenhuma **adição** ao roster, exceto pela janela da Regra 2.7.1. Uma **saída** é sempre permitida — ver Regra 2.7.a |
 | **Exceção** | Alterações ainda podem ser feitas por decisão administrativa — ver Regra 2.7.a |
 
 #### 2.7.a Solicitação de Alteração de Roster
@@ -391,15 +433,32 @@ As alterações de roster são solicitadas no site da liga (ktpleague.gg), nas c
 |------|---------|------------------------|
 | **Registro aberto** | Edita o roster diretamente; os administradores são notificados do que mudou | Registra uma solicitação |
 | **Registro fechado, antes da trava** | Registra uma solicitação; a equipe a analisa | Registra uma solicitação |
-| **Após a trava** | O formulário do capitão é encerrado — fale com um administrador | Registra uma solicitação |
+| **Após a trava** | O formulário do capitão é encerrado para **adições** — fale com um administrador. Uma **saída** se aplica de imediato | Sai de imediato |
 
-Um jogador pode pedir para sair de um roster **a qualquer momento, antes ou depois da trava**, pelas configurações da própria conta. É uma solicitação em todos os casos: o jogador permanece no roster até que um administrador atue sobre ela, e uma solicitação que deixaria um time sem capitão não é aplicada até que outro capitão esteja no lugar.
+Um jogador pode sair de um roster **a qualquer momento, antes ou depois da trava**, pelas configurações da própria conta, e um capitão pode remover um jogador a qualquer momento. **Uma saída se aplica imediatamente.** Não é uma solicitação e não precisa de aprovação: remover um jogador não acrescenta ninguém e não pode criar vantagem competitiva alguma, portanto a trava de roster não tem nada a proteger contra ela.
+
+Uma **transferência de saída** reduz o roster do time de origem exatamente como uma saída, e aqui é tratada como tal. Duas saídas ficam **suspensas** em vez de aplicadas, pelo mesmo motivo — cada uma deixaria o time sem condições de jogar:
+
+- uma que deixaria um time **sem capitão** não é aplicada até que outro capitão esteja no lugar;
+- uma que deixaria um time com **menos de quatro jogadores no roster** não é aplicada até que o time volte a ter quatro, porque a Regra 2.10 exige quatro jogadores de roster em toda partida.
+
+O mínimo lê o roster que o jogador **deixa**, nunca aquele que ele integra, e conta o **roster** — não os seis escalados em uma partida.
+
+**Uma troca é julgada pelo seu estado final.** Dois times que trocam jogadores terminam cada um com o tamanho de roster com que começaram, portanto uma troca não viola o mínimo, ainda que qualquer um dos movimentos, isoladamente, parecesse violar.
+
+**Uma troca move jogadores, não a capitania.** Seu estado final é quem está em cada roster; ela nunca decide quem lidera um. Um jogador que chega em uma troca entra como jogador ou co-capitão, e um time cujo único capitão é uma das duas metades não realiza a troca até que outro capitão esteja no lugar — a mesma suspensão que rege qualquer outra saída. A capitania muda por conta própria, depois, pelo formulário de roster.
+
+⛔ **Essas suspensões vinculam capitães e jogadores. Elas não vinculam administradores.** Um administrador pode mover um jogador a qualquer momento, inclusive durante uma trava — é isso que torna uma suspensão segura em vez de uma armadilha, e um time preso atrás de uma deve falar com um administrador.
+
+> ⚠️ **Enquanto os rosters estiverem travados, um jogador que sai não pode entrar em outro time pelo resto da temporada.** As adições são governadas pela janela da Regra 2.7.1, e fora dessa janela não há nenhuma — um administrador ainda pode alocá-lo, mas ninguém deve contar com isso. Um jogador que deixa um time no meio da temporada deve ser avisado disso antes de agir.
+
+Uma **adição** continua sendo uma solicitação em todos os casos.
 
 Toda solicitação e toda decisão ficam registradas.
 
 ### 2.7.1 Janela de Roster no Meio da Temporada
 
-Uma janela de adição ao roster ocorrerá no meio da temporada, anunciada com pelo menos uma semana de antecedência.
+Uma janela de adição ao roster ocorrerá no meio da temporada, anunciada com pelo menos uma semana de antecedência. Ela governa **somente as adições** — as saídas são sempre permitidas e nunca ficam sujeitas a ela (Regra 2.7.a).
 
 | Divisão | Requisitos |
 |----------|--------------|
@@ -423,7 +482,13 @@ Um **ringer** é um jogador que não está no seu roster oficial, usado temporar
 
 ### 2.11 W.O. de Times e Remoção
 
-Times que derem W.O. repetidamente podem ser removidos da liga. Mais de um W.O. em uma temporada pode resultar em remoção, a critério dos administradores.
+Um time que der W.O. **duas vezes em uma temporada** pode ser removido da liga, a critério dos administradores. Esse é o único limiar.
+
+Somente um W.O. **imputado a** um time conta para esse limiar. Uma vitória por W.O. (§5.3) nunca conta contra o time que compareceu — esse time está na mesma posição de um time em BYE (§1.13.b), e não lhe é imputado um adversário que não apareceu.
+
+Um W.O. é **imputado quando é pontuado** conforme o §1.13.c — ao fim da temporada regular, uma vez definido que nenhuma partida de reposição será disputada. **Um confronto recuperado por uma partida de reposição nunca é imputado**, portanto um time que foi declarado ausente conforme o §5.3 e depois disputou a partida não a conta para este limiar.
+
+> Quando uma partida é **anulada** porque ambos os times deram W.O. (§1.13.c), o W.O. é imputado a **cada** time.
 
 ---
 
@@ -639,6 +704,10 @@ Os jogadores não podem usar scripts para automatizar:
 - Ataque do jogador
 - Movimento do jogador
 - Rapid-fire
+  ⚠️ **Aqui "rapid-fire" significa autorrepetição — uma pressionada produzindo entradas repetidas.** **Não**
+  significa **Rapid Trigger**, o recurso de atuação analógica dos teclados de efeito Hall, que o §4.6 permite
+  explicitamente. O Rapid Trigger encurta *quando* uma tecla registra; ele nunca multiplica uma pressionada em
+  mais de uma entrada. Ver §4.6.
 - Compensação automática de recuo
 - Padrões automatizados de pulo ou movimento
 
@@ -686,6 +755,12 @@ Os capitães devem tirar uma captura de tela do `rcon status` por jogo para comp
 |------|--------|
 | **+10 minutos** | Documente e avise um administrador se não houver notícia do time adversário |
 | **+15 minutos** | O administrador pode declarar oficialmente o não comparecimento e conceder a vitória por W.O. |
+
+O relógio corre a partir do **horário de início efetivamente agendado** da partida — o horário que consta na página da partida, que é o horário acordado pelos capitães quando a partida foi remarcada. Ele não corre a partir do padrão do §2.2. Uma partida remarcada que ambos os capitães acordaram é o compromisso real.
+
+**Um não comparecimento aos +15 normalmente não encerra o confronto.** A KTP prefere uma **partida de reposição**, e os administradores organizam uma sempre que ambos os times ainda puderem jogar. A marca de +15 é o que autoriza um administrador a declarar o não comparecimento e iniciar essa conversa — ela não é um resultado. Uma vitória por W.O. geralmente é concedida somente ao **fim da temporada regular**, para um confronto que nenhuma reposição recuperou.
+
+> O §1.13.c já expõe isso pelo lado da pontuação: um W.O. é pontuado *"somente ao fim da temporada regular, uma vez definido que nenhuma partida de reposição será disputada."* Um W.O. **declarado** e um W.O. **creditado** são momentos distintos, e nenhum deles é automático — ambos são decisões administrativas.
 
 ### 5.4 Agendamento Justo
 
@@ -736,17 +811,21 @@ O reporte é bilateral. Um capitão insere o resultado, o capitão **adversário
 
 Um capitão que discorde de um resultado inserido o contesta em vez de confirmá-lo. Um resultado contestado nunca é registrado; ele vai para a equipe de administração com os relatos de ambos os capitães.
 
+O dever de uma hora é uma questão de **conduta** do capitão vencedor, não uma condição do resultado. Um resultado que o capitão adversário confirma dentro das suas 24 horas **vale independentemente de quando foi inserido**; um reporte atrasado é assunto do capitão, e nunca anula o resultado. Se **nenhum** dos capitães tiver inserido um resultado 24 horas após o horário de início agendado da partida (§5.3), o confronto vai para a equipe de administração para julgamento. Nada é concedido automaticamente.
+
 As capturas de tela **não** são enviadas junto com o reporte. Os capitães ainda as tiram (Regra 5.1.a, Regra 5.1.b), as guardam pela temporada (Regra 4.3) e devem apresentá-las mediante solicitação — um resultado contestado é resolvido a partir delas.
 
-> **Nota:** Os resultados de séries de playoff e os W.O. são registrados pelos administradores, e não pelo reporte dos capitães. Envie os placares de playoff a um administrador quando a série terminar.
+> **Nota:** Os resultados de séries de playoff e os W.O. são registrados pelos administradores, e não pelo reporte dos capitães. Envie os placares de playoff a um administrador quando a série terminar. Nos playoffs, o dever de registrar o resultado é do **administrador**, e nenhum relógio de uma hora corre sobre um capitão enquanto houver um administrador presente. Os capitães reportam **apenas se não houver administrador presente** quando a série terminar — e então o relógio de uma hora se aplica.
 
-> **Se o site não conseguir receber o reporte:** publique-o no canal de placares designado do Discord da KTP dentro da mesma hora e avise um administrador. Isso é um recurso alternativo para uma indisponibilidade, não uma segunda via de reporte.
+> **Se o site não conseguir receber o reporte:** publique-o no canal de placares designado do Discord da KTP dentro da mesma hora e avise um administrador. Isso é um recurso alternativo para uma indisponibilidade, não uma segunda via de reporte. Um resultado publicado ali **ainda precisa da confirmação do capitão adversário**, dentro das mesmas 24 horas, antes de ser registrado — o Discord é um canal de reporte, não uma segunda autoridade. A única exceção é um administrador inserir o resultado diretamente, o que se sobrepõe ao reporte dos capitães.
 
 ### 5.7 Vetos de Mapa nos Playoffs
 
 Os vetos são realizados apenas para partidas de playoff. Eles ocorrem na sala de veto da página da partida no site da liga (ktpleague.gg): ambos os capitães agem em turnos — banimentos, escolhas e lados iniciais — contra o pool de mapas de playoff publicado. O site decide de quem é a vez e recusa uma jogada ilegal, de modo que não há nada a enviar em nenhum outro lugar.
 
 Os capitães devem concluir o veto **pelo menos 72 horas antes do horário padrão de início da partida do round** (Regra 2.2). O prazo é medido a partir do horário padrão, e não de qualquer horário posterior que os dois capitães acordem entre si.
+
+Um round de playoff é uma semana agendada com uma data, exatamente como é uma semana de temporada regular. A data padrão de um round é **o domingo da sua semana**, e as 72 horas são contadas de trás para frente a partir do horário padrão do §2.2 naquela data. ⚠️ **Os rounds de playoff nem sempre são domingos consecutivos** — uma chave pode conter uma semana de folga. Os rounds da Temporada 10 caem em 15 de novembro, 22 de novembro e 6 de dezembro, com 29 de novembro de folga — portanto a âncora é a data publicada do próprio round, nunca "o domingo seguinte".
 
 > **Penalidade:** Se o veto não estiver concluído nesse prazo, os administradores executam as etapas pendentes em nome do time atrasado. Uma etapa realizada dessa forma é marcada como ação da equipe no log de veto da partida, que é público.
 
@@ -755,6 +834,8 @@ A duração da série é definida pelos administradores na partida. A maioria da
 #### 5.7.a Quando um Round se Define Tarde
 
 Uma partida de playoff não tem times até que o round anterior a ela seja decidido. Quando ambos os times se tornam conhecidos **menos de 72 horas antes** do início padrão do round, o prazo de 72 horas não pode ter sido cumprido e não é computado contra nenhum dos times. O veto passa a ser devido **assim que ambos os capitães tiverem tido uma oportunidade razoável de realizá-lo**, e os administradores podem executar as etapas pendentes quando a partida estiver, de outro modo, prestes a ser disputada.
+
+Ambos os capitães tiveram **uma oportunidade razoável** assim que a janela completa de 72 horas do §5.7 tiver decorrido com o confronto acessível a ambos — ambos os times conhecidos e a sala de veto aberta a ambos os capitães — contada para a frente a partir do momento em que ele se tornou acessível. Uma partida está **de outro modo prestes a ser disputada** quando está agendada dentro da sua própria semana de playoff.
 
 ### 5.8 Responsabilidade do Capitão
 

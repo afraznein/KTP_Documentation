@@ -1,7 +1,7 @@
 <!-- ktp-translation
 locale: es
 source: KTP Ruleset.md
-source-sha256: 5f160e48fdbefb97096fbeefa2edc8357980efc462432cf7ff2f4613adc028e2
+source-sha256: 1355e9a73faeb5a0e82dc6b7f6c2580988427aafb3d0d327e43a406142ecf9e5
 
 Records which revision of the English ruleset this translation was made from.
 ktpleague.gg re-checks it on every render and warns readers when it no longer
@@ -138,7 +138,7 @@ En caso de un juego empatado, se debe jugar tiempo extra de inmediato para deter
 - Dos mitades adicionales de **10 minutos cada una** (los equipos cambian de bando para la segunda mitad del tiempo extra)
 - Si el empate persiste, se continúan jugando mitades adicionales de tiempo extra de 10 minutos hasta que se defina un ganador
 
-> **Sanción:** No completar las rondas de tiempo extra requeridas resultará en que se registre una derrota para **ambos equipos**.
+> **Sanción:** No completar las rondas de tiempo extra requeridas se trata como un forfeit del equipo que lo haya causado, y se puntúa según el §1.13.b. Cuando **ambos** equipos son responsables, el partido se **anula** según el §1.13.c y ninguno de los dos cobra — no se registra como una derrota para ambos.
 
 > **Nota:** En partidos al mejor de tres, el tiempo extra aplica a cada mapa individual si ese mapa termina empatado. Cada mapa debe producir un ganador.
 
@@ -167,24 +167,38 @@ tiene una cantidad impar de equipos. Un **forfeit** es un partido otorgado sin q
 
 Un BYE vale el **promedio de los puntajes que los demás equipos de la división registraron esa semana**, en el
 mapa de esa semana. Cada partido jugado en la división esa semana aporta dos puntajes —uno por equipo— y
-al equipo con BYE se le acredita su media, tanto como puntos a favor como puntos en contra.
+al equipo con BYE se le acredita su media **únicamente como puntos a favor**. No se le acredita nada en contra:
+un BYE no tiene rival, así que no hay marcador que conceder.
+
+Solo un partido **jugado** aporta puntuaciones a ese promedio. Un partido perdido por forfeit o anulado no
+tiene marcador, por lo que no aporta nada: recibe el promedio en lugar de suministrarlo. Además, un equipo
+nunca forma parte de su propio promedio. Si en una semana hay un segundo BYE o un forfeit, el promedio se
+calcula a partir de los partidos que esa división haya jugado realmente.
 
 El promedio se toma **por semana**, porque cada semana se juega en un mapa y los mapas no puntúan
 igual. Nunca se toma a lo largo de toda la temporada.
 
-*Ejemplo resuelto.* Silver tiene nueve equipos, así que uno descansa cada semana. En la semana 4, en dod_harrington,
-los otros ocho juegan cuatro partidos que terminan 429-243, 312-300, 500-180 y 260-411. Los ocho puntajes
-promedian 329.375, así que al equipo con BYE se le acreditan 329.375 puntos a favor y 329.375 puntos en contra.
+El promedio es una fracción y se mantiene como tal. La tabla de posiciones lo calcula con hasta cuatro decimales
+y lo muestra recortado (un número entero no muestra decimales). Nunca se redondea a un número entero antes de
+aplicar los desempates, ya que redondear ocho puntuaciones a puntos enteros podría reordenar una división.
 
-Acreditar el promedio tanto como puntos a favor como puntos en contra es deliberado: significa que un BYE
-mueve la diferencia de puntos de un equipo exactamente en cero. Un BYE **no es un resultado** — no suma victoria ni derrota, y no hace que los registros sean
-comparables entre equipos que han jugado una cantidad distinta de partidos.
+*Ejemplo práctico.* Silver tiene nueve equipos, así que uno no juega cada semana. En la semana 4, en dod_harrington,
+los otros ocho juegan cuatro partidos que terminan 429-243, 312-300, 500-180 y 260-411. Los ocho puntajes
+promedian 329.375, así que al equipo con BYE se le acreditan 329.375 puntos a favor y 0 puntos en contra.
+
+Por lo tanto, un BYE mueve la diferencia de puntos de un equipo por el total de ese promedio, lo que puede
+mover a un equipo en el desempate por diferencia (§1.14). Un BYE **no es un resultado** — no suma victoria ni
+derrota, y no hace que los registros sean comparables entre equipos que han jugado una cantidad distinta de
+partidos.
 
 #### 1.13.b Puntuación de un forfeit
 
 Un partido perdido por forfeit se puntúa de la misma manera —el promedio de los puntajes que los demás equipos de la
 división registraron esa semana— y se acredita **únicamente al equipo que no dio forfeit**. El equipo que dio forfeit
 no recibe puntos por ese partido, ni a favor ni en contra.
+
+Al equipo que no dio forfeit se le acredita ese promedio **únicamente como puntos a favor**, exactamente
+igual que a un BYE según el §1.13.a. No se le acredita nada en contra.
 
 Un equipo que se presentó a un partido que su rival no jugó está en la misma posición que un equipo con
 BYE: no tuvo rival, sin culpa propia. El equipo que causó eso no merece el
@@ -196,8 +210,13 @@ Cuando ambos equipos dan forfeit, el partido se **anula** en su lugar (§1.13.c)
 
 #### 1.13.c Cuándo queda firme cada uno
 
-- Un **BYE** queda firme apenas se han puntuado todos los demás partidos que esa división jugó esa semana. No
+- Un **BYE** queda firme apenas ningún otro partido que esa división jugó esa semana siga a la espera de un
+  resultado — es decir, una vez que todos ellos hayan sido **registrados, perdidos por forfeit o anulados**. No
   espera al resto de la temporada. Hasta entonces es provisional y se mueve con cada resultado.
+  **Un forfeit en esa semana no mantiene abierto el BYE.** Un partido perdido por forfeit tiene un desenlace desde
+  el momento en que se declara; lo que espera hasta el final de la temporada regular es *el crédito del propio
+  forfeit* (§1.13.b), no que la semana esté completa. Un partido anulado ni mantiene abierta la semana ni aporta
+  al promedio.
 - Un **forfeit** se puntúa **solo al final de la temporada regular**, una vez que quede establecido que no
   se jugará ningún partido de reposición. Hasta entonces al equipo que no dio forfeit no se le acredita nada, de modo que un encuentro
   que finalmente sí se juega nunca llevó un crédito.
@@ -212,20 +231,26 @@ partido anulado por decisión de un administrador no cuenta para ninguno de los 
 
 Los equipos se ordenan por:
 
-1. **Registro** — más victorias, luego menos derrotas.
+1. **Registro** — más victorias. Las derrotas se muestran solo a título informativo y nunca ordenan la tabla: un
+   BYE no es un resultado (§1.13.a), así que dentro de una división las victorias y las derrotas de cada equipo
+   suman el mismo total, y un paso adicional sobre las derrotas nunca podría separar a equipos que las victorias
+   no hubieran separado.
 2. **Enfrentamiento directo** — los resultados entre los equipos que están igualados en registro (ver abajo).
 3. **Diferencia de puntos** — puntos de ronda a favor menos puntos de ronda en contra a lo largo de toda la
    temporada regular.
 
 #### 1.14.a Cómo se aplica el enfrentamiento directo
 
-- El **grupo empatado** es todo equipo de la división con un registro idéntico. El enfrentamiento directo se aplica
-  a todo el grupo a la vez — **no** es una serie de comparaciones de a pares. Comparar pares no
+- El **grupo empatado** es todo equipo de la división que queda igualado tras el paso 1 del §1.14 — la misma
+  cantidad de victorias. El enfrentamiento directo se aplica a todo el grupo a la vez — **no** es una serie de
+  comparaciones de a pares. Comparar pares no
   es transitivo: con tres o más equipos produce una respuesta distinta según qué par se
   compare primero, y puede no producir respuesta alguna.
 - El grupo se ordena según una **mini-tabla** de los partidos que esos equipos jugaron entre sí,
-  contando los mismos partidos que cuenta la tabla de posiciones (temporada regular, jugados o perdidos por forfeit). Un forfeit es
-  un resultado de enfrentamiento directo como cualquier otro.
+  contando los mismos partidos que cuenta la tabla de posiciones (temporada regular, jugados o perdidos por forfeit). El
+  enfrentamiento directo lee **únicamente la victoria y la derrota, nunca el marcador**. Por eso un forfeit es un
+  resultado de enfrentamiento directo como cualquier otro: tiene un ganador desde el momento en que se declara,
+  aunque no cargue ningún puntaje hasta el final de la temporada regular (§1.13.c).
 - La mini-tabla se ordena **solo por registro** — más victorias en la mini-tabla, luego menos derrotas en la mini-tabla.
   **La diferencia de puntos de la mini-tabla deliberadamente no se usa**, en ningún paso. Ver §1.14.c.
 - El enfrentamiento directo aplica **solo cuando cada equipo del grupo ha jugado contra al menos uno de los otros**.
@@ -234,7 +259,7 @@ Los equipos se ordenan por:
 - Los equipos que sigan igualados después de la mini-tabla pasan a la diferencia de puntos. La mini-tabla se
   aplica una sola vez; la regla no recurre a un empate más pequeño dentro del grupo.
 
-#### 1.14.b Ejemplo resuelto
+#### 1.14.b Ejemplo práctico
 
 Dos equipos terminan 5-2. Uno está en +500 de diferencia, el otro en +100. El equipo de +100 ganó el partido
 entre ambos, así que termina por delante — el enfrentamiento directo se aplica antes que la diferencia. Las columnas
@@ -243,13 +268,19 @@ el resultado que la ubicó.
 
 #### 1.14.b.i Equipos que siguen igualados después de los tres pasos
 
+> **Nota de ubicación.** Esta regla está numerada bajo el §1.14.b (el ejemplo práctico) pero aplica al §1.14.a y a los desempates
+> en general, no solo al ejemplo anterior. El identificador y el nivel del encabezado se dejan sin cambios a propósito: el sitio
+> web genera anclajes a partir del número de regla, y ambas traducciones reflejan esta estructura línea por línea.
+
 Si dos o más equipos permanecen exactamente igualados después del registro, el enfrentamiento directo y la diferencia de puntos, y el
-orden decide una siembra de playoffs o cualquier otra consecuencia, **un administrador de KTP resuelve el orden y la
-resolución se registra públicamente.** No se aplica ningún criterio automático adicional.
+orden decide **un cupo de playoffs, una siembra de playoffs, o una posición de descenso o ascenso**, **un administrador
+de KTP resuelve el orden y la resolución se registra públicamente.** No se aplica ningún criterio automático
+adicional. Cuando el orden no decide ninguna de esas tres cosas, los equipos siguen empatados y no se dicta
+resolución alguna.
 
 ⛔ **El orden mostrado en la página de posiciones no es autoritativo en este caso.** El sitio rompe el
 empate restante con un identificador interno únicamente para que la tabla no se reordene entre cargas de página.
-Eso no tiene significado deportivo. Hasta que un administrador haya resuelto, trata esas filas como no ordenadas.
+Eso no tiene significado deportivo. Trata esas filas como no ordenadas hasta que un administrador haya resuelto — y de forma definitiva, cuando no se active ninguna resolución.
 
 #### 1.14.c Por qué la mini-tabla ignora la diferencia de puntos
 
@@ -277,8 +308,12 @@ Cuando una traducción y el texto en inglés difieran —en redacción, en signi
 
 | Tipo de Equipo | Definición |
 |-----------|------------|
-| **Internacional** | La mayoría de los jugadores (4 o más) radicados fuera de Norteamérica (EU, SA, etc.) |
-| **Norteamericano** | Mayoría de jugadores norteamericanos |
+| **Internacional** | **4 o más** jugadores inscritos en el roster radicados fuera de Norteamérica (EU, SA, etc.) |
+| **Norteamericano** | Todo equipo que no sea Internacional |
+
+Cuatro es la mayoría de los **seis** que un equipo pone en cancha (§2.10), que es de donde sale el umbral — no una mayoría del roster máximo de diez jugadores (§2.7).
+
+> **Se mide sobre el roster al momento del bloqueo, no sobre la alineación de la noche.** El tipo de un equipo tiene que conocerse antes de generar el calendario, porque el horario predeterminado del partido se fija una sola vez (§2.2). Por lo tanto, un equipo con cuatro o más jugadores internacionales es Internacional aunque ponga menos en cancha un domingo determinado — la clasificación se inclina por conceder la adaptación, no por negarla.
 
 ### 2.2 Horarios Predeterminados de Programación de Partidos
 
@@ -297,6 +332,8 @@ El equipo listado en el calendario como equipo **HOME** tiene la elección del u
 
 #### 2.3.b Partidos al Mejor de Tres (BO3)
 Cada mapa se trata de forma independiente. El equipo que eligió un mapa se considera el equipo "home" para ese mapa.
+
+La condición de home para un mapa conlleva toda la ventaja del §2.3.a **para ese mapa**: el servidor en el que se juega y qué bando tomar primero. **El servidor se mueve con el mapa** — el equipo que eligió un mapa selecciona el servidor para él, de modo que el servidor puede diferir de un mapa a otro dentro de una serie. El §2.4 sigue rigiendo qué ubicaciones son elegibles para cada una de esas elecciones. ⚠️ **Excepción:** en un partido NA vs EU el servidor no sigue al mapa en absoluto — el §2.4.c otorga el servidor de cada mapa al equipo de NA, y el §2.4.e le otorga cada elección de bando.
 
 ### 2.4 Selección de Servidor por Región
 
@@ -331,7 +368,7 @@ El equipo HOME puede proponer una ubicación alternativa de servidor aprobada po
 
 #### 2.4.c NA vs EU — Selección de Servidor
 
-Para partidos entre un equipo norteamericano y un equipo europeo (mayoría de jugadores de EU al este de UTC -2 según la Regla 2.1), el equipo **HOME** selecciona la ubicación del servidor de juego entre las siguientes ubicaciones aprobadas por KTP, con prioridad para New York:
+Para partidos entre un equipo norteamericano y un equipo europeo (mayoría de jugadores de EU al este de UTC -2 según la Regla 2.1), el **equipo de NA** selecciona la ubicación del servidor de juego entre las siguientes ubicaciones aprobadas por KTP, con prioridad para New York. **Esto anula la elección de servidor del equipo HOME según el §2.3.a, y la elección de servidor por mapa según el §2.3.b** — el equipo de NA selecciona para cada mapa de la serie, sin importar qué equipo lo eligió. Junto con la elección de bando del §2.4.e, compensa el horario de inicio predeterminado más temprano que el §2.2.b concede al equipo europeo:
 
 | Ubicación | Estado |
 |----------|--------|
@@ -340,7 +377,9 @@ Para partidos entre un equipo norteamericano y un equipo europeo (mayoría de ju
 
 New York debe usarse siempre que esté disponible. Atlanta solo puede seleccionarse si no hay servidores de New York disponibles al momento de la programación o del inicio del partido. Estas ubicaciones de la Costa Este ofrecen una latencia de compromiso razonable para las conexiones transatlánticas.
 
-El equipo HOME puede proponer una ubicación alternativa de servidor aprobada por KTP que no esté listada arriba. La ubicación alternativa requiere la aprobación del capitán del equipo contrario. Si el capitán contrario no la aprueba, el equipo HOME debe elegir entre las ubicaciones estándar listadas arriba, respetando el orden de prioridad.
+"Al momento de la programación o del inicio del partido" es **inclusivo**: que New York no esté disponible en cualquiera de los dos momentos basta para seleccionar Atlanta. Cuando los dos momentos no coinciden, **rige el inicio del partido**, porque es cuando el partido necesita un servidor — un servidor de New York que esté disponible al inicio del partido se usa aunque no hubiera ninguno al programarlo, y uno que haya dejado de estar disponible al inicio del partido no obliga a jugar en New York. En un mejor de tres el servidor se elige por mapa (§2.3.b), así que esta prueba se aplica al **inicio de cada mapa**, no una sola vez para la serie — por lo tanto una serie puede jugarse en ubicaciones distintas de un mapa a otro.
+
+El equipo de NA puede proponer una ubicación alternativa de servidor aprobada por KTP que no esté listada arriba. La ubicación alternativa requiere la aprobación del capitán del equipo contrario. Si el capitán contrario no la aprueba, el equipo de NA debe elegir entre las ubicaciones estándar listadas arriba, respetando el orden de prioridad.
 
 > **Importante:** Los partidos nunca pueden jugarse en servidores no aprobados por KTP, sin importar que haya acuerdo mutuo.
 
@@ -355,6 +394,8 @@ Para partidos entre un equipo norteamericano y un equipo sudamericano (mayoría 
 
 Estas ubicaciones ofrecen una latencia de compromiso razonable para las conexiones sudamericanas.
 
+Aquí selecciona el equipo **HOME**, a diferencia del §2.4.c. Eso es deliberado: la elección de servidor y de bando que el §2.4.c/§2.4.e dan al equipo de NA existe para compensar el **horario de inicio más temprano**, y un equipo sudamericano no recibe ninguno — el horario predeterminado de las 3:00 PM del §2.2.b es solo para equipos con mayoría de EU al este de UTC -2. Un equipo sudamericano es Internacional según el §2.1 y aun así juega en el horario estándar, así que no hay nada que compensar.
+
 El equipo HOME puede proponer una ubicación alternativa de servidor aprobada por KTP que no esté listada arriba. La ubicación alternativa requiere la aprobación del capitán del equipo contrario. Si el capitán contrario no la aprueba, el equipo HOME debe elegir entre las ubicaciones estándar listadas arriba.
 
 > **Importante:** Los partidos nunca pueden jugarse en servidores no aprobados por KTP, sin importar que haya acuerdo mutuo.
@@ -362,6 +403,8 @@ El equipo HOME puede proponer una ubicación alternativa de servidor aprobada po
 #### 2.4.e Selección de Bando para NA vs EU
 
 Cuando un equipo norteamericano juega contra un equipo europeo (mayoría de jugadores de EU al este de UTC -2 según la Regla 2.1), el **equipo de NA siempre elige** en qué bando (Allies o Axis) jugar primero, **anulando la ventaja del equipo local definida en la Regla 2.3.a**. Esto compensa la ventaja de programación que los equipos de EU reciben por el horario predeterminado de partido más temprano.
+
+El equipo de NA también selecciona el servidor según el §2.4.c, de modo que en un partido NA vs EU **tanto el bando como el servidor quedan en manos del equipo de NA**, en cada mapa, sin importar qué equipo es HOME o eligió el mapa. Un equipo europeo no gana nada por ser HOME ni por elegir un mapa; lo que tiene en cambio es el horario de inicio predeterminado más temprano según el §2.2.b.
 
 ### 2.5 Uso de Jugadores Suspendidos
 
@@ -380,7 +423,7 @@ Un equipo puede cambiar su nombre **una vez** durante el transcurso de una tempo
 |------|---------|
 | **Tamaño máximo del roster** | 10 jugadores |
 | **Momento del bloqueo** | Fin del período de registro de equipos |
-| **Después del bloqueo** | Sin cambios en el roster, el nombre del equipo, los alias de los jugadores ni los SteamIDs |
+| **Después del bloqueo** | Sin cambios en el nombre del equipo, los alias de los jugadores ni los SteamIDs. Sin **incorporaciones** al roster salvo por la ventana de la Regla 2.7.1. Una **baja** siempre está permitida — ver Regla 2.7.a |
 | **Excepción** | Aún pueden hacerse cambios por decisión de un administrador — ver Regla 2.7.a |
 
 #### 2.7.a Solicitud de un Cambio de Roster
@@ -391,15 +434,32 @@ Los cambios de roster se solicitan en el sitio web de la liga (ktpleague.gg) en 
 |------|---------|------------------------|
 | **Registro abierto** | Edita el roster directamente; se notifica a los administradores qué cambió | Presenta una solicitud |
 | **Registro cerrado, antes del bloqueo** | Presenta una solicitud; el personal la revisa | Presenta una solicitud |
-| **Después del bloqueo** | El formulario del capitán se cierra — consulta a un administrador | Presenta una solicitud |
+| **Después del bloqueo** | El formulario del capitán se cierra para las **incorporaciones** — consulta a un administrador. Una **baja** se aplica de inmediato | Sale de inmediato |
 
-Un jugador puede pedir salir de un roster **en cualquier momento, antes o después del bloqueo**, desde la configuración de su propia cuenta. Es una solicitud en todos los casos: el jugador permanece en el roster hasta que un administrador actúe sobre ella, y una solicitud que dejaría a un equipo sin capitán no se aplica hasta que otro capitán esté en su lugar.
+Un jugador puede salir de un roster **en cualquier momento, antes o después del bloqueo**, desde la configuración de su propia cuenta, y un capitán puede dar de baja a un jugador en cualquier momento. **Una baja se aplica de inmediato.** No es una solicitud y no necesita aprobación: quitar a un jugador no suma a nadie y no puede generar ninguna ventaja competitiva, así que el bloqueo de roster no tiene nada que proteger frente a ella.
+
+Una **transferencia de salida** reduce el roster del equipo de origen exactamente como lo hace una baja, y aquí se trata como tal. Dos salidas quedan **en espera** en lugar de aplicarse, por la misma razón — cada una dejaría al equipo sin poder jugar:
+
+- una que dejaría a un equipo **sin capitán** no se aplica hasta que otro capitán esté en su lugar;
+- una que dejaría a un equipo con **menos de cuatro jugadores inscritos** no se aplica hasta que el equipo vuelva a tener cuatro, porque la Regla 2.10 exige cuatro jugadores inscritos en cada partido.
+
+El mínimo lee el roster que un jugador **deja**, nunca aquel al que se une, y cuenta el **roster** — no los seis que se ponen en cancha en un partido.
+
+**Un intercambio se juzga por su estado final.** Dos equipos que intercambian jugadores terminan cada uno con el tamaño de roster con el que empezaron, así que un intercambio no incumple el mínimo aunque cualquiera de los dos movimientos, por separado, pareciera hacerlo.
+
+**Un intercambio mueve jugadores, no la capitanía.** Su estado final es quién está en cada roster; nunca decide quién lidera uno. Un jugador que llega en un intercambio se incorpora como jugador o co-capitán, y un equipo cuyo único capitán es una de las dos mitades no realiza el intercambio hasta que otro capitán esté en su lugar — la misma espera que rige cualquier otra salida. La capitanía cambia por su cuenta, después, mediante el formulario de roster.
+
+⛔ **Estas esperas obligan a capitanes y jugadores. No obligan a los administradores.** Un administrador puede mover a un jugador en cualquier momento, incluso durante un bloqueo — eso es lo que hace que una espera sea segura y no una trampa, y un equipo atascado detrás de una debe consultar a un administrador.
+
+> ⚠️ **Mientras los rosters están bloqueados, un jugador que se va no puede unirse a otro equipo por el resto de la temporada.** Las incorporaciones se rigen por la ventana de la Regla 2.7.1, y fuera de esa ventana no hay ninguna — un administrador todavía puede ubicarlo, pero nadie debería contar con ello. A un jugador que deja un equipo a mitad de temporada hay que decírselo antes de que actúe.
+
+Una **incorporación** sigue siendo una solicitud en todos los casos.
 
 Cada solicitud y cada decisión quedan registradas.
 
 ### 2.7.1 Ventana de Roster de Media Temporada
 
-Habrá una ventana de incorporación al roster a mitad de temporada, anunciada con al menos una semana de anticipación.
+Habrá una ventana de incorporación al roster a mitad de temporada, anunciada con al menos una semana de anticipación. Rige **únicamente las incorporaciones** — las bajas siempre están permitidas y nunca están sujetas a ella (Regla 2.7.a).
 
 | División | Requisitos |
 |----------|--------------|
@@ -423,7 +483,13 @@ Un **ringer** es un jugador que no está en tu roster oficial y que se usa tempo
 
 ### 2.11 Forfeits de Equipo y Remoción
 
-Los equipos que den forfeit repetidamente pueden ser removidos de la liga. Más de un forfeit en una temporada puede derivar en la remoción a discreción de los administradores.
+Un equipo que dé forfeit **dos veces en una temporada** puede ser removido de la liga a discreción de los administradores. Ese es el único umbral.
+
+Solo cuenta para ese umbral un forfeit **imputado a** un equipo. Una victoria por forfeit (§5.3) nunca cuenta en contra del equipo que sí se presentó — ese equipo está en la misma posición que un equipo con BYE (§1.13.b), y no se le imputa un rival que no apareció.
+
+Un forfeit se **imputa cuando se puntúa** según el §1.13.c — al final de la temporada regular, una vez que quede establecido que no se jugará ningún partido de reposición. **Un encuentro recuperado por un partido de reposición nunca se imputa**, así que un equipo que fue declarado no presentado según el §5.3 y luego jugó el partido no lo cuenta para este umbral.
+
+> Cuando un partido se **anula** porque ambos equipos dieron forfeit (§1.13.c), el forfeit se imputa a **cada** equipo.
 
 ---
 
@@ -515,7 +581,7 @@ Los registros de KTPAntiCheat son producidos automáticamente por el cliente y c
 
 Cada sesión se evalúa en los servidores de KTP a partir de la evidencia presentada. Las sesiones pueden reevaluarse cuando cambian los métodos de detección, incluidas sesiones de etapas anteriores de la temporada; una reevaluación puede cambiar un resultado previo en cualquiera de las dos direcciones.
 
-**Conservación:** Las cargas de sesiones se conservan indefinidamente para revisión de integridad, de modo que una determinación siempre pueda reexaminarse a partir de la evidencia original. La telemetría de partido se conserva por **30 días**; los registros de sesión y sus resultados se conservan durante la temporada. Una determinación que se apoye en telemetría solo puede reexaminarse mientras esa telemetría siga conservada.
+**Conservación:** Las cargas de sesiones se conservan indefinidamente para revisión de integridad, de modo que una determinación siempre pueda reexaminarse a partir de la evidencia original. La telemetría de partido se conserva por **30 días**; los registros de sesión y sus resultados se conservan durante toda la temporada. Una determinación que se apoye en telemetría solo puede reexaminarse mientras esa telemetría siga conservada.
 
 #### 3.9.a Impugnación de una Determinación de KTPAntiCheat
 
@@ -639,6 +705,10 @@ Los jugadores no pueden usar scripts para automatizar:
 - El ataque del jugador
 - El movimiento del jugador
 - Rapid-fire
+  ⚠️ **Aquí "rapid-fire" significa auto-repetición — una pulsación que produce entradas repetidas.** **No**
+  significa **Rapid Trigger**, la función de actuación analógica de los teclados de efecto Hall, que el
+  §4.6 permite explícitamente. Rapid Trigger acorta *cuándo* se registra una tecla; nunca multiplica una
+  pulsación en más de una entrada. Ver §4.6.
 - Compensación automática de retroceso
 - Salto o patrones de movimiento automatizados
 
@@ -686,6 +756,12 @@ Los capitanes deben tomar una captura de pantalla de `rcon status` por juego par
 |------|--------|
 | **+10 minutos** | Documentar y avisar a un administrador si no hay noticias del equipo contrario |
 | **+15 minutos** | Un administrador puede declarar oficialmente la no presentación y otorgar la victoria por forfeit |
+
+El reloj corre desde el **horario de inicio programado real** del partido — el horario que figura en la página del partido, que es el horario que los capitanes acordaron cuando el partido fue reprogramado. No corre desde el predeterminado del §2.2. Un partido reprogramado que ambos capitanes acordaron es la cita real.
+
+**Una no presentación a los +15 normalmente no termina el encuentro.** KTP prefiere un **partido de reposición**, y los administradores organizan uno siempre que ambos equipos todavía puedan jugar. La marca de +15 es lo que faculta a un administrador para declarar la no presentación e iniciar esa conversación — no es un resultado. Una victoria por forfeit generalmente se otorga solo al **final de la temporada regular**, para un encuentro que ningún partido de reposición recuperó.
+
+> El §1.13.c ya lo establece desde el lado de la puntuación: un forfeit se puntúa *"solo al final de la temporada regular, una vez que quede establecido que no se jugará ningún partido de reposición."* Un forfeit **declarado** y un forfeit **acreditado** son momentos distintos, y ninguno es automático — ambos son decisiones de un administrador.
 
 ### 5.4 Programación Justa
 
@@ -736,17 +812,21 @@ El reporte es de dos lados. Un capitán ingresa el resultado, el capitán **cont
 
 Un capitán que no esté de acuerdo con un resultado ingresado lo disputa en lugar de confirmarlo. Un resultado disputado nunca queda registrado; pasa al equipo de administradores junto con la versión de ambos capitanes.
 
+El deber de la hora es un asunto de **conducta** del capitán ganador, no una condición del resultado. Un resultado que el capitán contrario confirma dentro de sus 24 horas **vale cuando sea que se haya ingresado**; un reporte tardío es un asunto del capitán, y nunca anula el resultado. Si **ninguno** de los dos capitanes ha ingresado un resultado 24 horas después del horario de inicio programado del partido (§5.3), el encuentro pasa al equipo de administradores para su resolución. Nada se otorga automáticamente.
+
 Las capturas de pantalla **no** se cargan junto con el reporte. Los capitanes igualmente las toman (Regla 5.1.a, Regla 5.1.b), las conservan durante la temporada (Regla 4.3), y deben presentarlas cuando se les solicite — un resultado disputado se resuelve a partir de ellas.
 
-> **Nota:** Los resultados de las series de playoffs y los forfeits son registrados por los administradores, no mediante el reporte de los capitanes. Envía los marcadores de playoffs a un administrador cuando la serie termine.
+> **Nota:** Los resultados de las series de playoffs y los forfeits son registrados por los administradores, no mediante el reporte de los capitanes. Envía los marcadores de playoffs a un administrador cuando la serie termine. En playoffs, el deber de registrar el resultado es del **administrador**, y no corre ningún reloj de una hora sobre un capitán mientras haya un administrador presente. Los capitanes reportan **solo si no hay un administrador presente** cuando la serie termina — y entonces sí corre el reloj de una hora.
 
-> **Si el sitio no puede recibir el reporte:** publícalo en el canal de marcadores designado del Discord de KTP dentro de esa misma hora y avísale a un administrador. Eso es un recurso alternativo ante una interrupción, no una segunda vía de reporte.
+> **Si el sitio no puede recibir el reporte:** publícalo en el canal de marcadores designado del Discord de KTP dentro de esa misma hora y avísale a un administrador. Eso es un recurso alternativo ante una interrupción, no una segunda vía de reporte. Un resultado publicado ahí **sigue necesitando la confirmación del capitán contrario**, dentro de esas mismas 24 horas, antes de quedar registrado — Discord es un canal para reportar, no una segunda autoridad. La única excepción es que un administrador ingrese el resultado directamente, lo cual sustituye al reporte de los capitanes.
 
 ### 5.7 Vetos de Mapas en Playoffs
 
 Los vetos se realizan únicamente para partidos de playoffs. Tienen lugar en la sala de vetos en la página del partido en el sitio web de la liga (ktpleague.gg): ambos capitanes actúan por turnos —baneos, elecciones y bandos iniciales— sobre el pool de mapas de playoffs publicado. El sitio decide de quién es el turno y rechaza una jugada ilegal, así que no hay nada que enviar en ningún otro lado.
 
 Los capitanes deben completar el veto **al menos 72 horas antes del horario predeterminado de inicio del partido de esa ronda** (Regla 2.2). El plazo se mide desde el horario predeterminado, no desde ningún horario posterior que los dos capitanes acuerden entre sí.
+
+Una ronda de playoffs es una semana programada con una fecha, exactamente como lo es una semana de temporada regular. La fecha predeterminada de una ronda es **el domingo de su semana**, y las 72 horas se cuentan hacia atrás desde el horario predeterminado del §2.2 en esa fecha. ⚠️ **Las rondas de playoffs no siempre son domingos consecutivos** — un cuadro puede incluir una semana libre. Las rondas de la Temporada 10 caen el 15 de noviembre, el 22 de noviembre y el 6 de diciembre, con el 29 de noviembre libre — así que el ancla es la fecha publicada de la propia ronda, nunca "el domingo siguiente".
 
 > **Sanción:** Si el veto no está completo en ese plazo, los administradores realizan los pasos pendientes en nombre del equipo atrasado. Un paso realizado de esa manera se marca como acción del personal en el registro de vetos del partido, que es público.
 
@@ -755,6 +835,8 @@ La duración de la serie la fijan los administradores en el partido. La mayoría
 #### 5.7.a Cuando una Ronda se Resuelve Tarde
 
 Un partido de playoffs no tiene equipos hasta que se decide la ronda previa. Cuando ambos equipos se conocen **menos de 72 horas antes** del inicio predeterminado de la ronda, el plazo de 72 horas no pudo haberse cumplido y no se computa en contra de ninguno de los dos equipos. En su lugar, el veto vence **apenas ambos capitanes hayan tenido una oportunidad razonable de realizarlo**, y los administradores pueden realizar los pasos pendientes una vez que el partido deba jugarse por lo demás.
+
+Ambos capitanes han tenido **una oportunidad razonable** una vez que ha transcurrido la ventana completa de 72 horas del §5.7 con el encuentro alcanzable para ambos — ambos equipos conocidos y la sala de vetos abierta para ambos capitanes — medida hacia adelante desde el momento en que se volvió alcanzable. Un partido **debe jugarse por lo demás** cuando está programado dentro de su propia semana de playoffs.
 
 ### 5.8 Responsabilidad del Capitán
 
