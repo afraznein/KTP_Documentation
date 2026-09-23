@@ -318,10 +318,10 @@ Cuatro es la mayoría de los **seis** que un equipo pone en cancha (§2.10), que
 ### 2.2 Horarios Predeterminados de Programación de Partidos
 
 #### 2.2.a Horario Predeterminado Estándar
-Domingo a las 9:00 PM hora del Este (ET — hora del Este de EE. UU., con horario de verano).
+Domingo a las 9:00 PM hora del Este (EST).
 
 #### 2.2.b Horario Predeterminado Internacional
-Cuando uno o ambos equipos tienen mayoría de jugadores de EU al este de UTC -2, el horario predeterminado del partido es el domingo a las 3:00 PM hora del Este (ET — hora del Este de EE. UU., con horario de verano).
+Cuando uno o ambos equipos tienen mayoría de jugadores de EU al este de UTC -2, el horario predeterminado del partido es el domingo a las 3:00 PM EST.
 
 > Los horarios pueden ajustarse por el horario de verano.
 

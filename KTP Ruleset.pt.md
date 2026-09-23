@@ -317,10 +317,10 @@ Quatro é a maioria dos **seis** que um time escala (§2.10), que é de onde vem
 ### 2.2 Horários Padrão de Agendamento das Partidas
 
 #### 2.2.a Horário Padrão
-Domingo às 21h00, horário do Leste (ET — horário do Leste dos EUA, com horário de verão).
+Domingo às 21h00, horário do Leste (EST).
 
 #### 2.2.b Horário Padrão Internacional
-Quando um ou ambos os times tiverem maioria de jogadores da UE a leste de UTC -2, o horário padrão da partida é domingo às 15h00, horário do Leste (ET — horário do Leste dos EUA, com horário de verão).
+Quando um ou ambos os times tiverem maioria de jogadores da UE a leste de UTC -2, o horário padrão da partida é domingo às 15h00 EST.
 
 > Os horários podem ser ajustados em razão do horário de verão.
 

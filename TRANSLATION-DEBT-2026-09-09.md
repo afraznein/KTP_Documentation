@@ -268,7 +268,7 @@ with the thirteen.)*
 
 ---
 
-## §2.2.a — Standard Default Time · EST → ET
+## §2.2.a — Standard Default Time · EST KEPT (ruled)
 
 **Status:** STALE in es and pt (es line ~299 area, pt line ~299 area).
 
@@ -279,7 +279,7 @@ with the thirteen.)*
 
 ---
 
-## §2.2.b — International Default Time · EST → ET
+## §2.2.b — International Default Time · EST KEPT (ruled)
 
 **Status:** STALE in es (line 302) and pt (line 302).
 
@@ -295,6 +295,11 @@ English rule change (`e1b58cf`, *"§2.2.b says EST for a start time that is most
 whole purpose was to stop the ruleset naming a timezone the match is usually not played in.
 
 We have not resolved this. §1.15 makes the English controlling, so the English now says ET — but
+**RULED 2026-09-11 by the operator: the es/pt rulesets KEEP "EST" in §2.2.a/b.** This is chi's
+deliberate divergence from the English, for a readership that reads EST as US east-coast time
+generically. It is settled — not a question for this review. A draft of this translation pass
+changed both to "ET" and was reverted before review; if you see ET in §2.2, that is the bug.
+
 whether the Spanish and Portuguese should follow it literally, or keep "EST" with a parenthetical
 gloss for a readership that reads EST as "US east coast time" generically, is a call for chi and
 the admins. It affects §2.2.a and §2.2.b in both files.
