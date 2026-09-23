@@ -565,24 +565,13 @@ Una falla técnica —una caída, una desconexión o una interrupción de KTPAnt
 
 #### 4.1.f POV Demos y Capturas de Pantalla
 
-**POV Demos:**
-- Graba una POV demo por cada mitad (dos demos por juego completo)
-- Comienza a grabar antes de la primera ronda, detén la grabación cuando termine la mitad
+**Graba cada mitad.** Empieza tu POV demo antes de la primera ronda y deténla cuando termine la mitad. Cada mitad de tiempo extra lleva su propia demo. HLTV graba el partido desde el servidor, pero eso no es tu demo, y tampoco lo es un stream ni una captura de video (Regla 4.2). Si un administrador te la pide, solo sirve tu propia grabación.
 
-**Captura de Pantalla Previa al Juego:**
-- Toma una captura de pantalla que muestre al menos un modelo de jugador de cada equipo
-- Verifica que los modelos/skins de los jugadores sean los correctos
+**Toma las capturas.** Una antes de que empiece el partido, con al menos un jugador de cada equipo a la vista: muestra qué modelos y skins se estaban usando. Después, una del marcador al final de cada mitad. Tu capitán adjunta las dos mitades al reporte de resultado, que es como queda registrado el marcador, así que guarda tus propias copias por si las dos no coinciden.
 
-**Capturas de Pantalla del Marcador al Final de Cada Mitad:**
-- Captura el marcador al final de cada mitad
-- Se usa para verificar el puntaje y la participación de los jugadores
+**Quédate hasta el final.** No te desconectes antes de que el partido haya terminado. Si sufres una caída, vuelve a conectarte y empieza a grabar de nuevo.
 
-**Permanece Hasta el Final del Juego:**
-- No te desconectes hasta que el partido haya terminado por completo
-- Si sufres una caída, vuelve a conectarte de inmediato
-
-**Demos de Tiempo Extra:**
-- Graba POV demos separadas para cada mitad de tiempo extra siguiendo el mismo procedimiento que en las mitades reglamentarias
+**Guarda todo hasta que termine la temporada** (Regla 4.3), y tenlo disponible para enviarlo dentro de las 24 horas posteriores a que un administrador lo pida (Regla 3.8.a). Los administradores piden material al azar y también durante las disputas, así que no sabrás de antemano qué partido importa. Un archivo que ya no tienes cuenta igual que uno que te negaste a enviar: el juego puede perderse por forfeit y tú puedes ser suspendido (Regla 3.2).
 
 #### 4.1.g Longitud y Formato del Nombre de Personaje
 

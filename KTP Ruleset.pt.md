@@ -565,24 +565,13 @@ Falha técnica — um crash, uma desconexão ou uma indisponibilidade do KTPAnti
 
 #### 4.1.f POV Demos e Capturas de Tela
 
-**POV Demos:**
-- Grave uma POV demo para cada tempo (duas demos por jogo completo)
-- Comece a gravar antes do primeiro round e pare quando o tempo terminar
+**Grave cada tempo.** Comece sua POV demo antes do primeiro round e pare quando o tempo terminar. Cada tempo de prorrogação tem sua própria demo. A HLTV grava a partida a partir do servidor, mas isso não é a sua demo, e uma transmissão ou captura de vídeo também não é (Regra 4.2). Se um administrador pedir, só serve a sua própria gravação.
 
-**Captura de Tela Pré-Jogo:**
-- Tire uma captura de tela mostrando pelo menos um modelo de jogador de cada time
-- Verifica se os modelos/skins dos jogadores estão corretos
+**Tire as capturas.** Uma antes de a partida começar, com pelo menos um jogador de cada time visível: ela mostra quais modelos e skins estavam em uso. Depois, uma do placar ao fim de cada tempo. Seu capitão anexa os dois tempos ao relatório de resultado, que é como o placar fica registrado, então guarde suas próprias cópias caso os dois não batam.
 
-**Capturas de Tela do Placar ao Fim de Cada Tempo:**
-- Capture o placar ao fim de cada tempo
-- Usadas para verificar o placar e a participação dos jogadores
+**Fique até o fim.** Não se desconecte antes de a partida terminar por completo. Se sofrer um crash, reconecte e comece a gravar de novo.
 
-**Permanecer Até o Fim do Jogo:**
-- Não se desconecte até que a partida esteja completamente encerrada
-- Se sofrer um crash, reconecte imediatamente
-
-**Demos de Prorrogação:**
-- Grave POV demos separadas para cada tempo de prorrogação, seguindo o mesmo procedimento dos tempos regulamentares
+**Guarde tudo até o fim da temporada** (Regra 4.3), e tenha o material pronto para enviar dentro de 24 horas depois de um administrador pedir (Regra 3.8.a). Os administradores pedem material aleatoriamente e também durante disputas, então você não saberá de antemão qual partida importa. Um arquivo que você não tem mais conta como um que você se recusou a enviar: o jogo pode ser perdido por W.O. e você pode ser suspenso (Regra 3.2).
 
 #### 4.1.g Comprimento e Formato do Nome do Personagem
 
