@@ -1,14 +1,29 @@
 # Translation debt — English ruleset, 2026-08-31 → 2026-09-09
 
-**For:** chi (KTP Admin), reviewer and translator of `KTP Ruleset.es.md` and `KTP Ruleset.pt.md`.
+**For:** chi (KTP Admin) and any Spanish- or Portuguese-speaking reviewer of `KTP Ruleset.es.md`
+and `KTP Ruleset.pt.md`.
 
-This is the whole of the outstanding translation work in one place. It replaces six separate
-tracking issues (#13, #15, #18, #19, #22, #24), which were one-per-English-commit and therefore a
-count of commits rather than a worklist. Nothing here needs the issue tracker to read.
+🔴 **THE ASK CHANGED — READ THIS FIRST.** This began as a worklist handing the translation *to* a
+translator. It is now a **spot-check guide**: the translation has been written, and what is wanted
+from a reviewer is corrections, not prose. Every section below still names the English that moved
+and what it means; use it to find the paragraph in the es/pt file and judge whether it says the
+same thing.
 
-**Nothing in this document is a translation.** The Spanish and Portuguese files are deliberately
-left as they are, apart from chi's own corrections from PR #14, which are carried forward here so
-they are not lost and not re-done. The translating is his.
+Each item's **Status** line describes what was outstanding *when this document was written*, and is
+kept as the record of what had to be covered. It is no longer a to-do list — all of it has been
+translated. **Where this document and the es/pt files disagree, the files are what shipped.**
+
+It replaces six separate tracking issues (#13, #15, #18, #19, #22, #24), which were
+one-per-English-commit and therefore a count of commits rather than a worklist. Nothing here needs
+the issue tracker to read.
+
+chi's own corrections from PR #14 are carried forward unchanged and under his authorship, so none
+of that work is lost or re-done. Two of his choices were **edited rather than kept**, both because
+the English moved underneath them — see *What PR #14 already covers* at the end.
+
+⚠️ **Two English changes landed after this document was written and are included in the
+translation:** PR #34 (§4.1.f, player recording duties) and PR #35 (§1.13, a BYE credits points
+for only). §1.13.b below has been corrected for #35; the framing it originally carried is retired.
 
 ---
 
@@ -117,12 +132,24 @@ are already in the files on this branch. Recorded here only so it is clear they 
 
 ---
 
-## §1.13.b — Scoring a forfeit · differential moves by zero
+## §1.13.b — Scoring a forfeit · credited as points FOR only
+
+🔻 **CORRECTED 2026-09-23.** This section previously read *"differential moves by zero"* and quoted
+English saying the credit is made **both as points scored and as points conceded**. **PR #35
+retired that**, on an operator ruling of 2026-09-23. Briefing a reviewer on the old framing would
+have them check the translation against a rule that no longer holds — which is why it is corrected
+here rather than left as a historical note.
 
 **Status:** MISSING in es and pt. New paragraph, inserted after "*…receives no points for that
 match, neither scored nor conceded.*"
 
-> The non-forfeiting team is credited that average **both as points scored and as points conceded**, exactly as a BYE is under §1.13.a. **A forfeit therefore moves point differential by zero**, the same as a BYE: a team is not rewarded in the differential tiebreak for an opponent who did not turn up, any more than it is for sitting out.
+> The non-forfeiting team is credited that average **as points scored only**, exactly as a BYE is under §1.13.a. Nothing is credited against it.
+
+⚠️ **The same reversal applies to §1.13.a**, which is the load-bearing half: a BYE now credits the
+average as points **for** only, nothing against, and therefore moves a team's differential by the
+**whole of that average** rather than by zero. The worked example now ends *"329.375 points for and
+0 points against"*. A reviewer checking §1.13.a or §1.13.b should check for that, and should treat
+any surviving "moves the differential by exactly zero" wording in either translation as a defect.
 
 ---
 
