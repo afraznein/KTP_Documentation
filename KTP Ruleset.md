@@ -157,7 +157,8 @@ number of teams. A **forfeit** is a match awarded without play.
 
 A BYE is worth the **average of the scores the division's other teams posted that week**, on that
 week's map. Each match played in the division that week contributes two scores — one per team — and
-the BYE team is credited with their mean, both as points scored and as points conceded.
+the BYE team is credited with their mean **as points scored only**. Nothing is credited against it:
+a BYE has no opponent, so there is no score to concede.
 
 Only a **played** match contributes scores to that average. A forfeited or voided match has no
 scoreline, so it feeds nothing — it *receives* the average rather than supplying it. A team is also
@@ -173,11 +174,12 @@ tiebreakers are applied, because rounding eight scores to whole points can reord
 
 *Worked example.* Silver has nine teams, so one sits out each week. In week 4, on dod_harrington,
 the other eight play four matches finishing 429-243, 312-300, 500-180 and 260-411. The eight scores
-average 329.375, so the team on BYE is credited 329.375 points for and 329.375 points against.
+average 329.375, so the team on BYE is credited 329.375 points for and 0 points against.
 
-Crediting the average both as points scored and as points conceded is deliberate: it means a BYE
-moves a team's point differential by exactly zero. A BYE is **not a result** — it adds no win and no loss, and it does not make records
-comparable between teams that have played a different number of matches.
+A BYE therefore moves a team's point differential by the whole of that average, which can move a
+team on the differential tiebreak (§1.14). A BYE is **not a result** — it adds no win and no loss,
+and it does not make records comparable between teams that have played a different number of
+matches.
 
 #### 1.13.b Scoring a forfeit
 
@@ -185,10 +187,8 @@ A forfeited match is scored the same way — the average of the scores the divis
 posted that week — and is credited to the **non-forfeiting team only**. The team that forfeited
 receives no points for that match, neither scored nor conceded.
 
-The non-forfeiting team is credited that average **both as points scored and as points conceded**,
-exactly as a BYE is under §1.13.a. **A forfeit therefore moves point differential by zero**, the same
-as a BYE: a team is not rewarded in the differential tiebreak for an opponent who did not turn up,
-any more than it is for sitting out.
+The non-forfeiting team is credited that average **as points scored only**, exactly as a BYE is
+under §1.13.a. Nothing is credited against it.
 
 A team that turned up to a match its opponent did not play is in the same position as a team on a
 BYE: it had no opponent, through no fault of its own. The team that caused that is not owed the
