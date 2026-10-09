@@ -138,7 +138,7 @@ En caso de un juego empatado, se debe jugar tiempo extra de inmediato para deter
 - Dos mitades adicionales de **10 minutos cada una** (los equipos cambian de bando para la segunda mitad del tiempo extra)
 - Si el empate persiste, se continúan jugando mitades adicionales de tiempo extra de 10 minutos hasta que se defina un ganador
 
-> **Sanción:** No completar las rondas de tiempo extra requeridas se trata como un forfeit del equipo que lo haya causado, y se puntúa según el §1.13.b. Cuando **ambos** equipos son responsables, el partido se **anula** según el §1.13.c y ninguno de los dos cobra — no se registra como una derrota para ambos.
+> **Sanción:** No completar las rondas de tiempo extra requeridas se trata como un forfeit del equipo que lo haya causado, y se puntúa según el §1.13.b. Cuando **ambos** equipos son responsables, el partido se **anula** según el §1.13.c y ninguno de los dos recibe puntos — no se registra como una derrota para ambos.
 
 > **Nota:** En partidos al mejor de tres, el tiempo extra aplica a cada mapa individual si ese mapa termina empatado. Cada mapa debe producir un ganador.
 
@@ -178,7 +178,7 @@ calcula a partir de los partidos que esa división haya jugado realmente.
 El promedio se toma **por semana**, porque cada semana se juega en un mapa y los mapas no puntúan
 igual. Nunca se toma a lo largo de toda la temporada.
 
-El promedio es una fracción y se mantiene como tal. La tabla de posiciones lo calcula con hasta cuatro decimales
+El promedio es **una fracción y se mantiene como tal**. La tabla de posiciones lo calcula con hasta cuatro decimales
 y lo muestra recortado (un número entero no muestra decimales). Nunca se redondea a un número entero antes de
 aplicar los desempates, ya que redondear ocho puntuaciones a puntos enteros podría reordenar una división.
 
@@ -186,9 +186,9 @@ aplicar los desempates, ya que redondear ocho puntuaciones a puntos enteros podr
 los otros ocho juegan cuatro partidos que terminan 429-243, 312-300, 500-180 y 260-411. Los ocho puntajes
 promedian 329.375, así que al equipo con BYE se le acreditan 329.375 puntos a favor y 0 puntos en contra.
 
-Por lo tanto, un BYE mueve la diferencia de puntos de un equipo por el total de ese promedio, lo que puede
+Por lo tanto, un BYE mueve la diferencia de puntos de un equipo en la totalidad de ese promedio, lo que puede
 mover a un equipo en el desempate por diferencia (§1.14). Un BYE **no es un resultado** — no suma victoria ni
-derrota, y no hace que los registros sean comparables entre equipos que han jugado una cantidad distinta de
+derrota, y no hace que los récords sean comparables entre equipos que han jugado una cantidad distinta de
 partidos.
 
 #### 1.13.b Puntuación de un forfeit
@@ -202,11 +202,11 @@ igual que a un BYE según el §1.13.a. No se le acredita nada en contra.
 
 Un equipo que se presentó a un partido que su rival no jugó está en la misma posición que un equipo con
 BYE: no tuvo rival, sin culpa propia. El equipo que causó eso no merece el
-mismo trato, y la derrota en su registro no es la totalidad de la consecuencia.
+mismo trato, y la derrota en su récord no es la totalidad de la consecuencia.
 
 Un partido perdido por forfeit no aporta nada al promedio a partir del cual se puntúa. No tiene marcador.
 
-Cuando ambos equipos dan forfeit, el partido se **anula** en su lugar (§1.13.c) — ninguno de los dos equipos cobra.
+Cuando ambos equipos dan forfeit, el partido se **anula** en su lugar (§1.13.c) — ninguno de los dos equipos recibe puntos.
 
 #### 1.13.c Cuándo queda firme cada uno
 
@@ -231,11 +231,11 @@ partido anulado por decisión de un administrador no cuenta para ninguno de los 
 
 Los equipos se ordenan por:
 
-1. **Registro** — más victorias. Las derrotas se muestran solo a título informativo y nunca ordenan la tabla: un
+1. **Récord** — más victorias. Las derrotas se muestran solo a título informativo y nunca ordenan la tabla: un
    BYE no es un resultado (§1.13.a), así que dentro de una división las victorias y las derrotas de cada equipo
    suman el mismo total, y un paso adicional sobre las derrotas nunca podría separar a equipos que las victorias
    no hubieran separado.
-2. **Enfrentamiento directo** — los resultados entre los equipos que están igualados en registro (ver abajo).
+2. **Enfrentamiento directo** — los resultados entre los equipos que están igualados en récord (ver abajo).
 3. **Diferencia de puntos** — puntos de ronda a favor menos puntos de ronda en contra a lo largo de toda la
    temporada regular.
 
@@ -251,11 +251,11 @@ Los equipos se ordenan por:
   enfrentamiento directo lee **únicamente la victoria y la derrota, nunca el marcador**. Por eso un forfeit es un
   resultado de enfrentamiento directo como cualquier otro: tiene un ganador desde el momento en que se declara,
   aunque no cargue ningún puntaje hasta el final de la temporada regular (§1.13.c).
-- La mini-tabla se ordena **solo por registro** — más victorias en la mini-tabla, luego menos derrotas en la mini-tabla.
+- La mini-tabla se ordena **solo por récord** — más victorias en la mini-tabla, luego menos derrotas en la mini-tabla.
   **La diferencia de puntos de la mini-tabla deliberadamente no se usa**, en ningún paso. Ver §1.14.c.
 - El enfrentamiento directo aplica **solo cuando cada equipo del grupo ha jugado contra al menos uno de los otros**.
   Si algún equipo empatado no ha jugado contra ninguno de ellos, el enfrentamiento directo se omite para todo el grupo y el empate
-  se resuelve por diferencia de puntos. Un enfrentamiento directo no jugado nunca se trata como un registro de 0-0.
+  se resuelve por diferencia de puntos. Un enfrentamiento directo no jugado nunca se trata como un récord de 0-0.
 - Los equipos que sigan igualados después de la mini-tabla pasan a la diferencia de puntos. La mini-tabla se
   aplica una sola vez; la regla no recurre a un empate más pequeño dentro del grupo.
 
@@ -272,8 +272,8 @@ el resultado que la ubicó.
 > en general, no solo al ejemplo anterior. El identificador y el nivel del encabezado se dejan sin cambios a propósito: el sitio
 > web genera anclajes a partir del número de regla, y ambas traducciones reflejan esta estructura línea por línea.
 
-Si dos o más equipos permanecen exactamente igualados después del registro, el enfrentamiento directo y la diferencia de puntos, y el
-orden decide **un cupo de playoffs, una siembra de playoffs, o una posición de descenso o ascenso**, **un administrador
+Si dos o más equipos permanecen exactamente igualados después del récord, el enfrentamiento directo y la diferencia de puntos, y el
+orden decide **un cupo de playoffs, una posición de siembra, o una posición de descenso o ascenso**, **un administrador
 de KTP resuelve el orden y la resolución se registra públicamente.** No se aplica ningún criterio automático
 adicional. Cuando el orden no decide ninguna de esas tres cosas, los equipos siguen empatados y no se dicta
 resolución alguna.
@@ -447,7 +447,7 @@ El mínimo lee el roster que un jugador **deja**, nunca aquel al que se une, y c
 
 **Un intercambio se juzga por su estado final.** Dos equipos que intercambian jugadores terminan cada uno con el tamaño de roster con el que empezaron, así que un intercambio no incumple el mínimo aunque cualquiera de los dos movimientos, por separado, pareciera hacerlo.
 
-**Un intercambio mueve jugadores, no la capitanía.** Su estado final es quién está en cada roster; nunca decide quién lidera uno. Un jugador que llega en un intercambio se incorpora como jugador o co-capitán, y un equipo cuyo único capitán es una de las dos mitades no realiza el intercambio hasta que otro capitán esté en su lugar — la misma espera que rige cualquier otra salida. La capitanía cambia por su cuenta, después, mediante el formulario de roster.
+**Un intercambio mueve jugadores, no la capitanía.** Su estado final es quién está en cada roster; nunca decide quién lidera uno. Un jugador que llega en un intercambio se incorpora como jugador o co-capitán, y si el único capitán de un equipo es uno de los dos jugadores que se intercambian, ese equipo no realiza el intercambio hasta que otro capitán esté en su lugar — la misma espera que rige cualquier otra salida. La capitanía cambia por su cuenta, después, mediante el formulario de roster.
 
 ⛔ **Estas esperas obligan a capitanes y jugadores. No obligan a los administradores.** Un administrador puede mover a un jugador en cualquier momento, incluso durante un bloqueo — eso es lo que hace que una espera sea segura y no una trampa, y un equipo atascado detrás de una debe consultar a un administrador.
 
@@ -631,9 +631,9 @@ Una falla técnica —una caída, una desconexión o una interrupción de KTPAnt
 
 #### 4.1.f POV Demos y Capturas de Pantalla
 
-**Graba cada mitad.** Empieza tu POV demo antes de la primera ronda y deténla cuando termine la mitad. Cada mitad de tiempo extra lleva su propia demo. HLTV graba el partido desde el servidor, pero eso no es tu demo, y tampoco lo es un stream ni una captura de video (Regla 4.2). Si un administrador te la pide, solo sirve tu propia grabación.
+**Graba cada mitad.** Empieza tu POV demo antes de la primera ronda y detenla cuando termine la mitad. Cada mitad de tiempo extra lleva su propia demo. HLTV graba el partido desde el servidor, pero eso no es tu demo, y tampoco lo es un stream ni una captura de video (Regla 4.2). Si un administrador te la pide, solo sirve tu propia grabación.
 
-**Toma las capturas.** Una antes de que empiece el partido, con al menos un jugador de cada equipo a la vista: muestra qué modelos y skins se estaban usando. Después, una del marcador al final de cada mitad. Tu capitán adjunta las dos mitades al reporte de resultado, que es como queda registrado el marcador, así que guarda tus propias copias por si las dos no coinciden.
+**Toma las capturas.** Una antes de que empiece el partido, con al menos un jugador de cada equipo a la vista: muestra qué modelos y skins se estaban usando. Después, una del marcador al final de cada mitad. Tu capitán adjunta las capturas de ambas mitades al reporte de resultado, que es como queda registrado el marcador, así que guarda tus propias copias por si las dos no coinciden.
 
 **Quédate hasta el final.** No te desconectes antes de que el partido haya terminado. Si sufres una caída, vuelve a conectarte y empieza a grabar de nuevo.
 
@@ -783,7 +783,7 @@ cada respuesta y cada recordatorio que la liga intentó entregar.
   nunca decide un resultado. Los administradores resuelven bajo §1.13 y §3.1, ponderando quién
   propuso horarios, quién guardó silencio y —como hecho aparte— si se pudo contactar
   siquiera a los capitanes de un equipo.
-- Un equipo cuyos capitanes fueron inubicables por todos los canales que la liga tiene es un
+- Un equipo cuyos capitanes fueron no localizables por todos los canales que la liga tiene es un
   caso distinto al de un equipo que sí fue contactado y no respondió. El
   registro de programación muestra cuál es cuál.
 
@@ -799,12 +799,12 @@ Los capitanes deben verificar la elegibilidad de los jugadores antes de que comi
 
 Los resultados se reportan en la página del partido en el sitio web de la liga (ktpleague.gg) dentro de **1 hora de finalizado el partido**. La obligación de reportar dentro de esa hora recae en el **capitán del equipo ganador**; cualquiera de los dos capitanes puede ingresar el resultado, y un capitán perdedor que lo ingrese primero cumple con la obligación.
 
-El reporte es de dos lados. Un capitán ingresa el resultado, el capitán **contrario** lo confirma, y el resultado queda registrado —y la tabla de posiciones se mueve— solo con esa confirmación. Un capitán no puede confirmar el reporte de su propio equipo.
+El reporte requiere la confirmación de ambos capitanes. Un capitán ingresa el resultado, el capitán **contrario** lo confirma, y el resultado queda registrado —y la tabla de posiciones se mueve— solo con esa confirmación. Un capitán no puede confirmar el reporte de su propio equipo.
 
 **Capitán que reporta:**
 
 - [ ] Ingresa el total final de puntos de cada equipo para el partido
-- [ ] Revisa el ganador que el sitio te indica de vuelta antes de enviar — un marcador invertido es el error común, y el otro capitán es la única persona que puede detectarlo
+- [ ] Revisa el ganador que el sitio te muestra antes de enviar — un marcador invertido es el error común, y el otro capitán es la única persona que puede detectarlo
 
 **Capitán contrario:**
 
@@ -812,7 +812,7 @@ El reporte es de dos lados. Un capitán ingresa el resultado, el capitán **cont
 
 Un capitán que no esté de acuerdo con un resultado ingresado lo disputa en lugar de confirmarlo. Un resultado disputado nunca queda registrado; pasa al equipo de administradores junto con la versión de ambos capitanes.
 
-El deber de la hora es un asunto de **conducta** del capitán ganador, no una condición del resultado. Un resultado que el capitán contrario confirma dentro de sus 24 horas **vale cuando sea que se haya ingresado**; un reporte tardío es un asunto del capitán, y nunca anula el resultado. Si **ninguno** de los dos capitanes ha ingresado un resultado 24 horas después del horario de inicio programado del partido (§5.3), el encuentro pasa al equipo de administradores para su resolución. Nada se otorga automáticamente.
+El deber de la hora es un asunto de **conducta** del capitán ganador, no una condición del resultado. Un resultado que el capitán contrario confirma dentro de sus 24 horas **es válido sin importar cuándo se haya ingresado**; un reporte tardío es un asunto del capitán, y nunca anula el resultado. Si **ninguno** de los dos capitanes ha ingresado un resultado 24 horas después del horario de inicio programado del partido (§5.3), el encuentro pasa al equipo de administradores para su resolución. Nada se otorga automáticamente.
 
 Las capturas de pantalla **no** se cargan junto con el reporte. Los capitanes igualmente las toman (Regla 5.1.a, Regla 5.1.b), las conservan durante la temporada (Regla 4.3), y deben presentarlas cuando se les solicite — un resultado disputado se resuelve a partir de ellas.
 
@@ -834,9 +834,9 @@ La duración de la serie la fijan los administradores en el partido. La mayoría
 
 #### 5.7.a Cuando una Ronda se Resuelve Tarde
 
-Un partido de playoffs no tiene equipos hasta que se decide la ronda previa. Cuando ambos equipos se conocen **menos de 72 horas antes** del inicio predeterminado de la ronda, el plazo de 72 horas no pudo haberse cumplido y no se computa en contra de ninguno de los dos equipos. En su lugar, el veto vence **apenas ambos capitanes hayan tenido una oportunidad razonable de realizarlo**, y los administradores pueden realizar los pasos pendientes una vez que el partido deba jugarse por lo demás.
+Un partido de playoffs no tiene equipos hasta que se decide la ronda previa. Cuando ambos equipos se conocen **menos de 72 horas antes** del inicio predeterminado de la ronda, el plazo de 72 horas no pudo haberse cumplido y no se computa en contra de ninguno de los dos equipos. En su lugar, el veto vence **apenas ambos capitanes hayan tenido una oportunidad razonable de realizarlo**, y los administradores pueden realizar los pasos pendientes una vez que ya corresponda jugar el partido según su calendario.
 
-Ambos capitanes han tenido **una oportunidad razonable** una vez que ha transcurrido la ventana completa de 72 horas del §5.7 con el encuentro alcanzable para ambos — ambos equipos conocidos y la sala de vetos abierta para ambos capitanes — medida hacia adelante desde el momento en que se volvió alcanzable. Un partido **debe jugarse por lo demás** cuando está programado dentro de su propia semana de playoffs.
+Ambos capitanes han tenido **una oportunidad razonable** una vez que ha transcurrido la ventana completa de 72 horas del §5.7 con el encuentro accesible para ambos — ambos equipos conocidos y la sala de vetos abierta para ambos capitanes — medida hacia adelante desde el momento en que se volvió accesible. Un partido **ya corresponde jugarse según su calendario** cuando está programado dentro de su propia semana de playoffs.
 
 ### 5.8 Responsabilidad del Capitán
 
