@@ -692,7 +692,7 @@ Voice commands should be used for team communication only. Excessive use to taun
 
 #### 4.6.a One Input for Crouch
 
-**Effective Sunday 1 November 2026.** Crouch may be issued by **one input only**:
+**Effective on publication, 21 October 2026.** Crouch may be issued by **one input only**:
 
 | Command | What it does | Usual key |
 |---------|--------------|-----------|
@@ -718,9 +718,9 @@ One input is one key, one mouse button, or one mousewheel direction. Whatever re
 - Where no loaded config was recorded, or what the game loads cannot be resolved from the record, compliance is **undetermined**: not a violation, and not a clearance. An admin may ask you to produce your config (Rule 3.2); a demo or a screenshot does not substitute for it.
 - A bind set at the console or by a launch option leaves no trace in the record. The obligation applies to it all the same; the league acts on what it can see, and says so when it cannot.
 
-**Penalty.** A violation is a Section 4 violation handled under Rule 1.2, as for the rest of §4.6. Concealment, repetition after notice, or a device configured expressly to defeat this rule is treated under Rule 3.4.
+**Penalty.** A violation is a Section 4 violation handled under Rule 1.2, as for the rest of §4.6. Because this rule took effect on publication, the first instance found on a player after that date is a notice to correct the bind, not a sanction; a second instance, or the same bind still present at the player's next match, is handled under Rule 1.2. Concealment, repetition after notice, or a device configured expressly to defeat this rule is treated under Rule 3.4.
 
-> **Transition:** A bind in place before the effective date is not a violation of this rule, whatever a session recorded; it stays subject to §4.6 as it already stood. Check your config before your first match on or after that date — most players who are affected need to remove exactly one bind.
+> **Transition:** This rule looks forward only. Matches played and sessions recorded before 21 October 2026 are not §4.6.a matters, whatever they show; wheel `+duck` in them remains a §4.6 matter exactly as before. A config that carries a second crouch input is in violation from publication onward, so check yours before your next match — most players who are affected need to remove exactly one bind.
 
 ### 4.7 No Automated Scripts
 
