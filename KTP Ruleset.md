@@ -681,37 +681,35 @@ Voice commands should be used for team communication only. Excessive use to taun
 **Prohibited:**
 - **A key bound to `+attack` must issue `+attack` and nothing else.** Binding or aliasing `+attack` together with any additional command — directly, through an alias, or through an exec'd config — is prohibited.
 - Binding `+attack` or `+duck` to the mousewheel (accelerates firing / bypasses stamina restrictions)
-- More than one input on `+duck`, `+jump` or `+speed` — a second key, mouse button or wheel direction on the same movement command (see Rule 4.6.a)
+- More than one input on `+duck` — a second key, mouse button or wheel direction on crouch (see Rule 4.6.a)
 - "Rapid Fire," "Turbo," or multi-tap keyboard/mouse modes that emit repeated inputs from a single press
 - "Snap Tap" / SOCD handling / null-cancel binds that auto-release one of two opposing movement keys (**SOCD** is the generic term; "Snap Tap" is Razer's brand name)
 
 **Notes:**
 - Rebinding is unaffected. `+attack` may be bound to any key, and other commands may have their own keys. Only combining them on the fire key is prohibited.
 - Stock commands are not suspicious in themselves. `+lookup`, `+lookdown`, `+left`, `+right`, and `centerview` ship as Half-Life defaults and appear in most configs.
-- Wheel `+jump` remains permitted (bunny-hopping) — as the **only** input for `+jump`. A wheel direction and a key both bound to `+jump` is two inputs on one command (Rule 4.6.a).
+- Wheel `+jump` remains permitted (bunny-hopping).
 
-#### 4.6.a One Input per Movement Command
+#### 4.6.a One Input for Crouch
 
-**Effective Sunday 1 November 2026.** Each of these commands may be issued by **one input only**:
+**Effective Sunday 1 November 2026.** Crouch may be issued by **one input only**:
 
 | Command | What it does | Usual key |
 |---------|--------------|-----------|
 | `+duck` | Crouch | CTRL |
-| `+jump` | Jump | SPACE |
-| `+speed` | Walk — the "shift" or slow-walk modifier | SHIFT |
 
-One input is one key, one mouse button, or one mousewheel direction. Whatever reaches the game as `+duck` must come from a single control, and the same holds for `+jump` and `+speed`. Which control you choose is up to you.
+One input is one key, one mouse button, or one mousewheel direction. Whatever reaches the game as `+duck` must come from a single control. Which control you choose is up to you.
 
-**Why.** With two controls on one movement command a player can alternate them, so what the game receives can no longer be attributed to any one key or device, and whatever ceiling a single control imposes on how fast that command can be repeated is gone. The mousewheel was one way of doing this; a second key is another; a mouse button is a third. This rule is written against the method rather than the device, so that the next variation is already covered.
+**Why.** With two controls on crouch a player can alternate them, so what the game receives can no longer be attributed to any one key or device, and whatever ceiling a single control imposes on how fast crouch can be repeated is gone. The mousewheel was one way of doing this; a second key is another; a mouse button is a third. This rule is written against the method rather than the device, so that the next variation is already covered.
 
 **Covered.** Each of the following is a second input and is prohibited:
 
-- a second key, mouse button or wheel direction bound to the same command, whether directly or through an exec'd config;
-- an alias or script that reaches the command from a second control (`alias x "+duck"` on a second key is a second `+duck` input);
-- a bind on a second control that issues the command together with other commands (a key bound to `+duck;…` is a `+duck` input, whatever else it does);
-- a device or firmware feature that issues the command from more than one physical control, or that alternates inputs on it for you. §4.6's principle applies: one physical actuation, one input.
+- a second key, mouse button or wheel direction bound to `+duck`, whether directly or through an exec'd config;
+- an alias or script that reaches `+duck` from a second control (`alias x "+duck"` on a second key is a second `+duck` input);
+- a bind on a second control that issues `+duck` together with other commands (a key bound to `+duck;…` is a `+duck` input, whatever else it does);
+- a device or firmware feature that issues `+duck` from more than one physical control, or that alternates inputs on it for you. §4.6's principle applies: one physical actuation, one input.
 
-**Not covered.** Rebinding is unaffected: `+duck` may live on any single control, including a mouse button. The other movement commands (`+forward`, `+back`, `+moveleft`, `+moveright`) are not restricted by this rule; the Half-Life defaults put two keys on some of them, and that stays legal. Wheel `+duck` remains prohibited under §4.6 whether or not it is the only input.
+**Not covered.** Rebinding is unaffected: `+duck` may live on any single control, including a mouse button. This rule applies to `+duck` only. `+jump` and `+speed` (walk, usually SHIFT) are not restricted by it — a key and a wheel direction both bound to `+jump` stays legal, as §4.6 already says — and neither are the other movement commands (`+forward`, `+back`, `+moveleft`, `+moveright`), where the Half-Life defaults put two keys on some of them. Wheel `+duck` remains prohibited under §4.6 whether or not it is the only input.
 
 **Evidence.** Compliance is judged from the configuration your game actually loads, as recorded by KTPAntiCheat (Rule 3.9): the engine's own config files and every config they exec, resolved in the order the game runs them.
 
