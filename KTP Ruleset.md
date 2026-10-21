@@ -681,13 +681,48 @@ Voice commands should be used for team communication only. Excessive use to taun
 **Prohibited:**
 - **A key bound to `+attack` must issue `+attack` and nothing else.** Binding or aliasing `+attack` together with any additional command — directly, through an alias, or through an exec'd config — is prohibited.
 - Binding `+attack` or `+duck` to the mousewheel (accelerates firing / bypasses stamina restrictions)
+- More than one input on `+duck`, `+jump` or `+speed` — a second key, mouse button or wheel direction on the same movement command (see Rule 4.6.a)
 - "Rapid Fire," "Turbo," or multi-tap keyboard/mouse modes that emit repeated inputs from a single press
 - "Snap Tap" / SOCD handling / null-cancel binds that auto-release one of two opposing movement keys (**SOCD** is the generic term; "Snap Tap" is Razer's brand name)
 
 **Notes:**
 - Rebinding is unaffected. `+attack` may be bound to any key, and other commands may have their own keys. Only combining them on the fire key is prohibited.
 - Stock commands are not suspicious in themselves. `+lookup`, `+lookdown`, `+left`, `+right`, and `centerview` ship as Half-Life defaults and appear in most configs.
-- Wheel `+jump` remains permitted (bunny-hopping).
+- Wheel `+jump` remains permitted (bunny-hopping) — as the **only** input for `+jump`. A wheel direction and a key both bound to `+jump` is two inputs on one command (Rule 4.6.a).
+
+#### 4.6.a One Input per Movement Command
+
+**Effective Sunday 1 November 2026.** Each of these commands may be issued by **one input only**:
+
+| Command | What it does | Usual key |
+|---------|--------------|-----------|
+| `+duck` | Crouch | CTRL |
+| `+jump` | Jump | SPACE |
+| `+speed` | Walk — the "shift" or slow-walk modifier | SHIFT |
+
+One input is one key, one mouse button, or one mousewheel direction. Whatever reaches the game as `+duck` must come from a single control, and the same holds for `+jump` and `+speed`. Which control you choose is up to you.
+
+**Why.** With two controls on one movement command a player can alternate them, so what the game receives can no longer be attributed to any one key or device, and whatever ceiling a single control imposes on how fast that command can be repeated is gone. The mousewheel was one way of doing this; a second key is another; a mouse button is a third. This rule is written against the method rather than the device, so that the next variation is already covered.
+
+**Covered.** Each of the following is a second input and is prohibited:
+
+- a second key, mouse button or wheel direction bound to the same command, whether directly or through an exec'd config;
+- an alias or script that reaches the command from a second control (`alias x "+duck"` on a second key is a second `+duck` input);
+- a bind on a second control that issues the command together with other commands (a key bound to `+duck;…` is a `+duck` input, whatever else it does);
+- a device or firmware feature that issues the command from more than one physical control, or that alternates inputs on it for you. §4.6's principle applies: one physical actuation, one input.
+
+**Not covered.** Rebinding is unaffected: `+duck` may live on any single control, including a mouse button. The other movement commands (`+forward`, `+back`, `+moveleft`, `+moveright`) are not restricted by this rule; the Half-Life defaults put two keys on some of them, and that stays legal. Wheel `+duck` remains prohibited under §4.6 whether or not it is the only input.
+
+**Evidence.** Compliance is judged from the configuration your game actually loads, as recorded by KTPAntiCheat (Rule 3.9): the engine's own config files and every config they exec, resolved in the order the game runs them.
+
+- A second input in a loaded config is a violation.
+- A config file that KTPAntiCheat records but which the game does not load is context only. On its own it is neither a violation nor proof of compliance.
+- Where no loaded config was recorded, or what the game loads cannot be resolved from the record, compliance is **undetermined**: not a violation, and not a clearance. An admin may ask you to produce your config (Rule 3.2); a demo or a screenshot does not substitute for it.
+- A bind set at the console or by a launch option leaves no trace in the record. The obligation applies to it all the same; the league acts on what it can see, and says so when it cannot.
+
+**Penalty.** A violation is a Section 4 violation handled under Rule 1.2, as for the rest of §4.6. Concealment, repetition after notice, or a device configured expressly to defeat this rule is treated under Rule 3.4.
+
+> **Transition:** A bind in place before the effective date is not a violation of this rule, whatever a session recorded; it stays subject to §4.6 as it already stood. Check your config before your first match on or after that date — most players who are affected need to remove exactly one bind.
 
 ### 4.7 No Automated Scripts
 
@@ -836,6 +871,6 @@ Captains are responsible for ensuring team members understand and follow all rul
 
 **End of Rules Document**
 
-*Last Updated: August 2026*
+*Last Updated: October 2026*
 
 *Questions? Contact KTP Admins via Discord or the league website.*
