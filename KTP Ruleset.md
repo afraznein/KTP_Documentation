@@ -817,6 +817,7 @@ Reporting is two-sided. One captain enters the result, the **opposing** captain 
 **Reporting captain:**
 
 - [ ] Enter each team's final point total for the match
+- [ ] Attach both halves' end-of-round scoreboard screenshots — the form will not submit without both
 - [ ] Check the winner the site names back to you before sending — a reversed score is the common mistake, and the other captain is the only person who can catch it
 
 **Opposing captain:**
@@ -827,7 +828,7 @@ A captain who disagrees with an entered result disputes it instead of confirming
 
 The 1-hour duty is a **conduct** matter for the winning captain, not a condition of the result. A result the opposing captain confirms inside their 24 hours **stands whenever it was entered**; a late report is a matter for the captain, and never voids the result. If **neither** captain has entered a result 24 hours after the match's scheduled start (§5.3), the fixture goes to the admin team for adjudication. Nothing is awarded automatically.
 
-Screenshots are **not** uploaded with the report. Captains still take them (Rule 5.1.a, Rule 5.1.b), retain them for the season (Rule 4.3), and must produce them on request — a disputed result is settled from them.
+Both halves' end-of-round scoreboard screenshots are uploaded **with** the report (Rule 5.1.a, Rule 5.1.b). The form does not submit without both, so a result cannot be entered until the reporting captain has them. A disputed result is settled from the uploaded pair. Captains still keep their own copies for the season (Rule 4.3) and must produce them on request.
 
 > **Note:** Playoff series results and forfeits are recorded by admins, not through captain reporting. Send playoff scores to an admin when the series is done. In playoffs the duty to record the result is the **admin's**, and no 1-hour clock runs on a captain while an admin is present. Captains report **only if no admin is present** when the series ends — and then the 1-hour clock applies.
 
