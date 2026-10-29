@@ -1,7 +1,7 @@
 <!-- ktp-translation
 locale: pt
 source: KTP Ruleset.md
-source-sha256: 1355e9a73faeb5a0e82dc6b7f6c2580988427aafb3d0d327e43a406142ecf9e5
+source-sha256: a9aa373f006c958aa18c2b60fa2e06474137c58f3d307ad11367afd4bc904431
 
 Records which revision of the English ruleset this translation was made from.
 ktpleague.gg re-checks it on every render and warns readers when it no longer
@@ -803,6 +803,7 @@ O reporte é bilateral. Um capitão insere o resultado, o capitão **adversário
 **Capitão que reporta:**
 
 - [ ] Insira o total final de pontos de cada time na partida
+- [ ] Anexe as capturas de tela do placar de fim de round de ambos os tempos — o formulário não será enviado sem as duas
 - [ ] Confira o vencedor que o site apresenta de volta a você antes de enviar — um placar invertido é o erro comum, e o outro capitão é a única pessoa que pode detectá-lo
 
 **Capitão adversário:**
@@ -813,7 +814,7 @@ Um capitão que discorde de um resultado inserido o contesta em vez de confirmá
 
 O dever de uma hora é uma questão de **conduta** do capitão vencedor, não uma condição do resultado. Um resultado que o capitão adversário confirma dentro das suas 24 horas **vale independentemente de quando foi inserido**; um reporte atrasado é assunto do capitão, e nunca anula o resultado. Se **nenhum** dos capitães tiver inserido um resultado 24 horas após o horário de início agendado da partida (§5.3), o confronto vai para a equipe de administração para julgamento. Nada é concedido automaticamente.
 
-As capturas de tela **não** são enviadas junto com o reporte. Os capitães ainda as tiram (Regra 5.1.a, Regra 5.1.b), as guardam pela temporada (Regra 4.3) e devem apresentá-las mediante solicitação — um resultado contestado é resolvido a partir delas.
+As capturas de tela do placar de fim de round de ambos os tempos são enviadas **junto com** o reporte (Regra 5.1.a, Regra 5.1.b). O formulário não é enviado sem as duas, então um resultado não pode ser inserido até que o capitão que reporta as tenha. Um resultado contestado é resolvido a partir do par enviado. Os capitães ainda guardam suas próprias cópias pela temporada (Regra 4.3) e devem apresentá-las mediante solicitação.
 
 > **Nota:** Os resultados de séries de playoff e os W.O. são registrados pelos administradores, e não pelo reporte dos capitães. Envie os placares de playoff a um administrador quando a série terminar. Nos playoffs, o dever de registrar o resultado é do **administrador**, e nenhum relógio de uma hora corre sobre um capitão enquanto houver um administrador presente. Os capitães reportam **apenas se não houver administrador presente** quando a série terminar — e então o relógio de uma hora se aplica.
 
