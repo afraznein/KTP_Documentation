@@ -681,6 +681,7 @@ Voice commands should be used for team communication only. Excessive use to taun
 **Prohibited:**
 - **A key bound to `+attack` must issue `+attack` and nothing else.** Binding or aliasing `+attack` together with any additional command — directly, through an alias, or through an exec'd config — is prohibited.
 - Binding `+attack` or `+duck` to the mousewheel (accelerates firing / bypasses stamina restrictions)
+- More than one input on `+duck` — a second key, mouse button or wheel direction on crouch (see Rule 4.6.a)
 - "Rapid Fire," "Turbo," or multi-tap keyboard/mouse modes that emit repeated inputs from a single press
 - "Snap Tap" / SOCD handling / null-cancel binds that auto-release one of two opposing movement keys (**SOCD** is the generic term; "Snap Tap" is Razer's brand name)
 
@@ -688,6 +689,28 @@ Voice commands should be used for team communication only. Excessive use to taun
 - Rebinding is unaffected. `+attack` may be bound to any key, and other commands may have their own keys. Only combining them on the fire key is prohibited.
 - Stock commands are not suspicious in themselves. `+lookup`, `+lookdown`, `+left`, `+right`, and `centerview` ship as Half-Life defaults and appear in most configs.
 - Wheel `+jump` remains permitted (bunny-hopping).
+
+#### 4.6.a One Input for Crouch
+
+**Effective on publication, 21 October 2026.**
+
+**Principle:** `+duck` may be issued by one input only. One input is one key, one mouse button, or one mousewheel direction. With two controls on crouch a player can alternate them, so what the game receives can no longer be attributed to any one key or device, and whatever ceiling a single control imposes on how fast crouch repeats is gone.
+
+**Prohibited:**
+- A second key, mouse button, or wheel direction bound to `+duck` — directly, through an alias, or through an exec'd config. `alias x "+duck"` on a second key is a second `+duck` input.
+- A bind on a second control that issues `+duck` together with other commands. A key bound to `+duck;…` is a `+duck` input, whatever else it does.
+- A device or firmware feature that issues `+duck` from more than one physical control, or that alternates inputs on it for you. §4.6's principle applies: one physical actuation, one input.
+
+**Notes:**
+- Rebinding is unaffected. `+duck` may live on any single control, including a mouse button.
+- This applies to `+duck` only. `+jump` and `+speed` are not restricted by it — a key and a wheel direction both bound to `+jump` stays legal, as §4.6 already says — and neither are `+forward`, `+back`, `+moveleft`, or `+moveright`, where the Half-Life defaults put two keys on some of them.
+- Wheel `+duck` remains prohibited under §4.6 whether or not it is the only input.
+
+**Evidence:** Compliance is determined from the configuration the game actually loads, as recorded by KTPAntiCheat (Rule 3.9): the engine's own config files and every config they exec, resolved in the order the game runs them. A second input in a loaded config is a violation. A config file KTPAntiCheat records but the game does not load is context only, and on its own is neither a violation nor proof of compliance. Where no loaded config was recorded, or what the game loads cannot be resolved, compliance is undetermined: not a violation, and not a clearance. An admin may ask you to produce your config (Rule 3.2); a demo or a screenshot does not substitute for it. A bind set at the console or by a launch option leaves no trace in the record, and the obligation applies to it all the same.
+
+**Penalty:** A Section 4 violation handled under Rule 1.2, as for the rest of §4.6. Because this rule took effect on publication, the first instance found after that date is a notice to correct the bind rather than a sanction; a second instance, or the same bind still present at the player's next match, is handled under Rule 1.2. Concealment, repetition after notice, or a device configured expressly to defeat this rule is treated under Rule 3.4.
+
+**Transition:** This rule looks forward only. Matches played and sessions recorded before 21 October 2026 are not §4.6.a matters, whatever they show, and wheel `+duck` in them remains a §4.6 matter exactly as before. A config carrying a second crouch input is in violation from publication onward, so check yours before your next match — for most players affected, that means removing one bind.
 
 ### 4.7 No Automated Scripts
 
@@ -837,6 +860,6 @@ Captains are responsible for ensuring team members understand and follow all rul
 
 **End of Rules Document**
 
-*Last Updated: August 2026*
+*Last Updated: October 2026*
 
 *Questions? Contact KTP Admins via Discord or the league website.*
