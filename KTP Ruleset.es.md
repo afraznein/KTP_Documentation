@@ -1,7 +1,7 @@
 <!-- ktp-translation
 locale: es
 source: KTP Ruleset.md
-source-sha256: 1355e9a73faeb5a0e82dc6b7f6c2580988427aafb3d0d327e43a406142ecf9e5
+source-sha256: a9aa373f006c958aa18c2b60fa2e06474137c58f3d307ad11367afd4bc904431
 
 Records which revision of the English ruleset this translation was made from.
 ktpleague.gg re-checks it on every render and warns readers when it no longer
@@ -804,6 +804,7 @@ El reporte requiere la confirmación de ambos capitanes. Un capitán ingresa el 
 **Capitán que reporta:**
 
 - [ ] Ingresa el total final de puntos de cada equipo para el partido
+- [ ] Adjunta las capturas de pantalla del marcador de fin de ronda de ambas mitades — el formulario no se puede enviar sin las dos
 - [ ] Revisa el ganador que el sitio te muestra antes de enviar — un marcador invertido es el error común, y el otro capitán es la única persona que puede detectarlo
 
 **Capitán contrario:**
@@ -814,7 +815,7 @@ Un capitán que no esté de acuerdo con un resultado ingresado lo disputa en lug
 
 El deber de la hora es un asunto de **conducta** del capitán ganador, no una condición del resultado. Un resultado que el capitán contrario confirma dentro de sus 24 horas **es válido sin importar cuándo se haya ingresado**; un reporte tardío es un asunto del capitán, y nunca anula el resultado. Si **ninguno** de los dos capitanes ha ingresado un resultado 24 horas después del horario de inicio programado del partido (§5.3), el encuentro pasa al equipo de administradores para su resolución. Nada se otorga automáticamente.
 
-Las capturas de pantalla **no** se cargan junto con el reporte. Los capitanes igualmente las toman (Regla 5.1.a, Regla 5.1.b), las conservan durante la temporada (Regla 4.3), y deben presentarlas cuando se les solicite — un resultado disputado se resuelve a partir de ellas.
+Las capturas de pantalla del marcador de fin de ronda de ambas mitades se cargan **junto con** el reporte (Regla 5.1.a, Regla 5.1.b). El formulario no se puede enviar sin las dos, así que no se puede ingresar un resultado hasta que el capitán que reporta las tenga. Un resultado disputado se resuelve a partir del par cargado. Los capitanes igualmente conservan sus propias copias durante la temporada (Regla 4.3) y deben presentarlas cuando se les solicite.
 
 > **Nota:** Los resultados de las series de playoffs y los forfeits son registrados por los administradores, no mediante el reporte de los capitanes. Envía los marcadores de playoffs a un administrador cuando la serie termine. En playoffs, el deber de registrar el resultado es del **administrador**, y no corre ningún reloj de una hora sobre un capitán mientras haya un administrador presente. Los capitanes reportan **solo si no hay un administrador presente** cuando la serie termina — y entonces sí corre el reloj de una hora.
 
