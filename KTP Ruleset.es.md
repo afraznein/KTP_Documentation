@@ -1,7 +1,7 @@
 <!-- ktp-translation
 locale: es
 source: KTP Ruleset.md
-source-sha256: a9aa373f006c958aa18c2b60fa2e06474137c58f3d307ad11367afd4bc904431
+source-sha256: e5975027d70a355c0de23b8332706d1aa63612592dff5784588121c94f1a3b21
 
 Records which revision of the English ruleset this translation was made from.
 ktpleague.gg re-checks it on every render and warns readers when it no longer
@@ -581,7 +581,7 @@ Los registros de KTPAntiCheat son producidos automáticamente por el cliente y c
 
 Cada sesión se evalúa en los servidores de KTP a partir de la evidencia presentada. Las sesiones pueden reevaluarse cuando cambian los métodos de detección, incluidas sesiones de etapas anteriores de la temporada; una reevaluación puede cambiar un resultado previo en cualquiera de las dos direcciones.
 
-**Conservación:** Las cargas de sesiones se conservan indefinidamente para revisión de integridad, de modo que una determinación siempre pueda reexaminarse a partir de la evidencia original. La telemetría de partido se conserva por **30 días**; los registros de sesión y sus resultados se conservan durante toda la temporada. Una determinación que se apoye en telemetría solo puede reexaminarse mientras esa telemetría siga conservada.
+**Conservación:** Las cargas de sesiones, los registros de sesión y sus resultados, y la telemetría de partido se conservan durante el tiempo que sean necesarios para la aplicación de las reglas y la resolución de impugnaciones, de modo que una determinación pueda reexaminarse a partir de la evidencia original. Los datos opcionales de perfil y de conexión se eliminan cuando el jugador los desactiva o hace privado su perfil.
 
 #### 3.9.a Impugnación de una Determinación de KTPAntiCheat
 
