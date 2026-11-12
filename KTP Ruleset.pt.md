@@ -1,7 +1,7 @@
 <!-- ktp-translation
 locale: pt
 source: KTP Ruleset.md
-source-sha256: a9aa373f006c958aa18c2b60fa2e06474137c58f3d307ad11367afd4bc904431
+source-sha256: e5975027d70a355c0de23b8332706d1aa63612592dff5784588121c94f1a3b21
 
 Records which revision of the English ruleset this translation was made from.
 ktpleague.gg re-checks it on every render and warns readers when it no longer
@@ -580,7 +580,7 @@ Os registros do KTPAntiCheat são produzidos automaticamente pelo cliente e mant
 
 Toda sessão é avaliada nos servidores da KTP a partir das evidências enviadas. As sessões podem ser reavaliadas quando os métodos de detecção mudarem, inclusive sessões do início da temporada; uma reavaliação pode alterar um resultado anterior em qualquer direção.
 
-**Retenção:** Os envios de sessão são retidos indefinidamente para revisão de integridade, de modo que uma determinação sempre pode ser reexaminada a partir da evidência original. A telemetria de partida é mantida por **30 dias**; os registros e resultados de sessão são mantidos pela temporada. Uma determinação que se apoie em telemetria só pode ser reexaminada enquanto aquela telemetria ainda estiver retida.
+**Retenção:** Os envios de sessão, os registros e resultados de sessão e a telemetria de partida são retidos pelo tempo necessário para a aplicação das regras e a análise de contestações, de modo que uma determinação possa ser reexaminada a partir da evidência original. Os dados opcionais de perfil e de conexão são excluídos quando o jogador os desativa ou torna seu perfil privado.
 
 #### 3.9.a Contestação de uma Determinação do KTPAntiCheat
 
