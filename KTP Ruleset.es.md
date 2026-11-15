@@ -1,7 +1,7 @@
 <!-- ktp-translation
 locale: es
 source: KTP Ruleset.md
-source-sha256: e460fec4b8b7c35cea0c1f0e49c945970e143656c595185fdc95f8c744e1c3da
+source-sha256: 73718151f6c2d736f0c40647870c8d0920cbda6100c3c8af2e76775f58b306c0
 
 Records which revision of the English ruleset this translation was made from.
 ktpleague.gg re-checks it on every render and warns readers when it no longer
@@ -623,7 +623,7 @@ Todos los jugadores deben cumplir con las verificaciones de integridad de archiv
 
 Todo jugador debe ejecutar la versión actual de **KTPAntiCheat** durante toda la duración de cada partido que juegue. Un partido está cubierto cuando la sesión de KTPAntiCheat del jugador está en ejecución antes de que el partido comience y sigue en ejecución hasta que termina.
 
-KTPAntiCheat tiene un cliente para Windows y, a partir de la versión 0.8.4, un cliente para Linux. Usa el cliente hecho para el sistema operativo en el que juegas. Ejecutar el cliente de Windows mediante Wine, Proton o cualquier otra capa de compatibilidad no es una forma admitida de jugar; los jugadores de Linux usan el cliente para Linux.
+KTPAntiCheat tiene un cliente para Windows y, a partir de la versión 0.8.4, un cliente para Linux. Usa el cliente hecho para el sistema operativo en el que juegas. Ejecutar el cliente de Windows mediante Wine, Proton o cualquier otra capa de compatibilidad no es una forma admitida de jugar y no cubre el partido; los jugadores de Linux usan el cliente para Linux.
 
 El cliente para Linux revisa menos cosas que el de Windows, por lo que sus sesiones se marcan como de cobertura reducida. Un partido jugado con el cliente para Linux sigue estando cubierto en las mismas condiciones que uno jugado en Windows. Los administradores piden POV demos a los jugadores de Linux en las mismas condiciones que a cualquier otro jugador (Reglas 3.2 y 4.1.f).
 

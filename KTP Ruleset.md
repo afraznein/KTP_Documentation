@@ -613,7 +613,7 @@ All players must comply with file-integrity, CVAR, and anti-cheat checks. Player
 
 Every player must run the current version of **KTPAntiCheat** for the duration of each match they play. A match is covered when the player's KTPAntiCheat session is running before the match begins and remains running until it ends.
 
-KTPAntiCheat comes in a Windows build and, from version 0.8.4, a Linux build. Run the build made for the operating system you play on. Running the Windows build under Wine, Proton or any other compatibility layer is not a supported way to play; Linux players use the Linux build.
+KTPAntiCheat comes in a Windows build and, from version 0.8.4, a Linux build. Run the build made for the operating system you play on. Running the Windows build under Wine, Proton or any other compatibility layer is not a supported way to play and does not cover a match; Linux players use the Linux build.
 
 The Linux build checks less than the Windows build, so sessions from it are marked as reduced coverage. A match played with the Linux build is still covered on the same terms as one played on Windows. Admins request POV demos from Linux players on the same terms as from any other player (Rules 3.2 and 4.1.f).
 
