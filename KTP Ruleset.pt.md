@@ -1,7 +1,7 @@
 <!-- ktp-translation
 locale: pt
 source: KTP Ruleset.md
-source-sha256: e5975027d70a355c0de23b8332706d1aa63612592dff5784588121c94f1a3b21
+source-sha256: 73718151f6c2d736f0c40647870c8d0920cbda6100c3c8af2e76775f58b306c0
 
 Records which revision of the English ruleset this translation was made from.
 ktpleague.gg re-checks it on every render and warns readers when it no longer
@@ -578,6 +578,8 @@ Os jogadores têm **24 horas a partir da notificação** para enviar:
 
 Os registros do KTPAntiCheat são produzidos automaticamente pelo cliente e mantidos pela liga; os jogadores não são obrigados a enviá-los. Em caso de contestação ou verificação aleatória, os jogadores devem fornecer suas POV demos da partida em questão.
 
+O conteúdo de um registro depende de qual cliente do KTPAntiCheat o gerou. A página "What the AC Collects" no cliente mostra o que o cliente que você usa registra.
+
 Toda sessão é avaliada nos servidores da KTP a partir das evidências enviadas. As sessões podem ser reavaliadas quando os métodos de detecção mudarem, inclusive sessões do início da temporada; uma reavaliação pode alterar um resultado anterior em qualquer direção.
 
 **Retenção:** Os envios de sessão, os registros e resultados de sessão e a telemetria de partida são retidos pelo tempo necessário para a aplicação das regras e a análise de contestações, de modo que uma determinação possa ser reexaminada a partir da evidência original. Os dados opcionais de perfil e de conexão são excluídos quando o jogador os desativa ou torna seu perfil privado.
@@ -619,6 +621,10 @@ Todos os jogadores devem cumprir as verificações de integridade de arquivos, d
 #### 4.1.e KTPAntiCheat
 
 Todo jogador deve executar a versão atual do **KTPAntiCheat** durante toda a duração de cada partida que disputar. Uma partida está coberta quando a sessão do KTPAntiCheat do jogador está em execução antes do início da partida e permanece em execução até o término dela.
+
+O KTPAntiCheat tem um cliente para Windows e, a partir da versão 0.8.4, um cliente para Linux. Use o cliente feito para o sistema operacional em que você joga. Executar o cliente de Windows pelo Wine, pelo Proton ou por qualquer outra camada de compatibilidade não é uma forma suportada de jogar e não cobre a partida; jogadores de Linux usam o cliente para Linux.
+
+O cliente para Linux verifica menos coisas que o de Windows, por isso as sessões dele são marcadas como de cobertura reduzida. Uma partida jogada com o cliente para Linux continua coberta nas mesmas condições que uma jogada no Windows. Os administradores solicitam POV demos aos jogadores de Linux nas mesmas condições que a qualquer outro jogador (Regras 3.2 e 4.1.f).
 
 Os jogadores não podem alterar, adulterar ou interferir no cliente, em seus registros de sessão ou em seus envios, e não podem enviar nem fazer com que seja enviado qualquer registro que não seja o seu próprio.
 

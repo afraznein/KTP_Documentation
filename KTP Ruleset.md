@@ -569,6 +569,8 @@ Players have **24 hours from notification** to submit:
 
 KTPAntiCheat records are produced automatically by the client and held by the league; players are not required to submit them. In the event of a dispute or random check, players must provide their POV demos from the match in question.
 
+What a record contains depends on which KTPAntiCheat build produced it. The "What the AC Collects" page in the client lists what your build records.
+
 Every session is scored on KTP's servers from the submitted evidence. Sessions may be re-scored when detection methods change, including sessions from earlier in the season; a re-score can change a previous outcome in either direction.
 
 **Retention:** Session uploads, session records and outcomes, and match telemetry are retained for as long as they are needed for enforcement and appeals, so a finding can be re-examined from the original evidence. Opt-in profile and connection data is deleted when the player turns it off or makes their profile private.
@@ -610,6 +612,10 @@ All players must comply with file-integrity, CVAR, and anti-cheat checks. Player
 #### 4.1.e KTPAntiCheat
 
 Every player must run the current version of **KTPAntiCheat** for the duration of each match they play. A match is covered when the player's KTPAntiCheat session is running before the match begins and remains running until it ends.
+
+KTPAntiCheat comes in a Windows build and, from version 0.8.4, a Linux build. Run the build made for the operating system you play on. Running the Windows build under Wine, Proton or any other compatibility layer is not a supported way to play and does not cover a match; Linux players use the Linux build.
+
+The Linux build checks less than the Windows build, so sessions from it are marked as reduced coverage. A match played with the Linux build is still covered on the same terms as one played on Windows. Admins request POV demos from Linux players on the same terms as from any other player (Rules 3.2 and 4.1.f).
 
 Players must not alter, tamper with, or interfere with the client, its session records, or its uploads, and must not submit or cause to be submitted any record that is not their own.
 

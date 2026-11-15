@@ -1,7 +1,7 @@
 <!-- ktp-translation
 locale: es
 source: KTP Ruleset.md
-source-sha256: e5975027d70a355c0de23b8332706d1aa63612592dff5784588121c94f1a3b21
+source-sha256: 73718151f6c2d736f0c40647870c8d0920cbda6100c3c8af2e76775f58b306c0
 
 Records which revision of the English ruleset this translation was made from.
 ktpleague.gg re-checks it on every render and warns readers when it no longer
@@ -579,6 +579,8 @@ Los jugadores tienen **24 horas desde la notificación** para presentar:
 
 Los registros de KTPAntiCheat son producidos automáticamente por el cliente y conservados por la liga; los jugadores no están obligados a presentarlos. En caso de una disputa o un control aleatorio, los jugadores deben proporcionar sus POV demos del partido en cuestión.
 
+Lo que contiene un registro depende de qué cliente de KTPAntiCheat lo generó. La página "What the AC Collects" del cliente muestra lo que registra el cliente que usas.
+
 Cada sesión se evalúa en los servidores de KTP a partir de la evidencia presentada. Las sesiones pueden reevaluarse cuando cambian los métodos de detección, incluidas sesiones de etapas anteriores de la temporada; una reevaluación puede cambiar un resultado previo en cualquiera de las dos direcciones.
 
 **Conservación:** Las cargas de sesiones, los registros de sesión y sus resultados, y la telemetría de partido se conservan durante el tiempo que sean necesarios para la aplicación de las reglas y la resolución de impugnaciones, de modo que una determinación pueda reexaminarse a partir de la evidencia original. Los datos opcionales de perfil y de conexión se eliminan cuando el jugador los desactiva o hace privado su perfil.
@@ -620,6 +622,10 @@ Todos los jugadores deben cumplir con las verificaciones de integridad de archiv
 #### 4.1.e KTPAntiCheat
 
 Todo jugador debe ejecutar la versión actual de **KTPAntiCheat** durante toda la duración de cada partido que juegue. Un partido está cubierto cuando la sesión de KTPAntiCheat del jugador está en ejecución antes de que el partido comience y sigue en ejecución hasta que termina.
+
+KTPAntiCheat tiene un cliente para Windows y, a partir de la versión 0.8.4, un cliente para Linux. Usa el cliente hecho para el sistema operativo en el que juegas. Ejecutar el cliente de Windows mediante Wine, Proton o cualquier otra capa de compatibilidad no es una forma admitida de jugar y no cubre el partido; los jugadores de Linux usan el cliente para Linux.
+
+El cliente para Linux revisa menos cosas que el de Windows, por lo que sus sesiones se marcan como de cobertura reducida. Un partido jugado con el cliente para Linux sigue estando cubierto en las mismas condiciones que uno jugado en Windows. Los administradores piden POV demos a los jugadores de Linux en las mismas condiciones que a cualquier otro jugador (Reglas 3.2 y 4.1.f).
 
 Los jugadores no deben alterar, manipular ni interferir con el cliente, sus registros de sesión o sus cargas, y no deben presentar ni hacer que se presente ningún registro que no sea el suyo.
 
