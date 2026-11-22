@@ -20,7 +20,7 @@ The nearest rules are §3.4, which lists *"any external program giving unfair ad
 
 ## What the anti-cheat can and cannot tell
 
-KTPAntiCheat can see that ReShade is loaded. It cannot see which preset is running or judge what that preset does to the picture. That matters most for option B.
+KTPAntiCheat checks the files in the game folder, so it sees ReShade's DLL when ReShade is installed there. It does not look inside the running game, so it cannot tell whether ReShade's effects are switched on, which preset is running, or what that preset does to the picture. That matters most for option B.
 
 ---
 
@@ -44,7 +44,7 @@ ReShade is allowed, but only for cosmetic changes. Two ways to write the limit:
 What it means:
 
 - **For players:** you can keep ReShade, but you are responsible for your preset staying inside the limit. Under B1 that is easy to check; under B2 you have to judge it yourself.
-- **For enforcement:** the anti-cheat can confirm ReShade is loaded, but not that the preset follows the rule. Admins would have to ask for the preset file and check it by hand. A preset can be changed at any moment, so a check shows what a player sent, not necessarily what was running during the match. B1 also means someone has to maintain the list.
+- **For enforcement:** the anti-cheat can confirm ReShade is installed, but not that its effects are on or that the preset follows the rule. Admins would have to ask for the preset file and check it by hand. A preset can be changed at any moment, so a check shows what a player sent, not necessarily what was running during the match. B1 also means someone has to maintain the list.
 - **Draft text:** a row in the §3.5 table: *ReShade: Allowed only with [an approved preset / a preset that uses no depth-buffer shaders and does not increase the visibility of players]*, plus a short sub-rule saying players must provide their preset file when an admin asks (Rule 3.8.a's 24 hours).
 
 ### Option C: ReShade is prohibited
@@ -52,12 +52,24 @@ What it means:
 ReShade and similar post-processing injectors may not be running during a match.
 
 - **For players:** anyone who uses it, for any reason, has to remove it or turn it off before matches. That includes players who use it for comfort or colour blindness.
-- **For enforcement:** the simplest of the three. ReShade being loaded during a match is the violation, and the anti-cheat can see that.
+- **For enforcement:** the simplest of the three. The anti-cheat sees ReShade's DLL in the game folder. It cannot tell whether the effects were switched on, so the rule should make having ReShade installed during a match the violation, which the anti-cheat can see.
 - **Draft text:** a row in the §3.5 table: *ReShade and other post-processing injectors: **NOT Allowed**.*
 
 ---
 
 ## Things to weigh whichever way you vote
 
-- **Other tools do the same thing.** Graphics-driver filters, driver colour settings and monitor modes like "black equalizer" can also brighten shadows and sharpen the image. None of them is covered by this vote, and the anti-cheat cannot see them. A ban on ReShade does not remove the effect from the game, only one way of getting it.
+- **Other tools do the same thing.** ReShade is one of several ways to change the finished picture. A ban on ReShade does not remove the effect from the game, only one way of getting it. See the list below.
 - **What breaking the rule counts as.** Under Option B or C, a violation could be treated as cheating under §3.3 (zero tolerance) or as a game-file violation with the ordinary penalties in §1.2. The ruleset should say which, so the same conduct does not carry two different penalties.
+
+## Other tools that do the same thing
+
+None of these is covered by this vote. They fall into five kinds, and only the first leaves anything the anti-cheat can see.
+
+1. **Inside the game, like ReShade.** A DLL placed next to the game. SweetFX, ENBSeries, GeDoSaTo and Special K work the same way, but most of them only support Direct3D, and Day of Defeat runs on OpenGL. In practice ReShade is the one that works here. The anti-cheat sees this kind by the DLL in the game folder.
+2. **A separate program that redraws the game window.** Magpie and Lossless Scaling capture the game window, apply effects such as sharpening or colour, and show the result in their own window on top. Nothing is added to the game folder.
+3. **Graphics-driver settings.** NVIDIA digital vibrance and gamma, NVIDIA App game filters (brightness, sharpening, colour), AMD Radeon Image Sharpening and colour settings, Intel's colour and gamma settings, and helpers like VibranceGUI that switch vibrance on when the game starts. The anti-cheat cannot see these.
+4. **Windows itself.** Windows colour filters (including the colour-blind modes), colour profiles, and tools that change screen-wide brightness. The anti-cheat cannot see these.
+5. **The monitor.** Gaming-monitor modes that brighten dark areas, such as Black eQualizer or Shadow Boost, and crosshairs drawn by the monitor's own menu, including over a sniper rifle. No software can see these.
+
+**What this means for the vote:** brightening shadows, raising vibrance, sharpening, and even a sniper crosshair (which §3.5 already forbids as a game file) all stay possible through the driver or the monitor, whichever option passes. Option C removes the one tool in this list the anti-cheat can see. It closes one route to the effect, not the effect itself. That is not an argument for or against any option, but it is worth knowing what each one can and cannot achieve.
