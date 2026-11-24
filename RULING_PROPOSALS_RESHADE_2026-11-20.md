@@ -20,7 +20,7 @@ The nearest rules are §3.4, which lists *"any external program giving unfair ad
 
 ## What the anti-cheat can and cannot tell
 
-KTPAntiCheat checks the files in the game folder, so it sees ReShade's DLL when ReShade is installed there. It does not look inside the running game, so it cannot tell whether ReShade's effects are switched on, which preset is running, or what that preset does to the picture. That matters most for option B.
+KTPAntiCheat checks the files in the game folder, so it sees ReShade's DLL when ReShade is installed there. From client version 0.8.4 (not yet released), it also records ReShade's settings file, the preset that file names and ReShade's log, if they are in the game folder, so an admin can read the preset a player had saved. It does not look inside the running game, so it cannot tell whether ReShade's effects are switched on, and the preset it records is the one saved on disk, which a player can change at any time. That matters most for option B.
 
 ---
 
@@ -44,7 +44,7 @@ ReShade is allowed, but only for cosmetic changes. Two ways to write the limit:
 What it means:
 
 - **For players:** you can keep ReShade, but you are responsible for your preset staying inside the limit. Under B1 that is easy to check; under B2 you have to judge it yourself.
-- **For enforcement:** the anti-cheat can confirm ReShade is installed, but not that its effects are on or that the preset follows the rule. Admins would have to ask for the preset file and check it by hand. A preset can be changed at any moment, so a check shows what a player sent, not necessarily what was running during the match. B1 also means someone has to maintain the list.
+- **For enforcement:** the anti-cheat can confirm ReShade is installed, but not that its effects are on or that the preset follows the rule. From client version 0.8.4 it records the saved preset file, so an admin can check it by hand without asking for it; before that, admins would have to ask for the file. A preset can be changed at any moment, so a check shows what was saved, not necessarily what was running during the match. B1 also means someone has to maintain the list.
 - **Draft text:** a row in the §3.5 table: *ReShade: Allowed only with [an approved preset / a preset that uses no depth-buffer shaders and does not increase the visibility of players]*, plus a short sub-rule saying players must provide their preset file when an admin asks (Rule 3.8.a's 24 hours).
 
 ### Option C: ReShade is prohibited
